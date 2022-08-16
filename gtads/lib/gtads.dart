@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 
-import 'gtads_platform_interface.dart';
+part 'gtads_provider.dart';
+part 'gtads_code.dart';
 
-class Gtads {
-  Future<String?> getPlatformVersion() {
-    return GtadsPlatform.instance.getPlatformVersion();
-  }
+class GTAds {
+
 }
