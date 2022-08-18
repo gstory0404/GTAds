@@ -58,6 +58,7 @@ String myParam1;
 String? _prama2;
 
 MYAdProvider(
+      this.myParam1,
       {required String alias,
       required int probability,
       required GTAdsCode adsCode})
