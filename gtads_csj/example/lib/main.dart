@@ -111,6 +111,9 @@ class _IndexState extends State<Index> {
                           print(
                               "激励广告关闭 $alias  $codeId $verify $transId $rewardName $rewardAmount");
                         },
+                        onExpand: (alias, codeId,param){
+                          print("激励广告自定义参数 $alias  $codeId $param");
+                        }
                       ),
                     );
                     if (b) {
