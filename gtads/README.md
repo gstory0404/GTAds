@@ -11,6 +11,16 @@ GTAds是一款聚合广告管理插件，提供一套广告管理调度方案、
 
 # 使用
 
+### pubspec.yaml
+```dart
+ gtads: ^0.0.0
+```
+
+### 引入
+```dart
+import 'package:gtads/gtads.dart';
+```
+
 ### 添加广告
 广告初始化前必须完成添加
 ```dart
