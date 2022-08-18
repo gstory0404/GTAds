@@ -2,9 +2,11 @@
 
 GTAds是一款聚合广告管理插件，提供一套广告管理调度方案、本身不提供任何广告，可通过扩展方法插入市面任何一款广告。
 
-# 广告支持插件
+## 广告支持插件
 - [gtads](https://github.com/gstory0404/GTAds/tree/master/gtads)
 - [gtads_csj(穿山甲广告)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
+
+## [自定义广告](https://github.com/gstory0404/GTAds/blob/master/expand.md) 
 
 ## 插件链接
 
