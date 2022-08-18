@@ -43,44 +43,52 @@ class GTAds {
 
   ///横幅广告
   ///
+  /// [codes] 广告id
+  ///
   /// [width] 宽
   ///
   /// [height] 高
   ///
   /// [callBack] 回调
-  static Widget bannerAd({required double width,
+  static Widget bannerAd({required List<GTAdsCode> codes,required double width,
     required double height,
     GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.bannerAd(width, height, callBack);
+    return GTAdsManager.instance.bannerAd(codes,width, height, callBack);
   }
 
   ///信息流广告
   ///
+  /// [codes] 广告id
+  ///
   /// [width] 宽
   ///
   /// [height] 高
   ///
   /// [callBack] 回调
-  static Widget nativeAd({required double width,
+  static Widget nativeAd({required List<GTAdsCode> codes,required double width,
     required double height,
     GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.nativeAd(width, height, callBack);
+    return GTAdsManager.instance.nativeAd(codes,width, height, callBack);
   }
 
   ///开屏广告
   ///
+  /// [codes] 广告id
+  ///
   /// [width] 宽
   ///
   /// [height] 高
   ///
   /// [callBack] 回调
-  static Widget splashAd({required double width,
+  static Widget splashAd({required List<GTAdsCode> codes,required double width,
     required double height,
     GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.splashAd(width, height, callBack);
+    return GTAdsManager.instance.splashAd(codes,width, height, callBack);
   }
 
   ///插屏广告
+  ///
+  /// [codes] 广告id
   ///
   /// [isFull] 是否全屏
   ///
@@ -90,12 +98,14 @@ class GTAds {
   ///
   /// [callBack] 广告监听
   static Future<bool> insertAd(
-      {bool? isFull, double? width, double? height, GTAdsCallBack? callBack}) {
+      {required List<GTAdsCode> codes,bool? isFull, double? width, double? height, GTAdsCallBack? callBack}) {
     return GTAdsManager.instance
-        .insertAd(isFull ?? true, width, height, callBack);
+        .insertAd(codes,isFull ?? true, width, height, callBack);
   }
 
   ///激励广告
+  ///
+  /// [codes] 广告id
   ///
   /// [rewardName] 奖励名称
   ///
@@ -106,12 +116,12 @@ class GTAds {
   /// [customData] 自定义扩展字段
   ///
   /// [callBack] 广告监听
-  static Future<bool> rewardAd({String? rewardName,
+  static Future<bool> rewardAd({required List<GTAdsCode> codes,String? rewardName,
     int? rewardAmount,
     String? userId,
     String? customData,
     GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.rewardAd(rewardName ?? "", rewardAmount ?? 0,
+    return GTAdsManager.instance.rewardAd(codes,rewardName ?? "", rewardAmount ?? 0,
         userId ?? "", customData ?? "", callBack);
   }
 }

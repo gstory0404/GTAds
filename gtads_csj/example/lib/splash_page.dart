@@ -18,21 +18,22 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GTAds.splashAd(
+        codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "887367774",iosId: "887367774")],
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         callBack: GTAdsCallBack(
-          onShow: (alias, codeId) {
-            print("开屏显示 厂商：$alias 广告ID:$codeId");
+          onShow: (code) {
+            print("开屏显示 ${code.toJson()}");
           },
-          onClick: (alias, codeId) {
-            print("开屏点击 厂商：$alias 广告ID:$codeId");
+          onClick: (code) {
+            print("开屏点击 ${code.toJson()}");
           },
-          onFail: (alias, codeId, message) {
-            print("开屏错误 厂商：$alias 广告ID:$codeId 错误信息:$message");
+          onFail: (code, message) {
+            print("开屏错误 ${code.toJson()} $message");
             Navigator.pop(context);
           },
-          onClose: (alias, codeId) {
-            print("开屏关闭 厂商：$alias 广告ID:$codeId");
+          onClose: (code) {
+            print("开屏关闭 ${code.toJson()}");
             Navigator.pop(context);
           },
         ),

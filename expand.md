@@ -7,9 +7,9 @@ class MYAdProvider extends GTAdsProvider{
 
   MYAdProvider(
       {required String alias,
-      required int probability,
-      required GTAdsCode adsCode})
-      : super(alias, probability, adsCode); 
+       String？ androidId,
+       String？ iosId})
+      : super(alias, androidId, iosId); 
 
   @override
   Future<bool> initAd(bool isDebug) {
@@ -18,33 +18,33 @@ class MYAdProvider extends GTAdsProvider{
   }
 
   @override
-  Widget? bannerAd(String adCode, double width, double height, GTAdsCallBack? callBack) {
+  Widget? bannerAd(GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
     // TODO: 返回一个横幅广告Widget
     throw UnimplementedError();
   }
 
   @override
-  Future<bool> insertAd(String adCode, bool isFull, double? width, double? height, GTAdsCallBack? callBack) {
+  Future<bool> insertAd(GTAdsCode adCode, bool isFull, double? width, double? height, GTAdsCallBack? callBack) {
     // TODO: 调用插屏广告方法
      //TODO: 如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
     throw UnimplementedError();
   }
 
   @override
-  Widget? nativeAd(String adCode, double width, double height, GTAdsCallBack? callBack) {
+  Widget? nativeAd(GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
     // TODO: 返回一个信息流广告Widget
     throw UnimplementedError();
   }
 
   @override
-  Future<bool> rewardAd(String adCode, String rewardName, int rewardAmount, String userId, String customData, GTAdsCallBack? callBack) {
+  Future<bool> rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount, String userId, String customData, GTAdsCallBack? callBack) {
    // TODO: 调用激励广告方法
      //TODO: 如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
     throw UnimplementedError();
   }
 
   @override
-  Widget? splashAd(String adCode, double width, double height, GTAdsCallBack? callBack) {
+  Widget? splashAd(GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
   // TODO: 返回一个开屏广告Widget
     throw UnimplementedError();
   }
@@ -60,8 +60,8 @@ String? _prama2;
 MYAdProvider(
       this.myParam1,
       {required String alias,
-      required int probability,
-      required GTAdsCode adsCode})
+      String？ androidId,
+      String？ iosId})
       :
       _prama2 = param2,
        super(alias, probability, adsCode);
@@ -84,11 +84,11 @@ var map = {
               "error": error,
               "propose": propose,
             };
-callBack?.onExpand!(getAlias(), adCode, map);
+callBack?.onExpand!(adCode, map);
 //接收
 GTAdsCallBack(
-    onExpand: (alias, codeId,param){
-         print("广告自定义参数 $alias  $codeId $param");
+    onExpand: (code,param){
+         print("广告自定义参数 ${code} $param");
     }
 )
 ```

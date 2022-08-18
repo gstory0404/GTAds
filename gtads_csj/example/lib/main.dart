@@ -38,17 +38,7 @@ class _IndexState extends State<Index> {
   late GTAdsProvider _provider;
 
   Future<void> init() async {
-    GTAds.addProvider(GTAdsCsjProvider(
-        alias: "csj",
-        probability: 6,
-        adsCode: GTAdsCode(
-          appId: "5098580",
-          bannerIds: ["945410197", "945410197"],
-          splashIds: ["887367774"],
-          nativeIds: ["945417699"],
-          insertIds: ["946201351"],
-          rewardIds: ["945418088"],
-        )));
+    GTAds.addProvider(GTAdsCsjProvider(alias: "csj",androidId: "5098580",iosId: "5098580"));
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});
@@ -85,6 +75,7 @@ class _IndexState extends State<Index> {
                   child: const Text('激励广告'),
                   onPressed: () async {
                     var b = await GTAds.rewardAd(
+                      codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945418088",iosId: "945418088")],
                       //奖励名称
                       rewardName: "100金币",
                       //奖励数量
@@ -93,32 +84,25 @@ class _IndexState extends State<Index> {
                       userId: "user100",
                       //扩展参数
                       customData: "123",
-                      callBack: GTAdsCallBack(
-                        onShow: (alias, codeId) {
-                          print("激励广告显示 $alias  $codeId");
-                        },
-                        onFail: (alias, codeId, message) {
-                          print("激励广告失败 $alias  $codeId $message");
-                        },
-                        onClick: (alias, codeId) {
-                          print("激励广告点击 $alias  $codeId");
-                        },
-                        onClose: (alias, codeId) {
-                          print("激励广告关闭 $alias  $codeId");
-                        },
-                        onVerify: (alias, codeId, verify, transId, rewardName,
-                            rewardAmount) {
-                          print(
-                              "激励广告关闭 $alias  $codeId $verify $transId $rewardName $rewardAmount");
-                        },
-                        onExpand: (alias, codeId,param){
-                          print("激励广告自定义参数 $alias  $codeId $param");
-                        }
-                      ),
+                      callBack: GTAdsCallBack(onShow: (code) {
+                        print("激励广告显示 ${code.toJson()}");
+                      }, onFail: (code, message) {
+                        print("激励广告失败 ${code.toJson()} $message");
+                      }, onClick: (code) {
+                        print("激励广告点击 ${code.toJson()}");
+                      }, onClose: (code) {
+                        print("激励广告关闭 ${code.toJson()}");
+                      }, onVerify: (code, verify, transId, rewardName,
+                          rewardAmount) {
+                        print(
+                            "激励广告关闭 ${code.toJson()} $verify $transId $rewardName $rewardAmount");
+                      }, onExpand: (code, param) {
+                        print("激励广告自定义参数 ${code.toJson()} $param");
+                      }),
                     );
                     if (b) {
                       print("激励广告开始请求");
-                    }else{
+                    } else {
                       print("激励广告开始请求失败");
                     }
                   },
@@ -129,21 +113,22 @@ class _IndexState extends State<Index> {
                   child: const Text('插屏广告'),
                   onPressed: () async {
                     var b = await GTAds.insertAd(
+                        codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "946201351",iosId: "946201351")],
                         isFull: false,
                         width: 300,
                         height: 500,
                         callBack: GTAdsCallBack(
-                          onShow: (alias, codeId) {
-                            print("插屏广告显示 $alias  $codeId");
+                          onShow: (code) {
+                            print("插屏广告显示 ${code.toJson()}");
                           },
-                          onFail: (alias, codeId, message) {
-                            print("插屏广告失败 $alias  $codeId $message");
+                          onFail: (code, message) {
+                            print("插屏广告失败 ${code.toJson()} $message");
                           },
-                          onClick: (alias, codeId) {
-                            print("插屏广告点击 $alias  $codeId");
+                          onClick: (code) {
+                            print("插屏广告点击 ${code.toJson()}");
                           },
-                          onClose: (alias, codeId) {
-                            print("插屏广告关闭 $alias  $codeId");
+                          onClose: (code) {
+                            print("插屏广告关闭 ${code.toJson()}");
                           },
                         ));
                     if (b) {

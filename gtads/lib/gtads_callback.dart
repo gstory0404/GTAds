@@ -6,21 +6,21 @@ part of 'gtads.dart';
 /// @Description: 聚合广告回调
 
 ///显示
-typedef GTAShow = void Function(String alias, String codeId);
+typedef GTAShow = void Function(GTAdsCode adCode);
 
 ///失败
 ///
 ///[message] 错误信息
-typedef GTAFail = void Function(String alias, String codeId, String message);
+typedef GTAFail = void Function(GTAdsCode adCode,String message);
 
 ///点击
-typedef GTAClick = void Function(String alias, String codeId);
+typedef GTAClick = void Function(GTAdsCode adCode);
 
 ///倒计时结束
-typedef GTAFinish = void Function(String alias, String codeId);
+typedef GTAFinish = void Function(GTAdsCode adCode);
 
 ///关闭
-typedef GTAClose = void Function(String alias, String codeId);
+typedef GTAClose = void Function(GTAdsCode adCode);
 
 ///激励广告广告奖励验证
 ///
@@ -31,11 +31,11 @@ typedef GTAClose = void Function(String alias, String codeId);
 /// [rewardName] 奖励名称
 ///
 /// [rewardAmount] 奖励数量
-typedef GTAVerify = void Function(String alias, String codeId, bool verify,
+typedef GTAVerify = void Function(GTAdsCode adCode, bool verify,
     String transId, String rewardName, int rewardAmount);
 
 ///扩展接口
-typedef GTAExpand = void Function(String alias, String codeId, dynamic param);
+typedef GTAExpand = void Function(GTAdsCode adCode, dynamic param);
 
 ///聚合广告接口回调
 class GTAdsCallBack {

@@ -5,38 +5,26 @@ part of 'gtads.dart';
 /// @Email gstory0404@gmail.com
 /// @Description: 广告相关id
 class GTAdsCode {
-  late String appId;
-  List<String>? nativeIds;
-  List<String>? splashIds;
-  List<String>? bannerIds;
-  List<String>? insertIds;
-  List<String>? rewardIds;
+  String alias = "";
+  String? androidId;
+  String? iosId;
+  int probability = 0;
 
-  GTAdsCode(
-      {required this.appId,
-        this.nativeIds,
-        this.splashIds,
-        this.bannerIds,
-        this.insertIds,
-        this.rewardIds});
+  GTAdsCode({required this.alias, this.androidId, this.iosId,required this.probability});
 
   GTAdsCode.fromJson(Map<String, dynamic> json) {
-    appId = json['appId'];
-    nativeIds = json['nativeIds'].cast<String>();
-    splashIds = json['splashIds'].cast<String>();
-    bannerIds = json['bannerIds'].cast<String>();
-    insertIds = json['insertIds'].cast<String>();
-    rewardIds = json['rewardIds'].cast<String>();
+    alias = json['alias'];
+    androidId = json['androidId'];
+    iosId = json['iosId'];
+    probability = json['probability'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['appId'] = appId;
-    data['nativeIds'] = nativeIds;
-    data['splashIds'] = splashIds;
-    data['bannerIds'] = bannerIds;
-    data['insertIds'] = insertIds;
-    data['rewardIds'] = rewardIds;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['alias'] = this.alias;
+    data['androidId'] = this.androidId;
+    data['iosId'] = this.iosId;
+    data['probability'] = this.probability;
     return data;
   }
 }

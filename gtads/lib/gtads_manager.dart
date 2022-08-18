@@ -35,165 +35,137 @@ class GTAdsManager {
   }
 
   //获取随机广告组件
-  GTAdsProvider? randomProvider(String type) {
-    List<GTAdsProvider> nowProvider = [];
-    providers.forEach((element) {
-      switch (type) {
-        case "banner":
-          if (element
-              .getGTAdsCode()
-              .bannerIds != null &&
-              element
-                  .getGTAdsCode()
-                  .bannerIds!
-                  .length > 0) {
-            nowProvider.add(element);
-          }
-          break;
-        case "native":
-          if (element
-              .getGTAdsCode()
-              .nativeIds != null &&
-              element
-                  .getGTAdsCode()
-                  .nativeIds!
-                  .length > 0) {
-            nowProvider.add(element);
-          }
-          break;
-        case "splash":
-          if (element
-              .getGTAdsCode()
-              .splashIds != null &&
-              element
-                  .getGTAdsCode()
-                  .splashIds!
-                  .length > 0) {
-            nowProvider.add(element);
-          }
-          break;
-        case "insert":
-          if (element
-              .getGTAdsCode()
-              .insertIds != null &&
-              element
-                  .getGTAdsCode()
-                  .insertIds!
-                  .length > 0) {
-            nowProvider.add(element);
-          }
-          break;
-        case "reward":
-          if (element
-              .getGTAdsCode()
-              .rewardIds != null &&
-              element
-                  .getGTAdsCode()
-                  .rewardIds!
-                  .length > 0) {
-            nowProvider.add(element);
-          }
-          break;
-      }
-    });
-    if(nowProvider.length == 0){
-      return null;
-    }
+  GTAdsCode? randomCode(List<GTAdsCode> codes) {
     //最大数因子
     int max = 0;
-    nowProvider.forEach((element) {
+    codes.forEach((element) {
       max += element.probability;
     });
-    if(max == 0){
+    if (max == 0) {
       return null;
     }
     int probability = Random().nextInt(max) + 1;
     int current = 0;
-    for (int i = 0; i < nowProvider.length; i++) {
+    for (int i = 0; i < codes.length; i++) {
       if (current < probability &&
-          probability <= current + nowProvider[i].getProbability()) {
-        return providers[i];
+          probability <= current + codes[i].probability) {
+        return codes[i];
       } else {
-        current += nowProvider[i].getProbability();
+        current += current + codes[i].probability;
       }
     }
     return null;
   }
 
   ///横幅广告
-  Widget bannerAd(double width, double height, GTAdsCallBack? callBack) {
+  Widget bannerAd(List<GTAdsCode> codes, double width, double height,
+      GTAdsCallBack? callBack) {
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       return Container();
     }
-    var provider = randomProvider("banner");
-    if (provider == null) {
+    var code = randomCode(codes);
+    if (code == null) {
       return Container();
     }
-    String adCode = provider.adsCode
-        .bannerIds![Random().nextInt(provider.adsCode.bannerIds!.length)];
-    return provider.bannerAd(adCode, width, height, callBack) ?? Container();
+    GTAdsProvider? provider = null;
+    providers.forEach((element) {
+      if (element.getAlias() == code.alias) {
+        provider = element;
+      }
+    });
+    return provider?.bannerAd(code, width, height, callBack) ?? Container();
   }
 
   ///信息流广告
-  Widget nativeAd(double width, double height, GTAdsCallBack? callBack) {
+  Widget nativeAd(List<GTAdsCode> codes, double width, double height,
+      GTAdsCallBack? callBack) {
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       return Container();
     }
-    var provider = randomProvider("native");
-    if (provider == null) {
+    var code = randomCode(codes);
+    if (code == null) {
       return Container();
     }
-    String adCode = provider.adsCode
-        .nativeIds![Random().nextInt(provider.adsCode.nativeIds!.length)];
-    return provider.nativeAd(adCode, width, height, callBack) ?? Container();
+    GTAdsProvider? provider = null;
+    providers.forEach((element) {
+      if (element.getAlias() == code.alias) {
+        provider = element;
+      }
+    });
+    return provider?.nativeAd(code, width, height, callBack) ?? Container();
   }
 
   ///开屏广告
-  Widget splashAd(double width, double height, GTAdsCallBack? callBack) {
+  Widget splashAd(List<GTAdsCode> codes, double width, double height,
+      GTAdsCallBack? callBack) {
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       return Container();
     }
-    var provider = randomProvider("splash");
-    if (provider == null) {
+    var code = randomCode(codes);
+    if (code == null) {
       return Container();
     }
-    String adCode = provider.adsCode
-        .splashIds![Random().nextInt(provider.adsCode.splashIds!.length)];
-    return provider.splashAd(adCode, width, height, callBack) ?? Container();
+    GTAdsProvider? provider = null;
+    providers.forEach((element) {
+      if (element.getAlias() == code.alias) {
+        provider = element;
+      }
+    });
+    return provider?.splashAd(code, width, height, callBack) ?? Container();
   }
 
   ///插屏广告
-  Future<bool> insertAd(bool isFull, double? width, double? height,GTAdsCallBack? callBack) {
+  Future<bool> insertAd(List<GTAdsCode> codes, bool isFull, double? width,
+      double? height, GTAdsCallBack? callBack) {
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       return Future.value(false);
     }
-    var provider = randomProvider("insert");
+    var code = randomCode(codes);
+    if (code == null) {
+      return Future.value(false);
+    }
+    GTAdsProvider? provider = null;
+    providers.forEach((element) {
+      if (element.getAlias() == code.alias) {
+        provider = element;
+      }
+    });
     if (provider == null) {
       return Future.value(false);
     }
-    String adCode = provider.adsCode
-        .insertIds![Random().nextInt(provider.adsCode.insertIds!.length)];
-    return provider.insertAd(adCode, isFull, width, height,callBack);
+    return provider!.insertAd(code, isFull, width, height, callBack);
   }
 
   ///激励广告
-  Future<bool> rewardAd(String rewardName, int rewardAmount, String userId,
-      String customData,GTAdsCallBack? callBack) {
+  Future<bool> rewardAd(
+      List<GTAdsCode> codes,
+      String rewardName,
+      int rewardAmount,
+      String userId,
+      String customData,
+      GTAdsCallBack? callBack) {
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       return Future.value(false);
     }
-    var provider = randomProvider("reward");
+    var code = randomCode(codes);
+    if (code == null) {
+      return Future.value(false);
+    }
+    GTAdsProvider? provider = null;
+    providers.forEach((element) {
+      if (element.getAlias() == code.alias) {
+        provider = element;
+      }
+    });
     if (provider == null) {
       return Future.value(false);
     }
-    String adCode = provider.adsCode
-        .rewardIds![Random().nextInt(provider.adsCode.rewardIds!.length)];
-    return provider.rewardAd(
-        adCode, rewardName, rewardAmount, userId, customData,callBack);
+    return provider!
+        .rewardAd(code, rewardName, rewardAmount, userId, customData, callBack);
   }
 }

@@ -30,30 +30,26 @@ class _BannerPageState extends State<BannerPage> {
         child: Column(
           children: [
             GTAds.bannerAd(
+                codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945410197",iosId: "945410197")],
                 //宽
                 width: 300,
                 //高
                 height: 400,
                 //回调
                 callBack: GTAdsCallBack(
-                  onShow: (alias, codeId) {
-                    print("Banner显示 厂商：$alias 广告ID:$codeId");
+                  onShow: (code) {
+                    print("Banner显示 ${code.toJson()}");
                   },
-                  onClick: (alias, codeId) {
-                    print("Banner点击 厂商：$alias 广告ID:$codeId");
+                  onClick: (code) {
+                    print("Banner点击 ${code.toJson()}");
                   },
-                  onFail: (alias, codeId, message) {
-                    print("Banner错误 厂商：$alias 广告ID:$codeId 错误信息:$message");
+                  onFail: (code,message) {
+                    print("Banner错误 ${code.toJson()} $message");
                   },
-                  onClose: (alias, codeId) {
-                    print("Banner关闭 厂商：$alias 广告ID:$codeId");
+                  onClose: (code) {
+                    print("Banner关闭 ${code.toJson()}");
                   },
                 )),
-            GTAds.getProvider("csj")?.bannerAd("945410197", 200, 400, null) ??
-                Container(),
-            GTAds.getProvider("csj2222")
-                    ?.bannerAd("945410197", 200, 400, null) ??
-                Container(),
           ],
         ),
       ),

@@ -21,20 +21,21 @@ class _NativePageState extends State<NativePage> {
         child: Column(
           children: [
             GTAds.nativeAd(
+              codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945417699",iosId: "945417699")],
               width: 300,
               height: 200,
               callBack: GTAdsCallBack(
-                onShow: (alias, codeId) {
-                  print("信息流显示 厂商：$alias 广告ID:$codeId");
+                onShow: (code) {
+                  print("信息流显示 ${code.toJson()}");
                 },
-                onClick: (alias, codeId) {
-                  print("信息流点击 厂商：$alias 广告ID:$codeId");
+                onClick: (code) {
+                  print("信息流点击 ${code.toJson()}");
                 },
-                onFail: (alias, codeId, message) {
-                  print("信息流错误 厂商：$alias 广告ID:$codeId 错误信息:$message");
+                onFail: (code,message) {
+                  print("信息流错误 ${code.toJson()} $message");
                 },
-                onClose: (alias, codeId) {
-                  print("信息流关闭 厂商：$alias 广告ID:$codeId");
+                onClose: (code) {
+                  print("信息流关闭 ${code.toJson()}");
                 },
               ),
             ),

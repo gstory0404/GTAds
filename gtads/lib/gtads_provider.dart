@@ -7,28 +7,18 @@ part of 'gtads.dart';
 
 abstract class GTAdsProvider extends BaseProvider {
 
-  ///[alias] 广告别名 必须设置 注意：保证唯一，不然无法添加
+  ///[alias] 广告别名 注意：保证唯一，不然无法添加
   ///
-  ///[probability] 广告出现概率 必须设置 0 - 10(0不出现)
+  ///[androidId] android appId
   ///
-  ///[adsCode] 广告id 必须设置
-  GTAdsProvider(String alias, int probability, GTAdsCode adsCode)
+  ///[adsCode] ios appId
+  GTAdsProvider(String alias, String? androidId, String? iosId)
       :
         assert(alias.isNotEmpty),
-        assert(probability >= 0 && probability <= 10),
-        assert(adsCode.appId.isNotEmpty),
-        super(alias, probability, adsCode);
+        super(alias, androidId, iosId);
 
   String getAlias() {
     return this.alias;
-  }
-
-  GTAdsCode getGTAdsCode() {
-    return this.adsCode;
-  }
-
-  int getProbability() {
-    return this.probability;
   }
 }
 
