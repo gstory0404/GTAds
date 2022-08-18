@@ -36,7 +36,7 @@ GTAds.addProvider(GTAdsCsjProvider(
           rewardIds: ["945418088"],
         )));
 ```
-GTAdsCsjProviderc参数 
+GTAdsCsjProviderc参数:     
 alias 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告  
 probability广告出现的评率 [0-10] 0不出现 10概率最高   
 GTAdsCode 广告相关id，android传入android相关，反之则传入ios相关。广告id支持传入多个，在使用时随机使用  
