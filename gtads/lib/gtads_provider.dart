@@ -5,29 +5,31 @@ part of 'gtads.dart';
 /// @Email gstory0404@gmail.com
 /// @Description: dart类作用描述 
 
-abstract class GTAdsProvider{
-  String adType = "";
+abstract class GTAdsProvider extends BaseProvider {
 
-  GTAdsCode? adsCode;
-
-  ///初始化广告
+  ///[alias] 广告别名 必须设置 注意：保证唯一，不然无法添加
   ///
-  /// [code] 广告相关id
-  Future<bool> initAd(GTAdsCode code);
+  ///[probability] 广告出现概率 必须设置 0 - 10(0不出现)
+  ///
+  ///[adsCode] 广告id 必须设置
+  GTAdsProvider(String alias, int probability, GTAdsCode adsCode)
+      :
+        assert(alias.isNotEmpty),
+        assert(probability >= 0 && probability <= 10),
+        assert(adsCode.appId.isNotEmpty),
+        super(alias, probability, adsCode);
 
-  ///设置广告id
-  void setCode(GTAdsCode code){
-    adsCode = code;
+  String getAlias() {
+    return this.alias;
   }
 
-  ///横幅广告
-  Widget? bannerAd(double width,double height);
+  GTAdsCode getGTAdsCode() {
+    return this.adsCode;
+  }
 
-  ///信息流广告
-  Widget? nativeAd(double width,double height);
-
-  ///开屏广告
-  Widget? splashAd(double width,double height);
+  int getProbability() {
+    return this.probability;
+  }
 }
 
 

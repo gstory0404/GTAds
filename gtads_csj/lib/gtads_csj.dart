@@ -1,8 +1,8 @@
+export 'package:flutter_unionad/flutter_unionad.dart';
 
-import 'gtads_csj_platform_interface.dart';
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_unionad/flutter_unionad.dart';
+import 'package:gtads/gtads.dart';
 
-class GtadsCsj {
-  Future<String?> getPlatformVersion() {
-    return GtadsCsjPlatform.instance.getPlatformVersion();
-  }
-}
+part 'gtads_csj_provider.dart';

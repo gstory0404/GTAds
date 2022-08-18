@@ -6,37 +6,37 @@ part of 'gtads.dart';
 /// @Description: 广告相关id
 class GTAdsCode {
   late String appId;
-  List<String>? nativeId;
-  List<String>? splashId;
-  List<String>? bannerId;
-  List<String>? insertId;
-  List<String>? rewardId;
+  List<String>? nativeIds;
+  List<String>? splashIds;
+  List<String>? bannerIds;
+  List<String>? insertIds;
+  List<String>? rewardIds;
 
   GTAdsCode(
       {required this.appId,
-        this.nativeId,
-        this.splashId,
-        this.bannerId,
-        this.insertId,
-        this.rewardId});
+        this.nativeIds,
+        this.splashIds,
+        this.bannerIds,
+        this.insertIds,
+        this.rewardIds});
 
   GTAdsCode.fromJson(Map<String, dynamic> json) {
     appId = json['appId'];
-    nativeId = json['nativeId'].cast<String>();
-    splashId = json['splashId'].cast<String>();
-    bannerId = json['bannerId'].cast<String>();
-    insertId = json['insertId'].cast<String>();
-    rewardId = json['rewardId'].cast<String>();
+    nativeIds = json['nativeIds'].cast<String>();
+    splashIds = json['splashIds'].cast<String>();
+    bannerIds = json['bannerIds'].cast<String>();
+    insertIds = json['insertIds'].cast<String>();
+    rewardIds = json['rewardIds'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['appId'] = appId;
-    data['nativeId'] = nativeId;
-    data['splashId'] = splashId;
-    data['bannerId'] = bannerId;
-    data['insertId'] = insertId;
-    data['rewardId'] = rewardId;
+    data['nativeIds'] = nativeIds;
+    data['splashIds'] = splashIds;
+    data['bannerIds'] = bannerIds;
+    data['insertIds'] = insertIds;
+    data['rewardIds'] = rewardIds;
     return data;
   }
 }
