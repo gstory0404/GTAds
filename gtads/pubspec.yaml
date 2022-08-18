@@ -1,7 +1,7 @@
 name: gtads
 description: Scalable Aggregate Ads Plugin
-version: 0.0.1
-homepage: https://github.com/gstory0404/GTAds/tree/master/gtads
+version: 0.0.2
+homepage: https://github.com/gstory0404/GTAds
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

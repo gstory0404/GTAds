@@ -1,4 +1,7 @@
 # GTAds穿山甲广告支持插件
+<p>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads_csj-v0.0.1-success></a>
+</p>
 
 # 使用
 

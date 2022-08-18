@@ -13,7 +13,7 @@ GTAds是一款聚合广告管理插件，提供一套广告管理调度方案、
 
 ### pubspec.yaml
 ```dart
- gtads: ^0.0.0
+ gtads: ^0.0.2
 ```
 
 ### 引入
@@ -36,10 +36,10 @@ GTAds.addProvider(GTAdsCsjProvider(
           rewardIds: ["945418088"],
         )));
 ```
-GTAdsCsjProviderc参数
-alias 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告
-probability广告出现的评率 [0-10] 0不出现 10概率最高
-GTAdsCode 广告相关id，android传入android相关，反之则传入ios相关。广告id支持传入多个，在使用时随机使用
+GTAdsCsjProviderc参数 
+alias 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告  
+probability广告出现的评率 [0-10] 0不出现 10概率最高   
+GTAdsCode 广告相关id，android传入android相关，反之则传入ios相关。广告id支持传入多个，在使用时随机使用  
 
 ### 初始化
 ```dart
@@ -70,64 +70,60 @@ GTAds.bannerAd(
 ### 激励广告
 ```dart
 var b = await GTAds.rewardAd(
-                      //奖励名称
-                      rewardName: "100金币",
-                      //奖励数量
-                      rewardAmount: 100,
-                      //用户id
-                      userId: "user100",
-                      //扩展参数
-                      customData: "123",
-                      callBack: GTAdsCallBack(
-                        onShow: (alias, codeId) {
-                          print("激励广告显示 $alias  $codeId");
-                        },
-                        onFail: (alias, codeId, message) {
-                          print("激励广告失败 $alias  $codeId $message");
-                        },
-                        onClick: (alias, codeId) {
-                          print("激励广告点击 $alias  $codeId");
-                        },
-                        onClose: (alias, codeId) {
-                          print("激励广告关闭 $alias  $codeId");
-                        },
-                        onVerify: (alias, codeId, verify, transId, rewardName,
-                            rewardAmount) {
-                          print(
-                              "激励广告关闭 $alias  $codeId $verify $transId $rewardName $rewardAmount");
-                        },
-                      ),
-                    );
-                    if (b) {
-                      print("激励广告开始请求");
-                    }else{
-                      print("激励广告开始请求失败");
-                    }
+    //奖励名称
+    rewardName: "100金币",
+    //奖励数量
+    rewardAmount: 100,
+    //用户id
+    userId: "user100",
+    //扩展参数
+    customData: "123",
+    callBack: GTAdsCallBack(
+        onShow: (alias, codeId) {
+          print("激励广告显示 $alias  $codeId");
+        },
+        onFail: (alias, codeId, message) {
+          print("激励广告失败 $alias  $codeId $message");
+        },
+        onClick: (alias, codeId) {
+          print("激励广告点击 $alias  $codeId");
+        },
+        onClose: (alias, codeId) {
+          print("激励广告关闭 $alias  $codeId");
+        },
+        onVerify: (alias, codeId, verify, transId, rewardName,
+        rewardAmount) {
+            print("激励广告关闭 $alias  $codeId $verify $transId $rewardName $rewardAmount");
+        },
+    ),
+);
+if (b) {
+  print("激励广告开始请求");
+}else{
+  print("激励广告开始请求失败");
+}
 ```
 
 ### 插屏广告
 ```dart
 var b = await GTAds.insertAd(
-                        isFull: false,
-                        width: 300,
-                        height: 500,
-                        callBack: GTAdsCallBack(
-                          onShow: (alias, codeId) {
-                            print("插屏广告显示 $alias  $codeId");
-                          },
-                          onFail: (alias, codeId, message) {
-                            print("插屏广告失败 $alias  $codeId $message");
-                          },
-                          onClick: (alias, codeId) {
-                            print("插屏广告点击 $alias  $codeId");
-                          },
-                          onClose: (alias, codeId) {
-                            print("插屏广告关闭 $alias  $codeId");
-                          },
-                        ));
-                    if (b) {
-                      print("插屏广告开始请求");
-                    }
+    isFull: false,
+    width: 300,
+    height: 500,
+    callBack: GTAdsCallBack(
+        onShow: (alias, codeId) {
+          print("插屏广告显示 $alias  $codeId");
+        },
+        onFail: (alias, codeId, message) {
+          print("插屏广告失败 $alias  $codeId $message");
+        },
+        onClick: (alias, codeId) {
+         print("插屏广告点击 $alias  $codeId");
+        },
+        onClose: (alias, codeId) {
+         print("插屏广告关闭 $alias  $codeId");
+        },
+));
 ```
 
 ### 开屏广告
