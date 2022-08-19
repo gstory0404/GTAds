@@ -180,6 +180,6 @@ String alias = "";
 String? androidId;
 //当前广告位 iosid
 String? iosId;
-//当前广告位出现的概率 必须大于0
+//当前广告位出现的概率 必须大于0,如果小于0则不会加载该广告
 int probability = 0;
 ```
