@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gtads/base_provider.dart';
 import 'package:gtads/gtads_manager.dart';
 import 'dart:async';
 

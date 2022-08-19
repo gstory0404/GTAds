@@ -35,10 +35,8 @@ class _IndexState extends State<Index> {
     init();
   }
 
-  late GTAdsProvider _provider;
-
   Future<void> init() async {
-    GTAds.addProvider(GTAdsCsjProvider(alias: "csj",androidId: "5098580",iosId: "5098580"));
+    GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580"));
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});

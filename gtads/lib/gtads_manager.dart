@@ -39,7 +39,10 @@ class GTAdsManager {
     //最大数因子
     int max = 0;
     codes.forEach((element) {
-      max += element.probability;
+      //过滤概率小于1的广告
+      if(element.probability > 0){
+        max += element.probability;
+      }
     });
     if (max == 0) {
       return null;
@@ -47,11 +50,14 @@ class GTAdsManager {
     int probability = Random().nextInt(max) + 1;
     int current = 0;
     for (int i = 0; i < codes.length; i++) {
-      if (current < probability &&
-          probability <= current + codes[i].probability) {
-        return codes[i];
-      } else {
-        current += current + codes[i].probability;
+      //过滤概率小于1的广告
+      if(codes[i].probability > 0){
+        if (current < probability &&
+            probability <= current + codes[i].probability) {
+          return codes[i];
+        } else {
+          current += current + codes[i].probability;
+        }
       }
     }
     return null;

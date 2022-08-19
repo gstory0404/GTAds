@@ -1,6 +1,6 @@
 name: gtads
-description: Scalable Aggregate Ads Plugin
-version: 0.0.3
+description: Aggregate ad plugin
+version: 0.0.4
 homepage: https://github.com/gstory0404/GTAds
 
 environment:

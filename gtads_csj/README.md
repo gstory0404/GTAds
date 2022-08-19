@@ -17,5 +17,5 @@ import 'package:gtads_csj/gtads_csj.dart';
 
 ### 使用
 ```dart
-GTAds.addProvider(GTAdsCsjProvider(alias: "csj",androidId: "5098580",iosId: "5098580"));
+GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580"));
 ```

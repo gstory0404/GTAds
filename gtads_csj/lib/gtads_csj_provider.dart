@@ -6,20 +6,14 @@ part of 'gtads_csj.dart';
 /// @Description: dart类作用描述
 
 class GTAdsCsjProvider extends GTAdsProvider {
-  ///[alias] 广告别名 注意：保证唯一，不然无法添加
-  ///
-  ///[androidId] android appId
-  ///
-  ///[adsCode] ios appId
-  GTAdsCsjProvider({required String alias,
-    String? androidId,
-    String? iosId})
+
+  GTAdsCsjProvider(String alias, String? androidId, String? iosId)
       : super(alias, androidId, iosId);
 
   @override
   Future<bool> initAd(bool isDebug) {
     return FlutterUnionad.register(
-      //穿山甲广告 Android appid 必填
+        //穿山甲广告 Android appid 必填
         androidAppId: androidId ?? "",
         //穿山甲广告 ios appid 必填
         iosAppId: iosId ?? "",
@@ -47,8 +41,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
   }
 
   @override
-  Widget splashAd(GTAdsCode adCode, double width, double height,
-      GTAdsCallBack? callBack) {
+  Widget splashAd(
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
     return FlutterUnionad.splashAdView(
       //是否使用个性化模版  设定widget宽高
       mIsExpress: true,
@@ -94,57 +88,57 @@ class GTAdsCsjProvider extends GTAdsProvider {
   }
 
   @override
-  Widget nativeAd(GTAdsCode adCode, double width, double height,
-      GTAdsCallBack? callBack) {
+  Widget nativeAd(
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
     return //个性化模板信息流广告
-      FlutterUnionad.nativeAdView(
-        //android 信息流广告id 必填
-        androidCodeId: adCode.androidId ?? "",
-        //ios banner广告id 必填
-        iosCodeId: adCode.iosId ?? "",
-        //是否支持 DeepLink 选填
-        supportDeepLink: true,
-        // 期望view 宽度 dp 必填
-        expressViewWidth: 375.5,
-        //期望view高度 dp 必填
-        expressViewHeight: 0,
-        //一次请求广告数量 大于1小于3 必填
-        expressNum: 2,
-        mIsExpress: true,
-        //控制下载APP前是否弹出二次确认弹窗
-        downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
-        //是否启用点击 仅ios生效 默认启用
-        isUserInteractionEnabled: true,
-        //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
-        adLoadType: FlutterUnionadLoadType.LOAD,
-        callBack: FlutterUnionadNativeCallBack(
-          onShow: () {
-            if (callBack != null && callBack.onShow != null) {
-              callBack.onShow!(adCode);
-            }
-          },
-          onFail: (error) {
-            if (callBack != null && callBack.onFail != null) {
-              callBack.onFail!(adCode, error);
-            }
-          },
-          onDislike: (message) {
-            if (callBack != null && callBack.onClose != null) {
-              callBack.onClose!(adCode);
-            }
-          },
-          onClick: () {
-            if (callBack != null && callBack.onClick != null) {
-              callBack.onClick!(adCode);
-            }
-          },
-        ),
-      );
+        FlutterUnionad.nativeAdView(
+      //android 信息流广告id 必填
+      androidCodeId: adCode.androidId ?? "",
+      //ios banner广告id 必填
+      iosCodeId: adCode.iosId ?? "",
+      //是否支持 DeepLink 选填
+      supportDeepLink: true,
+      // 期望view 宽度 dp 必填
+      expressViewWidth: 375.5,
+      //期望view高度 dp 必填
+      expressViewHeight: 0,
+      //一次请求广告数量 大于1小于3 必填
+      expressNum: 2,
+      mIsExpress: true,
+      //控制下载APP前是否弹出二次确认弹窗
+      downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
+      //是否启用点击 仅ios生效 默认启用
+      isUserInteractionEnabled: true,
+      //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
+      adLoadType: FlutterUnionadLoadType.LOAD,
+      callBack: FlutterUnionadNativeCallBack(
+        onShow: () {
+          if (callBack != null && callBack.onShow != null) {
+            callBack.onShow!(adCode);
+          }
+        },
+        onFail: (error) {
+          if (callBack != null && callBack.onFail != null) {
+            callBack.onFail!(adCode, error);
+          }
+        },
+        onDislike: (message) {
+          if (callBack != null && callBack.onClose != null) {
+            callBack.onClose!(adCode);
+          }
+        },
+        onClick: () {
+          if (callBack != null && callBack.onClick != null) {
+            callBack.onClick!(adCode);
+          }
+        },
+      ),
+    );
   }
 
   @override
-  Widget bannerAd(GTAdsCode adCode, double width, double height,
-      GTAdsCallBack? callBack) {
+  Widget bannerAd(
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
     return FlutterUnionad.bannerAdView(
       //andrrid banner广告id 必填
       androidCodeId: adCode.androidId ?? "",
@@ -199,7 +193,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
       double? height, GTAdsCallBack? callBack) {
     StreamSubscription? stream = null;
     stream = FlutterUnionadStream.initAdStream(
-      flutterUnionadNewInteractionCallBack: FlutterUnionadNewInteractionCallBack(
+      flutterUnionadNewInteractionCallBack:
+          FlutterUnionadNewInteractionCallBack(
         onShow: () {
           if (callBack?.onShow != null) {
             callBack?.onShow!(adCode);
@@ -287,8 +282,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
         onSkip: () {},
         onVerify: (rewardVerify, rewardAmount, rewardName, code, message) {
           if (callBack?.onClose != null) {
-            callBack?.onVerify!(adCode, rewardVerify, "",
-                rewardName, rewardAmount);
+            callBack?.onVerify!(
+                adCode, rewardVerify, "", rewardName, rewardAmount);
           }
         },
         onReady: () async {

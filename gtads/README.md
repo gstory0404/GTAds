@@ -1,13 +1,19 @@
 # GTAds聚合广告插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.3-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.4-success></a>
 </p>
+
+GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
+
+## 支持插件
+- [gtads_csj(穿山甲广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
+- [gtads_ylh(优量汇广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_ylh)
 
 # 使用
 
 ### pubspec.yaml
 ```dart
- gtads: ^0.0.3
+ gtads: ^0.0.4
 ```
 
 ### 引入
@@ -18,9 +24,9 @@ import 'package:gtads/gtads.dart';
 ### 添加广告
 广告初始化前必须完成添加
 ```dart
-GTAds.addProvider(GTAdsCsjProvider(alias: "csj",androidId: "5098580",iosId: "5098580"));
+GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580"));
 ```
-GTAdsCsjProviderc参数 
+GTAdsCsjProviderc参数          
 alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告  
 androidId: andorid appId  
 iosId: ios appId
