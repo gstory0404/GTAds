@@ -3,11 +3,11 @@ part of 'gtads_ylh.dart';
 /// @Author: gstory
 /// @CreateDate: 2022/8/19 14:24
 /// @Email gstory0404@gmail.com
-/// @Description: dart类作用描述
+/// @Description: 优量汇广告支持
 
 class GTAdsYlhProvider extends GTAdsProvider {
 
-  GTAdsYlhProvider(super.alias, super.androidId, super.iosId);
+  GTAdsYlhProvider(String alias, String? androidId, String? iosId) : super(alias, androidId, iosId);
 
   @override
   Future<bool> initAd(bool isDebug) {

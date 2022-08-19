@@ -20,7 +20,7 @@ dependencies:
 
   gtads_ylh:
     path: ../
-  gtads: ^0.0.3
+  gtads: ^0.0.4
   cupertino_icons: ^1.0.2
 
 
