@@ -23,7 +23,7 @@ GTAds是一款Flutter聚合广告管理插件，支持android、ios，提供一�
 |文档预览插件|[file_preview](https://github.com/gstory0404/file_preview)|
 |滤镜|[gpu_image](https://github.com/gstory0404/gpu_image)|
 |Gromore聚合广告|[gromore](https://github.com/gstory0404/gromore)|
-|GTAds聚合广告|[gromore](https://github.com/gstory0404/gtads)|
+|GTAds聚合广告|[gtads](https://github.com/gstory0404/gtads)|
 
 ### 开源不易，觉得有用的话可以请作者喝杯奶茶🧋
 <img src="https://github.com/gstory0404/flutter_universalad/blob/master/images/weixin.jpg" width = "200" height = "160" alt="打赏"/>
