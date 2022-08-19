@@ -3,7 +3,7 @@
 <a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads_csj-v0.0.3-success></a>
 </p>
 
-📢 该插件依托于[GTAds](https://github.com/gstory0404/GTAds),使用前先集成[GTAds](https://github.com/gstory0404/GTAds)。
+📢 该插件依托于[GTAds](https://github.com/gstory0404/GTAds)实现,使用前请先集成[GTAds](https://github.com/gstory0404/GTAds)。
 
 # 使用
 

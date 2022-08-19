@@ -1,7 +1,7 @@
 name: gtads_ylh
-description: A new Flutter project.
+description: GTAds优量汇广告支持
 version: 0.0.1
-homepage:
+homepage: https://github.com/gstory0404/GTAds/blob/master/gtads_ylh
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
