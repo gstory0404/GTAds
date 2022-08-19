@@ -1,7 +1,7 @@
 # GTAds自定义广告
 
 ## GTAdsProvider
-新建自己的广告provider集成GTAdsProvider
+新建自己的广告provider继承GTAdsProvider
 ```dart
 class MYAdProvider extends GTAdsProvider{
 
@@ -68,10 +68,10 @@ MYAdProvider(
 ```
 
 ## 扩展方法
-可以通过GTAds.getProvider("别名")获取到Provider，则可以使用provider来调用Provider中自定义的任何方法。
+可以通过GTAds.getProvider("别名")获取到Provider，则可以使用provider来调用Provider中自定义的方法。
 
 ## 扩展回调
-GTAdsCallBack提供一个GTAExpand扩展回调，可以通过传入不同参数来实现不用参数回传
+GTAdsCallBack提供一个GTAExpand扩展回调接口，可以通过传入不同参数来实现不用参数回传
 ```
 //发送
 var map = {
