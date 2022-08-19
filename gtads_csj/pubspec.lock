@@ -70,10 +70,10 @@ packages:
   gtads:
     dependency: "direct main"
     description:
-      path: "../gtads"
-      relative: true
-    source: path
-    version: "0.0.3"
+      name: gtads
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   matcher:
     dependency: transitive
     description:
