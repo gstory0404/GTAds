@@ -1,12 +1,14 @@
 # GTAds聚合广告插件
 
 GTAds是一款Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
+[示例](https://github.com/gstory0404/GTAds/blob/master/gtads_csj/example/lib/main.dart)
 
-## 广告支持插件
+## 相关插件
 - [gtads](https://github.com/gstory0404/GTAds/tree/master/gtads)
-- [gtads_csj(穿山甲广告)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
+- [gtads_csj(穿山甲广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
 
-## [自定义广告](https://github.com/gstory0404/GTAds/blob/master/expand.md) 
+## 自定义广告
+通过[文档](https://github.com/gstory0404/GTAds/blob/master/expand.md),可快速将自己的广告接入到聚合插件中
 
 ## 插件链接
 
