@@ -1,6 +1,6 @@
 # GTAds聚合广告插件
 
-GTAds是一款聚合广告管理插件，提供一套广告管理调度方案、本身不提供任何广告，可通过扩展方法插入市面任何一款广告。
+GTAds是一款Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
 
 ## 广告支持插件
 - [gtads](https://github.com/gstory0404/GTAds/tree/master/gtads)
