@@ -5,8 +5,8 @@
 
 # 📢 相关插件
 
-- [sigmobad](https://github.com/gstory0404/sigmobad)Sigmob广告本体，内部已集成无需额外引入，配置相关查看插件说明
-- [GTAds](https://github.com/gstory0404/GTAds)聚合广告插件，必须引入
+- [sigmobad](https://github.com/gstory0404/sigmobad) Sigmob广告本体，内部已集成无需额外引入，配置相关查看插件说明
+- [GTAds](https://github.com/gstory0404/GTAds) 聚合广告插件，必须引入
 
 # 使用
 
@@ -14,7 +14,7 @@
 ```dart
  //广告基础库 必须引入
  gtads: ^0.0.5
- //穿山甲广告
+ //Sigmob广告
  gtads_sigmob: ^0.0.1
 ```
 
