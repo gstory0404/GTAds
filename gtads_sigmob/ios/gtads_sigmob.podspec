@@ -5,9 +5,9 @@
 Pod::Spec.new do |s|
   s.name             = 'gtads_sigmob'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter project.'
+  s.summary          = '为GTAds提供Singmob广告支持'
   s.description      = <<-DESC
-A new Flutter project.
+为GTAds提供Singmob广告支持
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

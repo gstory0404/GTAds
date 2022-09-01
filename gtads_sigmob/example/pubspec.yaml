@@ -16,9 +16,9 @@ dependencies:
     path: ../
 
   cupertino_icons: ^1.0.2
-#  gtads: ^0.0.5
-  gtads:
-    path: ../../gtads
+  gtads: ^0.0.6
+#  gtads:
+#    path: ../../gtads
 
 dev_dependencies:
   flutter_test:
