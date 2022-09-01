@@ -48,7 +48,6 @@ class GTAdsInsert {
       if (callBack?.onFail != null) {
         _stream?.cancel();
         callBack?.onFail!(null, "获取广告超时");
-        print("获取广告超时");
       }
       _timer?.cancel();
     });
@@ -58,8 +57,9 @@ class GTAdsInsert {
   Future<bool> _loadAd() async {
     //如果不存在provider则返回一个空Container
     if (_providers.length == 0) {
+      _stream?.cancel();
+      _timer?.cancel();
       if (callBack?.onFail != null) {
-        _stream?.cancel();
         callBack?.onFail!(null, "暂无可加载广告");
       }
       return Future.value(false);
@@ -68,6 +68,7 @@ class GTAdsInsert {
     //如果未获取到code 则直接返回
     if (_code == null) {
       _stream?.cancel();
+      _timer?.cancel();
       if (callBack?.onFail != null) {
         callBack?.onFail!(null, "暂无可加载广告");
       }
@@ -82,6 +83,7 @@ class GTAdsInsert {
     //如果未查询到可使用provider 则直接返回
     if (_provider == null) {
       _stream?.cancel();
+      _timer?.cancel();
       if (callBack?.onFail != null) {
         callBack?.onFail!(null, "暂无可加载广告");
       }
@@ -92,6 +94,7 @@ class GTAdsInsert {
       isFull,
       GTAdsCallBack(
         onShow: (code) {
+          //移除计时
           _timer?.cancel();
           if (callBack?.onShow != null) {
             callBack?.onShow!(code);
@@ -115,7 +118,6 @@ class GTAdsInsert {
           codes.remove(code);
           //重试 直至codes数组为空
           _loadAd();
-          print("出错了$code $message", );
         },
         onExpand: (code, param) {
           if (callBack?.onExpand != null) {
@@ -124,6 +126,12 @@ class GTAdsInsert {
         },
       ),
     );
+    if(_stream == null){
+      //移除当前错误code
+      codes.remove(_code);
+      //重试 直至codes数组为空
+      _loadAd();
+    }
     return Future.value(true);
   }
 }

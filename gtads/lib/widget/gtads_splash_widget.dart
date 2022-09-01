@@ -38,9 +38,8 @@ class GTAdsSplashWidget extends StatefulWidget {
 }
 
 class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
-  //当前广告提供者
-  GTAdsProvider? provider;
-
+  //开屏广告
+  Widget? _splashWidget;
   //广告ids
   List<GTAdsCode> codes = [];
 
@@ -58,8 +57,8 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
     super.initState();
     providers = GTAdsManager.instance.providers;
     codes = widget.codes;
-    getProvider();
     startTime();
+    getProvider();
   }
 
   //开始计时
@@ -67,20 +66,21 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
     _timer = Timer.periodic(Duration(seconds: widget.timeout), (timer) {
       if (mounted) {
         setState(() {
-          provider = null;
+          _splashWidget = null;
         });
       }
       if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "获取广告超时");
-        print("获取广告超时");
+        widget.callBack?.onFail!(null, "获取广告超时");;
       }
       _timer?.cancel();
     });
   }
 
   void getProvider() {
+    GTAdsProvider? provider;
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
+      _timer?.cancel();
       if (widget.callBack?.onFail != null) {
         widget.callBack?.onFail!(null, "暂无可加载广告");
       }
@@ -89,6 +89,7 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
     code = GTAdsUtil.randomCode(codes);
     //如果未获取到code 则直接返回
     if (code == null) {
+      _timer?.cancel();
       if (widget.callBack?.onFail != null) {
         widget.callBack?.onFail!(null, "暂无可加载广告");
       }
@@ -102,10 +103,56 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
     }
     //如果未查询到可使用provider 则直接返回
     if (provider == null) {
+      _timer?.cancel();
       if (widget.callBack?.onFail != null) {
         widget.callBack?.onFail!(null, "暂无可加载广告");
         return;
       }
+    }
+    _splashWidget = provider?.splashAd(
+        code!,
+        widget.width,
+        widget.height,
+        GTAdsCallBack(
+          onShow: (code) {
+            //移除计时
+            _timer?.cancel();
+            if (widget.callBack?.onShow != null) {
+              widget.callBack?.onShow!(code);
+            }
+          },
+          onClick: (code) {
+            if (widget.callBack?.onClick != null) {
+              widget.callBack?.onClick!(code);
+            }
+          },
+          onClose: (code) {
+            if (widget.callBack?.onClose != null) {
+              widget.callBack?.onClose!(code);
+            }
+          },
+          onFail: (code, message) {
+            if (widget.callBack?.onFail != null) {
+              widget.callBack?.onFail!(code, message);
+            }
+            //移除当前错误code
+            codes.remove(code);
+            //重试 直至codes数组为空
+            getProvider();
+          },
+          onExpand: (code, param) {
+            if (widget.callBack?.onExpand != null) {
+              widget.callBack?.onExpand!(code, param);
+            }
+          },
+        ));
+    //广告不存在 则重试
+    if(_splashWidget == null){
+      //移除当前错误code
+      codes.remove(code);
+      //重试 直至codes数组为空
+      getProvider();
+      return;
     }
     setState(() {});
   }
@@ -118,44 +165,6 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (provider == null) {
-      return Container();
-    }
-    return provider?.splashAd(
-            code!,
-            widget.width,
-            widget.height,
-            GTAdsCallBack(
-              onShow: (code) {
-                if (widget.callBack?.onShow != null) {
-                  widget.callBack?.onShow!(code);
-                }
-              },
-              onClick: (code) {
-                if (widget.callBack?.onClick != null) {
-                  widget.callBack?.onClick!(code);
-                }
-              },
-              onClose: (code) {
-                if (widget.callBack?.onClose != null) {
-                  widget.callBack?.onClose!(code);
-                }
-              },
-              onFail: (code, message) {
-                if (widget.callBack?.onFail != null) {
-                  widget.callBack?.onFail!(code, message);
-                }
-                //移除当前错误code
-                codes.remove(code);
-                //重试 直至codes数组为空
-                getProvider();
-              },
-              onExpand: (code, param) {
-                if (widget.callBack?.onExpand != null) {
-                  widget.callBack?.onExpand!(code, param);
-                }
-              },
-            )) ??
-        Container();
+    return _splashWidget ?? Container();
   }
 }

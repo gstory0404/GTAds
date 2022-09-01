@@ -3,7 +3,10 @@
 <a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_csj-v0.0.5-success></a>
 </p>
 
-📢 该插件依托于[GTAds](https://github.com/gstory0404/GTAds)实现,使用前请先集成[GTAds](https://github.com/gstory0404/GTAds)。
+# 📢 相关插件
+
+- [flutter_unionad](https://github.com/gstory0404/flutter_unionad)穿山甲广告本体，内部已集成无需额外引入，配置相关查看插件说明
+- [GTAds](https://github.com/gstory0404/GTAds)聚合广告插件，必须引入
 
 # 使用
 

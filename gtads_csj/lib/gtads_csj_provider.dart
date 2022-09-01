@@ -3,7 +3,7 @@ part of 'gtads_csj.dart';
 /// @Author: gstory
 /// @CreateDate: 2022/8/16 15:02
 /// @Email gstory0404@gmail.com
-/// @Description: dart类作用描述
+/// @Description: GTAds穿山甲广告提供
 
 class GTAdsCsjProvider extends GTAdsProvider {
 

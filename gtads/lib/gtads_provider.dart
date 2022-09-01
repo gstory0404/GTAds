@@ -35,8 +35,7 @@ abstract class GTAdsProvider {
   /// [callBack] 广告回调
   ///
   ///如果广告不提供 则
-  ///   callBack!.onFail!(adCode,"");
-  ///   return Container();
+  ///  return null;
   Widget? bannerAd(GTAdsCode adCode, double width, double height,
       GTAdsCallBack? callBack);
 
@@ -51,8 +50,7 @@ abstract class GTAdsProvider {
   /// [callBack] 广告回调
   ///
   ///如果广告不提供 则
-  ///   callBack!.onFail!(adCode,"");
-  ///   return Container();
+  ///   return null;
   Widget? nativeAd(GTAdsCode adCode, double width, double height,
       GTAdsCallBack? callBack);
 
@@ -67,21 +65,20 @@ abstract class GTAdsProvider {
   /// [callBack] 广告回调
   ///
   ///如果广告不提供 则
-  ///   callBack!.onFail!(adCode,"");
-  ///   return Container();
+  ///   return null;
   Widget? splashAd(GTAdsCode adCode, double width, double height,
       GTAdsCallBack? callBack);
 
   ///插屏广告
   ///注意：如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
   ///
-  /// 如果广告不提供 则 return Future.value(false);
+  /// 如果广告不提供 则 return null;
   StreamSubscription? insertAd(GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack);
 
   ///激励广告
   ///注意：如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
   ///
-  ///如果广告不提供 则 return Future.value(false);
+  ///如果广告不提供 则 return null;
   StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
       String userId, String customData, GTAdsCallBack? callBack);
 

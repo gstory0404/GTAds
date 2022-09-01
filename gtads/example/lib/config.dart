@@ -1,5 +1,6 @@
 import 'package:gtads/gtads.dart';
 import 'package:gtads_csj/gtads_csj.dart';
+import 'package:gtads_sigmob/gtads_sigmob.dart';
 import 'package:gtads_ylh/gtads_ylh.dart';
 
 /// @Author: gstory
@@ -14,10 +15,19 @@ class Config {
   //优量汇
   static String YLH = "ylh";
 
+  //Sigmob
+  static String SIGMOB = "sigmob";
+
   //广告
   static List<GTAdsProvider> providers = [
     GTAdsCsjProvider(CSJ, "5098580", "5098580"),
-    GTAdsYlhProvider(YLH, "1200009850", "1200718557")
+    GTAdsYlhProvider(YLH, "1200009850", "1200718557"),
+    GTAdsSigmobProvider(
+        alias: SIGMOB,
+        androidId: '6878',
+        iosId: '6877',
+        androidAppKey: '8ebc1fd1c27e650c',
+        iosAppKey: 'eccdcdbd9adbd4a7')
   ];
 
   //横幅广告位
@@ -39,7 +49,12 @@ class Config {
         alias: YLH,
         probability: 5,
         androidId: "4072918853903023",
-        iosId: "6023578995600715")
+        iosId: "6023578995600715"),
+    GTAdsCode(
+        alias: SIGMOB,
+        probability: 5,
+        androidId: "ed70b4760ff",
+        iosId: "ed70b3615a5"),
   ];
 
   //开屏广告位
@@ -50,7 +65,12 @@ class Config {
         alias: YLH,
         probability: 5,
         androidId: "4052216802299999",
-        iosId: "3053975955207733")
+        iosId: "3053975955207733"),
+    GTAdsCode(
+        alias: SIGMOB,
+        probability: 5,
+        androidId: "ea1f8f21300",
+        iosId: "ea1f8f9bd12"),
   ];
 
   //激励广告位
@@ -62,6 +82,11 @@ class Config {
         probability: 5,
         androidId: "5042816813706194",
         iosId: "4023171869997790"),
+    GTAdsCode(
+        alias: SIGMOB,
+        probability: 5,
+        androidId: "ea1f8ea2d90",
+        iosId: "ea1f8f7b662"),
   ];
 
   //插屏广告位
@@ -73,5 +98,10 @@ class Config {
         probability: 5,
         androidId: "9062813863614416",
         iosId: "5093576955904702"),
+    GTAdsCode(
+        alias: SIGMOB,
+        probability: 5,
+        androidId: "ea1f8f45d80",
+        iosId: "ea1f8fb93fb"),
   ];
 }

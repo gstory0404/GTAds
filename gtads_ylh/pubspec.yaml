@@ -11,9 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-#  gtads:
-#    path: ../gtads
-  gtads: ^0.0.5
+  gtads:
+    path: ../gtads
+#  gtads: ^0.0.5
   flutter_tencentad: ^1.2.3
 
 dev_dependencies:

@@ -1,6 +1,6 @@
 # GTAds聚合广告插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.5-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.6-success></a>
 </p>
 
 GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案及广告规则、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
@@ -9,12 +9,25 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 - [gtads_csj(穿山甲广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
 - [gtads_ylh(优量汇广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_ylh)
 
+## 开发环境
+```dart
+[✓] Flutter (Channel stable, 3.3.0, on macOS 12.5.1 21G83 darwin-x64, locale zh-Hans-CN)
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc1)
+[✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+[✓] Chrome - develop for the web
+[✓] Android Studio (version 2021.2)
+[✓] IntelliJ IDEA Ultimate Edition (version 2022.1.1)
+[✓] VS Code (version 1.70.2)
+[✓] Connected device (3 available)
+[✓] HTTP Host Availability
+```
+
 # 使用
 
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^0.0.5
+ gtads: ^0.0.6
  //需要使用的广告  按需引入
  //穿山甲广告
  gtads_csj: ^0.0.5

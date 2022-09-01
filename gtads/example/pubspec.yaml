@@ -18,6 +18,9 @@ dependencies:
   # 优量汇
   gtads_ylh:
     path: ../../gtads_ylh
+  # Sigmob
+  gtads_sigmob:
+    path: ../../gtads_sigmob
 
 dev_dependencies:
   flutter_test:
