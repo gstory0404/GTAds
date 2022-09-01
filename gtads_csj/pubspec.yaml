@@ -1,6 +1,6 @@
 name: gtads_csj
 description: GTAds-穿山甲广告支持
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/gstory0404/GTAds/blob/master/gtads_csj
 
 environment:
@@ -11,10 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  flutter_unionad: ^1.3.9
+  flutter_unionad: ^1.3.10
 #  gtads:
 #    path: ../gtads
-  gtads: ^0.0.4
+  gtads: ^0.0.5
 
 dev_dependencies:
   flutter_test:

@@ -53,9 +53,9 @@ class GTAdsCsjProvider extends GTAdsProvider {
       //是否支持 DeepLink 选填
       supportDeepLink: true,
       // 期望view 宽度 dp 选填 mIsExpress=true必填
-      expressViewWidth: 750,
+      expressViewWidth: width,
       //期望view高度 dp 选填 mIsExpress=true必填
-      expressViewHeight: 800,
+      expressViewHeight: height,
       //控制下载APP前是否弹出二次确认弹窗
       downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
       //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
@@ -99,9 +99,9 @@ class GTAdsCsjProvider extends GTAdsProvider {
       //是否支持 DeepLink 选填
       supportDeepLink: true,
       // 期望view 宽度 dp 必填
-      expressViewWidth: 375.5,
+      expressViewWidth: width,
       //期望view高度 dp 必填
-      expressViewHeight: 0,
+      expressViewHeight: height,
       //一次请求广告数量 大于1小于3 必填
       expressNum: 2,
       mIsExpress: true,
@@ -149,13 +149,13 @@ class GTAdsCsjProvider extends GTAdsProvider {
       //是否支持 DeepLink 选填
       supportDeepLink: true,
       //一次请求广告数量 大于1小于3 必填
-      expressAdNum: 3,
+      expressAdNum: 1,
       //轮播间隔事件 30-120秒  选填
       expressTime: 30,
       // 期望view 宽度 dp 必填
-      expressViewWidth: 600.5,
+      expressViewWidth: width,
       //期望view高度 dp 必填
-      expressViewHeight: 120.5,
+      expressViewHeight: height,
       //控制下载APP前是否弹出二次确认弹窗
       downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
       //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
@@ -165,23 +165,23 @@ class GTAdsCsjProvider extends GTAdsProvider {
       //广告事件回调 选填
       callBack: FlutterUnionadBannerCallBack(
         onShow: () {
-          if (callBack != null && callBack.onShow != null) {
-            callBack.onShow!(adCode);
+          if (callBack?.onShow != null) {
+            callBack?.onShow!(adCode);
           }
         },
         onFail: (error) {
-          if (callBack != null && callBack.onFail != null) {
-            callBack.onFail!(adCode, error);
+          if (callBack?.onFail != null) {
+            callBack?.onFail!(adCode, error);
           }
         },
         onDislike: (message) {
-          if (callBack != null && callBack.onClose != null) {
-            callBack.onClose!(adCode);
+          if (callBack?.onClose != null) {
+            callBack?.onClose!(adCode);
           }
         },
         onClick: () {
-          if (callBack != null && callBack.onClick != null) {
-            callBack.onClick!(adCode);
+          if (callBack?.onClick != null) {
+            callBack?.onClick!(adCode);
           }
         },
       ),
@@ -189,8 +189,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
   }
 
   @override
-  Future<bool> insertAd(GTAdsCode adCode, bool isFull, double? width,
-      double? height, GTAdsCallBack? callBack) {
+  StreamSubscription? insertAd(GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack) {
     StreamSubscription? stream = null;
     stream = FlutterUnionadStream.initAdStream(
       flutterUnionadNewInteractionCallBack:
@@ -210,7 +209,6 @@ class GTAdsCsjProvider extends GTAdsProvider {
           if (callBack?.onFinish != null) {
             callBack?.onFinish!(adCode);
           }
-          stream?.cancel();
         },
         onFail: (error) {
           if (callBack?.onFail != null) {
@@ -221,7 +219,6 @@ class GTAdsCsjProvider extends GTAdsProvider {
           if (callBack?.onClose != null) {
             callBack?.onClose!(adCode);
           }
-          stream?.cancel();
         },
         onReady: () async {
           await FlutterUnionad.showFullScreenVideoAdInteraction();
@@ -233,7 +230,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
         },
       ),
     );
-    return FlutterUnionad.loadFullScreenVideoAdInteraction(
+    FlutterUnionad.loadFullScreenVideoAdInteraction(
       //android 全屏广告id 必填
       androidCodeId: adCode.androidId ?? "",
       //ios 全屏广告id 必填
@@ -247,10 +244,11 @@ class GTAdsCsjProvider extends GTAdsProvider {
       //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
       adLoadType: FlutterUnionadLoadType.LOAD,
     );
+    return stream;
   }
 
   @override
-  Future<bool> rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
+  StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
       String userId, String customData, GTAdsCallBack? callBack) {
     StreamSubscription? stream = null;
     stream = FlutterUnionadStream.initAdStream(
@@ -266,22 +264,18 @@ class GTAdsCsjProvider extends GTAdsProvider {
           }
         },
         onFail: (error) {
-          //停止监听
-          stream?.cancel();
           if (callBack?.onFail != null) {
             callBack?.onFail!(adCode, error);
           }
         },
         onClose: () {
-          //停止监听
-          stream?.cancel();
           if (callBack?.onClose != null) {
             callBack?.onClose!(adCode);
           }
         },
         onSkip: () {},
         onVerify: (rewardVerify, rewardAmount, rewardName, code, message) {
-          if (callBack?.onClose != null) {
+          if (callBack?.onVerify != null) {
             callBack?.onVerify!(
                 adCode, rewardVerify, "", rewardName, rewardAmount);
           }
@@ -313,8 +307,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
         },
       ),
     );
-    return FlutterUnionad.loadRewardVideoAd(
-      mIsExpress: false,
+    FlutterUnionad.loadRewardVideoAd(
       //是否个性化 选填
       androidCodeId: adCode.androidId ?? "",
       //Android 激励视频广告id  必填
@@ -337,5 +330,6 @@ class GTAdsCsjProvider extends GTAdsProvider {
       //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
       adLoadType: FlutterUnionadLoadType.PRELOAD,
     );
+    return stream;
   }
 }

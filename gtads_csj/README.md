@@ -1,6 +1,6 @@
 # GTAds穿山甲广告支持插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_csj-v0.0.4-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_csj-v0.0.5-success></a>
 </p>
 
 📢 该插件依托于[GTAds](https://github.com/gstory0404/GTAds)实现,使用前请先集成[GTAds](https://github.com/gstory0404/GTAds)。
@@ -9,7 +9,10 @@
 
 ### pubspec.yaml
 ```dart
- gtads_csj: ^0.0.4
+ //广告基础库 必须引入
+ gtads: ^0.0.5
+ //穿山甲广告
+ gtads_csj: ^0.0.5
 ```
 
 ### 引入
@@ -18,7 +21,8 @@ import 'package:gtads_csj/gtads_csj.dart';
 ```
 
 ### 使用
+仅需通过以下方法插入广告至聚合插件，无需关注具体广告的调用
 ```dart
-//别名、andoridId、iosId
-GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580"));
+//参数依次为 别名、andorid app Id、ios app Id
+GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580")]);
 ```

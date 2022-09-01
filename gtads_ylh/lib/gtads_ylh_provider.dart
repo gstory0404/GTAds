@@ -57,8 +57,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
   }
 
   @override
-  Future<bool> insertAd(GTAdsCode adCode, bool isFull, double? width,
-      double? height, GTAdsCallBack? callBack) {
+  StreamSubscription? insertAd(GTAdsCode adCode, bool isFull,GTAdsCallBack? callBack) {
     StreamSubscription? stream;
     stream = FlutterTencentAdStream.initAdStream(
       flutterTencentadInteractionCallBack: FlutterTencentadInteractionCallBack(
@@ -101,7 +100,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
         },
       ),
     );
-    return FlutterTencentad.loadUnifiedInterstitialAD(
+    FlutterTencentad.loadUnifiedInterstitialAD(
       //android广告id
       androidId: adCode.androidId ?? "",
       //ios广告id
@@ -111,6 +110,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
       //下载二次确认弹窗 默认false
       downloadConfirm: true,
     );
+    return stream;
   }
 
   @override
@@ -154,7 +154,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
   }
 
   @override
-  Future<bool> rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
+  StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
       String userId, String customData, GTAdsCallBack? callBack) {
     StreamSubscription? stream;
     stream = FlutterTencentAdStream.initAdStream(
@@ -176,7 +176,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
         if (callBack != null && callBack.onClose != null) {
           callBack.onClose!(adCode);
         }
-        stream?.cancel();
+        // stream?.cancel();
       }, onReady: () async {
         await FlutterTencentad.showRewardVideoAd();
       }, onUnReady: () {
@@ -191,11 +191,11 @@ class GTAdsYlhProvider extends GTAdsProvider {
       }, onFinish: () {
         if (callBack != null && callBack.onFinish != null) {
           callBack.onFinish!(adCode);
-          stream?.cancel();
+          // stream?.cancel();
         }
       }),
     );
-    return FlutterTencentad.loadRewardVideoAd(
+    FlutterTencentad.loadRewardVideoAd(
       //android广告id
       androidId: adCode.androidId ?? "",
       //ios广告id
@@ -211,6 +211,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
       //下载二次确认弹窗 默认false
       downloadConfirm: true,
     );
+    return stream;
   }
 
   @override

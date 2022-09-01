@@ -17,10 +17,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GTAds.splashAd(
+      body: GTAdsSplashWidget(
         codes: [GTAdsCode(alias: "ylh", probability: 5,androidId: "4052216802299999",iosId: "3053975955207733")],
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
+        timeout: 6,
         callBack: GTAdsCallBack(
           onShow: (code) {
             print("开屏显示 ${code.toJson()}");
@@ -29,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
             print("开屏点击 ${code.toJson()}");
           },
           onFail: (code, message) {
-            print("开屏错误 ${code.toJson()} $message");
+            print("开屏错误 ${code?.toJson()} $message");
             Navigator.pop(context);
           },
           onClose: (code) {

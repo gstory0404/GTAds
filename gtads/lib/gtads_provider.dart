@@ -11,6 +11,12 @@ abstract class GTAdsProvider {
   String? androidId;
   String? iosId;
 
+  ///
+  /// [_alias] 唯一， 广告别名 与广告位GTAdsCode 中别名保持一致 不然无法加载广告
+  ///
+  /// [androidId] android app id
+  ///
+  /// [iosId] ios app id
   GTAdsProvider(this._alias, this.androidId, this.iosId);
 
   ///初始化广告
@@ -19,25 +25,64 @@ abstract class GTAdsProvider {
   Future<bool> initAd(bool isDebug);
 
   ///横幅广告
+  ///
+  /// [adCode] 广告相关id
+  ///
+  /// [width] 广告宽
+  ///
+  /// [height] 广告高
+  ///
+  /// [callBack] 广告回调
+  ///
+  ///如果广告不提供 则
+  ///   callBack!.onFail!(adCode,"");
+  ///   return Container();
   Widget? bannerAd(GTAdsCode adCode, double width, double height,
       GTAdsCallBack? callBack);
 
   ///信息流广告
+  ///
+  /// [adCode] 广告相关id
+  ///
+  /// [width] 广告宽
+  ///
+  /// [height] 广告高
+  ///
+  /// [callBack] 广告回调
+  ///
+  ///如果广告不提供 则
+  ///   callBack!.onFail!(adCode,"");
+  ///   return Container();
   Widget? nativeAd(GTAdsCode adCode, double width, double height,
       GTAdsCallBack? callBack);
 
   ///开屏广告
+  ///
+  /// [adCode] 广告相关id
+  ///
+  /// [width] 广告宽
+  ///
+  /// [height] 广告高
+  ///
+  /// [callBack] 广告回调
+  ///
+  ///如果广告不提供 则
+  ///   callBack!.onFail!(adCode,"");
+  ///   return Container();
   Widget? splashAd(GTAdsCode adCode, double width, double height,
       GTAdsCallBack? callBack);
 
   ///插屏广告
   ///注意：如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
-  Future<bool> insertAd(GTAdsCode adCode, bool isFull, double? width,
-      double? height, GTAdsCallBack? callBack);
+  ///
+  /// 如果广告不提供 则 return Future.value(false);
+  StreamSubscription? insertAd(GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack);
 
   ///激励广告
   ///注意：如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
-  Future<bool> rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
+  ///
+  ///如果广告不提供 则 return Future.value(false);
+  StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
       String userId, String customData, GTAdsCallBack? callBack);
 
   String getAlias() {

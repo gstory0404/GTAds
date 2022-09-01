@@ -29,12 +29,13 @@ class _BannerPageState extends State<BannerPage> {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            GTAds.bannerAd(
+            GTAdsBannerWidget(
                 codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945410197",iosId: "945410197")],
                 //宽
                 width: 300,
                 //高
                 height: 400,
+                timeout: 5,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -44,7 +45,7 @@ class _BannerPageState extends State<BannerPage> {
                     print("Banner点击 ${code.toJson()}");
                   },
                   onFail: (code,message) {
-                    print("Banner错误 ${code.toJson()} $message");
+                    print("Banner错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
                     print("Banner关闭 ${code.toJson()}");

@@ -66,14 +66,14 @@ packages:
       name: flutter_unionad
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.3.9"
+    version: "1.3.10"
   gtads:
     dependency: "direct main"
     description:
       name: gtads
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.5"
   matcher:
     dependency: transitive
     description:

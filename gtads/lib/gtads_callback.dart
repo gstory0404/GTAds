@@ -11,7 +11,7 @@ typedef GTAShow = void Function(GTAdsCode adCode);
 ///失败
 ///
 ///[message] 错误信息
-typedef GTAFail = void Function(GTAdsCode adCode,String message);
+typedef GTAFail = void Function(GTAdsCode? adCode,String message);
 
 ///点击
 typedef GTAClick = void Function(GTAdsCode adCode);

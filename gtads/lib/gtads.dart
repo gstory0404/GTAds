@@ -2,19 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:gtads/gtads_manager.dart';
 import 'dart:async';
 
+import 'package:gtads/gtads_util.dart';
+import 'package:gtads/widget/gtads_insert.dart';
+import 'package:gtads/widget/gtads_reward.dart';
+
 part 'gtads_provider.dart';
 
 part 'gtads_code.dart';
 
 part 'gtads_callback.dart';
 
+part 'widget/gtads_banner_widget.dart';
+
+part 'widget/gtads_splash_widget.dart';
+
+part 'widget/gtads_native_widget.dart';
+
 class GTAds {
   ///添加GTAdsProvider 必须实现[GTAdsProvider]
   ///
   /// [name] 广告别名 保证唯一不然无法添加进去
   ///
-  static void addProvider(GTAdsProvider provider) {
-    GTAdsManager.instance.addProviders(provider);
+  static void addProvider(List<GTAdsProvider> providers) {
+    GTAdsManager.instance.addProviders(providers);
   }
 
   ///初始化广告组
@@ -40,66 +50,26 @@ class GTAds {
     return null;
   }
 
-  ///横幅广告
-  ///
-  /// [codes] 广告id
-  ///
-  /// [width] 宽
-  ///
-  /// [height] 高
-  ///
-  /// [callBack] 回调
-  static Widget bannerAd({required List<GTAdsCode> codes,required double width,
-    required double height,
-    GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.bannerAd(codes,width, height, callBack);
-  }
-
-  ///信息流广告
-  ///
-  /// [codes] 广告id
-  ///
-  /// [width] 宽
-  ///
-  /// [height] 高
-  ///
-  /// [callBack] 回调
-  static Widget nativeAd({required List<GTAdsCode> codes,required double width,
-    required double height,
-    GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.nativeAd(codes,width, height, callBack);
-  }
-
-  ///开屏广告
-  ///
-  /// [codes] 广告id
-  ///
-  /// [width] 宽
-  ///
-  /// [height] 高
-  ///
-  /// [callBack] 回调
-  static Widget splashAd({required List<GTAdsCode> codes,required double width,
-    required double height,
-    GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.splashAd(codes,width, height, callBack);
-  }
-
   ///插屏广告
   ///
   /// [codes] 广告id
   ///
   /// [isFull] 是否全屏
   ///
-  /// [width] 宽
-  ///
-  /// [height] 高
+  ///  [timeout] 超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
   ///
   /// [callBack] 广告监听
   static Future<bool> insertAd(
-      {required List<GTAdsCode> codes,bool? isFull, double? width, double? height, GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance
-        .insertAd(codes,isFull ?? true, width, height, callBack);
+      {required List<GTAdsCode> codes,
+      bool? isFull,
+      required int timeout,
+      GTAdsCallBack? callBack}) {
+    return GTAdsInsert(
+            codes: codes,
+            isFull: isFull ?? true,
+            timeout: timeout,
+            callBack: callBack)
+        .init();
   }
 
   ///激励广告
@@ -114,13 +84,25 @@ class GTAds {
   ///
   /// [customData] 自定义扩展字段
   ///
+  ///  [timeout] 超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
+  ///
   /// [callBack] 广告监听
-  static Future<bool> rewardAd({required List<GTAdsCode> codes,String? rewardName,
-    int? rewardAmount,
-    String? userId,
-    String? customData,
-    GTAdsCallBack? callBack}) {
-    return GTAdsManager.instance.rewardAd(codes,rewardName ?? "", rewardAmount ?? 0,
-        userId ?? "", customData ?? "", callBack);
+  static Future<bool> rewardAd(
+      {required List<GTAdsCode> codes,
+      String? rewardName,
+      int? rewardAmount,
+      String? userId,
+      String? customData,
+      required int timeout,
+      GTAdsCallBack? callBack}) {
+    return GTAdsReward(
+            codes: codes,
+            rewardName: rewardName ?? "",
+            rewardAmount: rewardAmount ?? 0,
+            userId: userId ?? "",
+            customData: customData ?? "",
+            timeout: timeout,
+            callBack: callBack)
+        .init();
   }
 }

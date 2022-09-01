@@ -20,10 +20,11 @@ class _NativePageState extends State<NativePage> {
       body: Container(
         child: Column(
           children: [
-            GTAds.nativeAd(
+            GTAdsNativeWidget(
               codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945417699",iosId: "945417699")],
               width: 300,
               height: 200,
+              timeout: 6,
               callBack: GTAdsCallBack(
                 onShow: (code) {
                   print("信息流显示 ${code.toJson()}");
@@ -32,7 +33,7 @@ class _NativePageState extends State<NativePage> {
                   print("信息流点击 ${code.toJson()}");
                 },
                 onFail: (code,message) {
-                  print("信息流错误 ${code.toJson()} $message");
+                  print("信息流错误 ${code?.toJson()} $message");
                 },
                 onClose: (code) {
                   print("信息流关闭 ${code.toJson()}");

@@ -36,7 +36,7 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> init() async {
-    GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580"));
+    GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580")]);
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});
@@ -82,10 +82,11 @@ class _IndexState extends State<Index> {
                       userId: "user100",
                       //扩展参数
                       customData: "123",
+                      timeout: 6,
                       callBack: GTAdsCallBack(onShow: (code) {
                         print("激励广告显示 ${code.toJson()}");
                       }, onFail: (code, message) {
-                        print("激励广告失败 ${code.toJson()} $message");
+                        print("激励广告失败 ${code?.toJson()} $message");
                       }, onClick: (code) {
                         print("激励广告点击 ${code.toJson()}");
                       }, onClose: (code) {
@@ -113,14 +114,13 @@ class _IndexState extends State<Index> {
                     var b = await GTAds.insertAd(
                         codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "946201351",iosId: "946201351")],
                         isFull: false,
-                        width: 300,
-                        height: 500,
+                        timeout: 6,
                         callBack: GTAdsCallBack(
                           onShow: (code) {
                             print("插屏广告显示 ${code.toJson()}");
                           },
                           onFail: (code, message) {
-                            print("插屏广告失败 ${code.toJson()} $message");
+                            print("插屏广告失败 ${code?.toJson()} $message");
                           },
                           onClick: (code) {
                             print("插屏广告点击 ${code.toJson()}");

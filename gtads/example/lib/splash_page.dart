@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gtads/gtads.dart';
+import 'package:gtads_example/config.dart';
 
 /// @Author: gstory
 /// @CreateDate: 2022/8/18 15:18
@@ -18,10 +19,11 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GTAdsSplashWidget(
-        codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "887367774",iosId: "887367774")],
+        codes: Config.splashCodes,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        timeout: 6,
+        //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
+        timeout: 5,
         callBack: GTAdsCallBack(
           onShow: (code) {
             print("开屏显示 ${code.toJson()}");

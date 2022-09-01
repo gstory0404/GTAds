@@ -1,9 +1,9 @@
 # GTAds聚合广告插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.4-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.5-success></a>
 </p>
 
-GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
+GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案及广告规则、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
 
 ## 支持插件
 - [gtads_csj(穿山甲广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
@@ -13,7 +13,13 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 
 ### pubspec.yaml
 ```dart
- gtads: ^0.0.4
+ //广告基础库 必须引入
+ gtads: ^0.0.5
+ //需要使用的广告  按需引入
+ //穿山甲广告
+ gtads_csj: ^0.0.5
+ //优量汇广告
+ gtads_ylh: ^0.0.2
 ```
 
 ### 引入
@@ -22,6 +28,8 @@ import 'package:gtads/gtads.dart';
 ```
 
 ### 添加广告
+
+
 广告初始化前必须完成添加
 ```dart
 GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580"));
@@ -39,13 +47,15 @@ await GTAds.init(isDebug: true);
 ```
 ### 横幅广告
 ```dart
- GTAds.bannerAd(
+ GTAdsBannerWidget(
     //需要的广告位数组
     codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945410197",iosId: "945410197")],
     //宽
     width: 300,
     //高
     height: 400,
+    //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
+    timeout: 5,
     //回调
     callBack: GTAdsCallBack(
         onShow: (code) {
@@ -76,6 +86,8 @@ await GTAds.init(isDebug: true);
     userId: "user100",
     //扩展参数
     customData: "123",
+    //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
+    timeout: 5,
     callBack: GTAdsCallBack(
         onShow: (code) {
           print("激励广告显示 ${code.toJson()}");
@@ -108,6 +120,8 @@ var b = await GTAds.insertAd(
     isFull: false,
     width: 300,
     height: 500,
+    //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
+    timeout: 5,
     callBack: GTAdsCallBack(
         onShow: (code) {
          print("插屏广告显示 ${code.toJson()}");
@@ -126,11 +140,13 @@ var b = await GTAds.insertAd(
 
 ### 开屏广告
 ```dart
-GTAds.splashAd(
+GTAdsSplashWidget(
     //需要的广告位组
     codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "887367774",iosId: "887367774")],
     width: MediaQuery.of(context).size.width,
     height: MediaQuery.of(context).size.height,
+    //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
+    timeout: 5,
     callBack: GTAdsCallBack(
         onShow: (code) {
           print("开屏显示 ${code.toJson()}");
@@ -152,11 +168,13 @@ GTAds.splashAd(
 
 ### 信息流
 ```dart
-GTAds.nativeAd(
+GTAdsNativeWidget(
     //需要的广告位组
     codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945417699",iosId: "945417699")],
     width: 300,
     height: 200,
+    //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
+    timeout: 5,
     callBack: GTAdsCallBack(
         onShow: (code) {
           print("信息流显示 ${code.toJson()}");
