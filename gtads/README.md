@@ -29,10 +29,9 @@ import 'package:gtads/gtads.dart';
 
 ### 添加广告
 
-
 广告初始化前必须完成添加
 ```dart
-GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580"));
+GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580")]);
 ```
 GTAdsCsjProviderc参数          
 alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告  

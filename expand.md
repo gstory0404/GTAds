@@ -26,7 +26,6 @@ class MYAdProvider extends GTAdsProvider{
   @override
   Future<bool> insertAd(GTAdsCode adCode, bool isFull, double? width, double? height, GTAdsCallBack? callBack) {
     // TODO: 调用插屏广告方法
-     //TODO: 如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
     throw UnimplementedError();
   }
 
@@ -39,7 +38,6 @@ class MYAdProvider extends GTAdsProvider{
   @override
   Future<bool> rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount, String userId, String customData, GTAdsCallBack? callBack) {
    // TODO: 调用激励广告方法
-     //TODO: 如果使用了StreamSubscription来监听广告回调则 需要在广告结束/失败时进行释放操作
     throw UnimplementedError();
   }
 
