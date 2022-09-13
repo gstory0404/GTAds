@@ -73,21 +73,21 @@ packages:
       name: flutter_unionad
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.3.10"
+    version: "1.3.13"
   gtads:
     dependency: transitive
     description:
-      path: "../../gtads"
-      relative: true
-    source: path
-    version: "0.0.5"
+      name: gtads
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.6"
   gtads_csj:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.5"
+    version: "0.0.6"
   lints:
     dependency: transitive
     description:
