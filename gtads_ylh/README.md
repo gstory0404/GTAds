@@ -3,14 +3,17 @@
 <a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads_ylh-v0.0.2-success></a>
 </p>
 
-📢 该插件依托于[GTAds](https://github.com/gstory0404/GTAds)实现,使用前请先集成[GTAds](https://github.com/gstory0404/GTAds)。
+# 📢 相关插件
+
+- [flutter_tencentad](https://github.com/gstory0404/flutter_tencentad) 腾讯优量汇广告本体，内部已集成无需额外引入，配置相关查看插件说明
+- [GTAds](https://github.com/gstory0404/GTAds) 聚合广告插件，必须引入
 
 # 使用
 
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^0.0.5
+ gtads: ^0.0.6
  //优量汇广告
  gtads_ylh: ^0.0.2
 ```
