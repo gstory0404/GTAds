@@ -275,7 +275,11 @@ class GTAdsCsjProvider extends GTAdsProvider {
         },
         onSkip: () {},
         onVerify: (rewardVerify, rewardAmount, rewardName, code, message) {
-          print("穿山甲激励奖励回调 $code $message");
+          if(!rewardVerify){
+            if (callBack?.onFail != null) {
+              callBack?.onFail!(adCode, "$code $message");
+            }
+          }
           if (callBack?.onVerify != null) {
             callBack?.onVerify!(
                 adCode, rewardVerify, "", rewardName, rewardAmount);

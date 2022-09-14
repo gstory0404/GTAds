@@ -84,9 +84,11 @@ packages:
   gtads_csj:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: gtads_csj
+      ref: HEAD
+      resolved-ref: "6d1c0aa300e121e6edd42ed71ff58ad844d7919f"
+      url: "https://github.com/gstory0404/GTAds.git"
+    source: git
     version: "0.0.6"
   lints:
     dependency: transitive
