@@ -1,5 +1,4 @@
 # GTAds聚合广告插件
-
 <p>
 <a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.6-success></a>
 </p>
@@ -7,13 +6,11 @@
 GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案及广告规则、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
 
 ## 支持插件
-
 - [gtads_csj(穿山甲广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
 - [gtads_ylh(优量汇广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_ylh)
 - [gtads_sigmob(Sigmob广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_sigmob)
 
 ## 开发环境
-
 ```dart
 [✓] Flutter (Channel stable, 3.3.0, on macOS 12.5.1 21G83 darwin-x64, locale zh-Hans-CN)
 [✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc1)
@@ -29,7 +26,6 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 # 使用
 
 ### pubspec.yaml
-
 ```dart
  //广告基础库 必须引入
  gtads: ^0.0.6
@@ -43,7 +39,6 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 ```
 
 ### 引入
-
 ```dart
 import 'package:gtads/gtads.dart';
 ```
@@ -51,26 +46,21 @@ import 'package:gtads/gtads.dart';
 ### 添加广告
 
 广告初始化前必须完成添加
-
 ```dart
 GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580")]);
 ```
-
-GTAdsCsjProviderc参数
-alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告
-androidId: andorid appId
+GTAdsCsjProviderc参数          
+alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告  
+androidId: andorid appId  
 iosId: ios appId
 
 ### 初始化
-
 ```dart
 //isDebug 是否开启debug日志
 await GTAds.init(isDebug: true);
 //return [{csj: true}]，添加的广告初始化结果
 ```
-
 ### 横幅广告
-
 ```dart
  GTAdsBannerWidget(
     //需要的广告位数组
@@ -99,7 +89,6 @@ await GTAds.init(isDebug: true);
 ```
 
 ### 激励广告
-
 ```dart
   var b = await GTAds.rewardAd(
     //需要的广告位数组
@@ -139,7 +128,6 @@ if (b) {
 ```
 
 ### 插屏广告
-
 ```dart
 var b = await GTAds.insertAd(
     //需要的广告位组
@@ -166,7 +154,6 @@ var b = await GTAds.insertAd(
 ```
 
 ### 开屏广告
-
 ```dart
 GTAdsSplashWidget(
     //需要的广告位组
@@ -195,7 +182,6 @@ GTAdsSplashWidget(
 ```
 
 ### 信息流
-
 ```dart
 GTAdsNativeWidget(
     //需要的广告位组
@@ -222,13 +208,10 @@ GTAdsNativeWidget(
 ```
 
 ## 说明
-
 ### 广告位codes
-
 如果不需要某个广告 则可以不传入对应的广告位id到数组中
 
 ### GTAdsCode
-
 ```dart
 //别名 需要与GTAds.addProvider传入的Provider别名保持一致 不然无法加载对应广告
 String alias = "";
