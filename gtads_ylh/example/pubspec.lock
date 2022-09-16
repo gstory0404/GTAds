@@ -61,7 +61,7 @@ packages:
       name: flutter_tencentad
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.3"
+    version: "1.2.6"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -70,17 +70,17 @@ packages:
   gtads:
     dependency: transitive
     description:
-      path: "../../gtads"
-      relative: true
-    source: path
-    version: "0.0.5"
+      name: gtads
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.6"
   gtads_ylh:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   matcher:
     dependency: transitive
     description:

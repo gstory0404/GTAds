@@ -31,7 +31,8 @@ class _SplashPageState extends State<SplashPage> {
           },
           onFail: (code, message) {
             print("开屏错误 ${code?.toJson()} $message");
-            Navigator.pop(context);
+            Navigator.canPop(context);
+            // Navigator.pop(context);
           },
           onClose: (code) {
             print("开屏关闭 ${code.toJson()}");
