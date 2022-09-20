@@ -104,7 +104,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
       //android广告id
       androidId: adCode.androidId ?? "",
       //ios广告id
-      iosId: adCode.androidId ?? "",
+      iosId: adCode.iosId ?? "",
       //是否全屏
       isFullScreen: isFull,
       //下载二次确认弹窗 默认false
@@ -120,7 +120,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
         //android广告id
         androidId: adCode.androidId ?? "",
         //ios广告id
-        iosId: adCode.androidId ?? "",
+        iosId: adCode.iosId ?? "",
         //广告宽 单位dp
         viewWidth: width.toInt(),
         //广告高  单位dp
@@ -199,7 +199,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
       //android广告id
       androidId: adCode.androidId ?? "",
       //ios广告id
-      iosId: adCode.androidId ?? "",
+      iosId: adCode.iosId ?? "",
       //用户id
       userID: userId,
       //奖励
@@ -221,7 +221,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
       //android广告id
       androidId: adCode.androidId ?? "",
       //ios广告id
-      iosId: adCode.androidId ?? "",
+      iosId: adCode.iosId ?? "",
       ////设置开屏广告从请求到展示所花的最大时长（并不是指广告曝光时长），取值范围为[1500, 5000]ms
       fetchDelay: 3000,
       //下载二次确认弹窗 默认false
