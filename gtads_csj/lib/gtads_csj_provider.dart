@@ -81,8 +81,16 @@ class GTAdsCsjProvider extends GTAdsProvider {
             callBack.onClose!(adCode);
           }
         },
-        onSkip: () {},
-        onTimeOut: () {},
+        onSkip: () {
+          if (callBack != null && callBack.onClose != null) {
+            callBack.onClose!(adCode);
+          }
+        },
+        onTimeOut: () {
+          if (callBack != null && callBack.onFail != null) {
+            callBack.onFail!(adCode, "加载超时");
+          }
+        },
       ),
     );
   }

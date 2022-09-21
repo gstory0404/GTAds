@@ -10,12 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-#  gtads_csj:
-#    path: ../
   gtads_csj:
-    git:
-      url: https://github.com/gstory0404/GTAds.git
-      path: gtads_csj/
+    path: ../
+#  gtads_csj:
+#    git:
+#      url: https://github.com/gstory0404/GTAds.git
+#      path: gtads_csj/
 
   cupertino_icons: ^1.0.2
 
