@@ -77,7 +77,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
           }
         },
         onFinish: () {
-          if (callBack != null && callBack.onFinish != null) {
+          if (callBack != null && callBack.onClose != null) {
             callBack.onClose!(adCode);
           }
         },
