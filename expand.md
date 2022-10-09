@@ -1,7 +1,9 @@
 # GTAds自定义广告
 
 ## GTAdsProvider
+
 新建自己的广告provider继承GTAdsProvider
+
 ```dart
 class MYAdProvider extends GTAdsProvider{
 
@@ -25,7 +27,7 @@ class MYAdProvider extends GTAdsProvider{
 
   @override
   Future<bool> insertAd(GTAdsCode adCode, bool isFull, double? width, double? height, GTAdsCallBack? callBack) {
-    // TODO: 调用插屏广告方法
+    // TODO: 返回StreamSubscription 插屏广告监听
     throw UnimplementedError();
   }
 
@@ -36,8 +38,8 @@ class MYAdProvider extends GTAdsProvider{
   }
 
   @override
-  Future<bool> rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount, String userId, String customData, GTAdsCallBack? callBack) {
-   // TODO: 调用激励广告方法
+  StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount, String userId, String customData, GTAdsCallBack? callBack) {
+   // TODO: 返回StreamSubscription 激励广告监听
     throw UnimplementedError();
   }
 
@@ -51,6 +53,7 @@ class MYAdProvider extends GTAdsProvider{
 ```
 
 ## 扩展参数
+
 ```
 String myParam1;
 String? _prama2;
@@ -66,10 +69,13 @@ MYAdProvider(
 ```
 
 ## 扩展方法
+
 可以通过GTAds.getProvider("别名")获取到Provider，则可以使用provider来调用Provider中自定义的方法。
 
 ## 扩展回调
+
 GTAdsCallBack提供一个GTAExpand扩展回调接口，可以通过传入不同参数来实现不用参数回传
+
 ```
 //发送
 var map = {
