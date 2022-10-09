@@ -1,6 +1,6 @@
 # GTAds优量汇广告支持插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads_ylh-v1.0.0-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads_ylh-v1.0.1-success></a>
 </p>
 
 # 📢 相关插件
@@ -15,7 +15,7 @@
  //广告基础库 必须引入
  gtads: ^0.0.6
  //优量汇广告
- gtads_ylh: ^1.0.0
+ gtads_ylh: ^1.0.1
 ```
 
 ### 引入

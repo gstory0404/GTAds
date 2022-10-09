@@ -88,7 +88,7 @@ class _IndexState extends State<Index> {
                       userId: "user100",
                       //扩展参数
                       customData: "123",
-                      timeout: 6,
+                      timeout: 10,
                       callBack: GTAdsCallBack(onShow: (code) {
                         print("激励广告显示 ${code.toJson()}");
                       }, onFail: (code, message) {

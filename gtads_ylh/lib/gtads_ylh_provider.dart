@@ -176,14 +176,12 @@ class GTAdsYlhProvider extends GTAdsProvider {
         if (callBack != null && callBack.onClose != null) {
           callBack.onClose!(adCode);
         }
-        // stream?.cancel();
       }, onReady: () async {
         await FlutterTencentad.showRewardVideoAd();
       }, onUnReady: () {
         if (callBack != null && callBack.onFail != null) {
           callBack.onFail!(adCode, "激励广告预加载未准备就绪");
         }
-        stream?.cancel();
       }, onVerify: (transId, rewardName, rewardAmount) {
         if (callBack != null && callBack.onVerify != null) {
           callBack.onVerify!(adCode, true, transId, rewardName, rewardAmount);
@@ -191,7 +189,6 @@ class GTAdsYlhProvider extends GTAdsProvider {
       }, onFinish: () {
         if (callBack != null && callBack.onFinish != null) {
           callBack.onFinish!(adCode);
-          // stream?.cancel();
         }
       }),
     );
