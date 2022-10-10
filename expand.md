@@ -74,7 +74,7 @@ MYAdProvider(
 
 ## 扩展回调
 
-GTAdsCallBack提供一个GTAExpand扩展回调接口，可以通过传入不同参数来实现不用参数回传
+GTAdsCallBack提供一个GTAExpand扩展回调接口，可以通过传入不同参数来实现不同功能参数回传
 
 ```
 //发送
