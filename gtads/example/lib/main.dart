@@ -110,6 +110,7 @@ class _IndexState extends State<Index> {
                   textColor: Colors.white,
                   child: const Text('插屏广告'),
                   onPressed: () async {
+                    print("广告位数量 ${Config.insertCodes.length}");
                     var b = await GTAds.insertAd(
                         codes: Config.insertCodes,
                         isFull: false,

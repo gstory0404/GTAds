@@ -11,17 +11,15 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  # 广告基础库 必须引入
-  gtads: ^0.0.6
-#  gtads:
-#    path: ../gtads
-  # Sigmob
   sigmobad: ^0.0.7
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 #  flutter_lints: ^2.0.0
+gtads: ^0.0.6
+#  gtads:
+#    path: ../gtads
 
 flutter:
 
