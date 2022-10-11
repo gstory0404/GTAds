@@ -1,3 +1,7 @@
-## 0.0.1
+## 1.0.1
 
-* TODO: Describe initial release.
+* fix bug
+
+## 1.0.0
+
+* 发布插件
