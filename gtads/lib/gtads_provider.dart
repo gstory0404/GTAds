@@ -3,10 +3,9 @@ part of 'gtads.dart';
 /// @Author: gstory
 /// @CreateDate: 2022/8/16 10:27
 /// @Email gstory0404@gmail.com
-/// @Description: dart类作用描述 
+/// @Description: dart类作用描述
 
 abstract class GTAdsProvider {
-
   String _alias;
   String? androidId;
   String? iosId;
@@ -36,8 +35,8 @@ abstract class GTAdsProvider {
   ///
   ///如果广告不提供 则
   ///  return null;
-  Widget? bannerAd(GTAdsCode adCode, double width, double height,
-      GTAdsCallBack? callBack);
+  Widget? bannerAd(
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack);
 
   ///信息流广告
   ///
@@ -51,8 +50,8 @@ abstract class GTAdsProvider {
   ///
   ///如果广告不提供 则
   ///   return null;
-  Widget? nativeAd(GTAdsCode adCode, double width, double height,
-      GTAdsCallBack? callBack);
+  Widget? nativeAd(
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack);
 
   ///开屏广告
   ///
@@ -66,25 +65,29 @@ abstract class GTAdsProvider {
   ///
   ///如果广告不提供 则
   ///   return null;
-  Widget? splashAd(GTAdsCode adCode, double width, double height,
-      GTAdsCallBack? callBack);
+  Widget? splashAd(
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack);
 
   ///插屏广告
   ///注意： 返回StreamSubscription 插屏广告监听
   ///如果广告不提供 则
   ///   return null;
-  StreamSubscription? insertAd(GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack);
+  StreamSubscription? insertAd(
+      GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack);
 
   ///激励广告
   ///注意： 返回StreamSubscription 激励广告监听
   ///如果广告不提供 则
   ///   return null;
-  StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
-      String userId, String customData, GTAdsCallBack? callBack);
+  StreamSubscription? rewardAd(
+      GTAdsCode adCode,
+      String rewardName,
+      int rewardAmount,
+      String userId,
+      String customData,
+      GTAdsCallBack? callBack);
 
   String getAlias() {
     return this._alias;
   }
 }
-
-
