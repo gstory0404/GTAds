@@ -59,10 +59,12 @@ import 'package:gtads/gtads.dart';
 GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580")]);
 ```
 
-GTAdsCsjProviderc参数
-alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告
-androidId: andorid appId
-iosId: ios appId
+>GTAdsCsjProvider 穿山甲广告Provider   
+alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告  
+androidId: andorid appId   
+iosId: ios appId   
+
+📢 使用前查看对应广告Provider参数
 
 ### 初始化
 
