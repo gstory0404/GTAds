@@ -91,38 +91,38 @@ packages:
   gtads:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.6"
+      name: gtads
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0"
   gtads_bqt:
     dependency: "direct main"
     description:
-      path: "../../gtads_bqt"
-      relative: true
-    source: path
-    version: "1.0.1"
+      name: gtads_bqt
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
   gtads_csj:
     dependency: "direct main"
     description:
-      path: "../../gtads_csj"
-      relative: true
-    source: path
-    version: "1.0.0"
+      name: gtads_csj
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.1"
   gtads_sigmob:
     dependency: "direct main"
     description:
-      path: "../../gtads_sigmob"
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: gtads_sigmob
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.0"
   gtads_ylh:
     dependency: "direct main"
     description:
-      path: "../../gtads_ylh"
-      relative: true
-    source: path
-    version: "1.0.1"
+      name: gtads_ylh
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
   lints:
     dependency: transitive
     description:
@@ -171,7 +171,7 @@ packages:
       name: sigmobad
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.7"
+    version: "1.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

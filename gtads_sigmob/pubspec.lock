@@ -59,7 +59,7 @@ packages:
       name: gtads
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.6"
+    version: "1.0.0"
   matcher:
     dependency: transitive
     description:
@@ -101,7 +101,7 @@ packages:
       name: sigmobad
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.7"
+    version: "1.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

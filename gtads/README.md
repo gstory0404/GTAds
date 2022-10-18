@@ -1,7 +1,7 @@
 # GTAds聚合广告插件
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v0.0.6-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v1.0.0-success></a>
 </p>
 
 GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案及广告规则、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
@@ -33,16 +33,16 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 
 ```dart
  //广告基础库 必须引入
- gtads: ^0.0.6
+ gtads: ^1.0.0
  //需要使用的广告按需引入,以下可选
  //字节穿山甲广告
- gtads_csj: ^1.0.0
+ gtads_csj: ^1.0.1
  //腾讯优量汇广告
- gtads_ylh: ^1.0.1
+ gtads_ylh: ^1.0.2
  //优量汇广告
- gtads_sigmob: ^0.0.1 
+ gtads_sigmob: ^1.0.0
  //百度百青藤广告
- gtads_bqt: ^1.0.1
+ gtads_bqt: ^1.0.2
 ```
 
 ### 引入

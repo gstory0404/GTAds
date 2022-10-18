@@ -58,12 +58,12 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
     super.initState();
     providers = GTAdsManager.instance.providers;
     codes = widget.codes;
-    startTime();
-    getProvider();
+    _startTime();
+    _getProvider();
   }
 
   //开始计时
-  void startTime() {
+  void _startTime() {
     _timer = Timer.periodic(Duration(seconds: widget.timeout), (timer) {
       if (mounted) {
         setState(() {
@@ -78,7 +78,7 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
     });
   }
 
-  void getProvider() {
+  void _getProvider() {
     GTAdsProvider? provider;
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
@@ -140,7 +140,7 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
             //移除当前错误code
             codes.remove(code);
             //重试 直至codes数组为空
-            getProvider();
+            _getProvider();
           },
           onExpand: (code, param) {
             if (widget.callBack?.onExpand != null) {
@@ -153,7 +153,7 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
       //移除当前错误code
       codes.remove(code);
       //重试 直至codes数组为空
-      getProvider();
+      _getProvider();
       return;
     }
     setState(() {});

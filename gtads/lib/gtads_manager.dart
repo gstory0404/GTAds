@@ -29,8 +29,20 @@ class GTAdsManager {
   //provider组
   List<GTAdsProvider> providers = [];
 
-  //添加adProvider
+  /// 添加adProviders
   void addProviders(List<GTAdsProvider> list) {
     providers = list;
+  }
+
+  /// 添加adProvider
+  ///
+  /// 在GTAds.init后调用 则必须先执行GTAdsProvider.init
+  void addProvider(GTAdsProvider provider) {
+    providers.add(provider);
+  }
+
+  /// 根据alias移除Provider
+  void removeProvider(String alias) {
+    providers.removeWhere((element) => element.getAlias() == alias);
   }
 }

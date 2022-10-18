@@ -21,7 +21,9 @@ abstract class GTAdsProvider {
   ///初始化广告
   ///
   /// [code] 广告相关id
-  Future<bool> initAd(bool isDebug);
+  Future<bool> initAd(bool isDebug) {
+    return Future(() => false);
+  }
 
   ///横幅广告
   ///
@@ -36,7 +38,9 @@ abstract class GTAdsProvider {
   ///如果广告不提供 则
   ///  return null;
   Widget? bannerAd(
-      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack);
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
+    return null;
+  }
 
   ///信息流广告
   ///
@@ -51,7 +55,9 @@ abstract class GTAdsProvider {
   ///如果广告不提供 则
   ///   return null;
   Widget? nativeAd(
-      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack);
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
+    return null;
+  }
 
   ///开屏广告
   ///
@@ -66,14 +72,18 @@ abstract class GTAdsProvider {
   ///如果广告不提供 则
   ///   return null;
   Widget? splashAd(
-      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack);
+      GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
+    return null;
+  }
 
   ///插屏广告
   ///注意： 返回StreamSubscription 插屏广告监听
   ///如果广告不提供 则
   ///   return null;
   StreamSubscription? insertAd(
-      GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack);
+      GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack) {
+    return null;
+  }
 
   ///激励广告
   ///注意： 返回StreamSubscription 激励广告监听
@@ -85,7 +95,9 @@ abstract class GTAdsProvider {
       int rewardAmount,
       String userId,
       String customData,
-      GTAdsCallBack? callBack);
+      GTAdsCallBack? callBack) {
+    return null;
+  }
 
   String getAlias() {
     return this._alias;

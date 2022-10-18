@@ -66,7 +66,7 @@ packages:
       name: gtads
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.6"
+    version: "1.0.0"
   matcher:
     dependency: transitive
     description:
