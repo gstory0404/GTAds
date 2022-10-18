@@ -21,6 +21,9 @@ dependencies:
   # Sigmob
   gtads_sigmob:
     path: ../../gtads_sigmob
+  # 百青藤
+  gtads_bqt:
+    path: ../../gtads_bqt
 
 dev_dependencies:
   flutter_test:

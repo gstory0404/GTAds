@@ -1,4 +1,5 @@
 import 'package:gtads/gtads.dart';
+import 'package:gtads_bqt/gtads_bqt.dart';
 import 'package:gtads_csj/gtads_csj.dart';
 import 'package:gtads_sigmob/gtads_sigmob.dart';
 import 'package:gtads_ylh/gtads_ylh.dart';
@@ -18,6 +19,9 @@ class Config {
   //Sigmob
   static String SIGMOB = "sigmob";
 
+  //百青藤
+  static String BQT = "bqt";
+
   //广告
   static List<GTAdsProvider> providers = [
     GTAdsCsjProvider(CSJ, "5098580", "5098580"),
@@ -27,7 +31,8 @@ class Config {
         androidId: '6878',
         iosId: '6877',
         androidAppKey: '8ebc1fd1c27e650c',
-        iosAppKey: 'eccdcdbd9adbd4a7')
+        iosAppKey: 'eccdcdbd9adbd4a7'),
+    GTAdsBqtProvider(BQT, "b423d90d", "a6b7fed6")
   ];
 
   //横幅广告位
@@ -44,17 +49,19 @@ class Config {
   //信息流广告位
   static List<GTAdsCode> nativeCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 5, androidId: "945417699", iosId: "945417699"),
+        alias: CSJ, probability: 1, androidId: "945417699", iosId: "945417699"),
     GTAdsCode(
         alias: YLH,
-        probability: 5,
+        probability: 1,
         androidId: "4072918853903023",
         iosId: "6023578995600715"),
     GTAdsCode(
         alias: SIGMOB,
-        probability: 5,
+        probability: 1,
         androidId: "ed70b4760ff",
         iosId: "ed70b3615a5"),
+    GTAdsCode(
+        alias: BQT, probability: 9, androidId: "8352393", iosId: "8353656"),
   ];
 
   //开屏广告位
@@ -71,6 +78,8 @@ class Config {
         probability: 5,
         androidId: "ea1f8f21300",
         iosId: "ea1f8f9bd12"),
+    GTAdsCode(
+        alias: BQT, probability: 5, androidId: "7792007", iosId: "7803231"),
   ];
 
   //激励广告位
@@ -87,6 +96,8 @@ class Config {
         probability: 5,
         androidId: "ea1f8ea2d90",
         iosId: "ea1f8f7b662"),
+    GTAdsCode(
+        alias: BQT, probability: 5, androidId: "7792010", iosId: "7800949"),
   ];
 
   //插屏广告位
@@ -103,5 +114,7 @@ class Config {
         probability: 5,
         androidId: "ea1f8f45d80",
         iosId: "ea1f8fb93fb"),
+    GTAdsCode(
+        alias: BQT, probability: 5, androidId: "8351686", iosId: "7803486"),
   ];
 }

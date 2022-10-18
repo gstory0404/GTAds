@@ -121,7 +121,6 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
             _timer?.cancel();
             if (widget.callBack?.onShow != null) {
               widget.callBack?.onShow!(code);
-              print("执行了2");
             }
           },
           onClick: (code) {
@@ -150,7 +149,7 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
           },
         ));
     //广告不存在 则重试
-    if(_nativeWidget == null){
+    if (_nativeWidget == null) {
       //移除当前错误code
       codes.remove(code);
       //重试 直至codes数组为空

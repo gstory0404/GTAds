@@ -11,7 +11,6 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  gtads: ^0.0.6
   baiduad: ^0.0.4
 #  baiduad:
 #    git:
@@ -22,6 +21,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 #  flutter_lints: ^2.0.0
+  gtads: ^0.0.6
 
 flutter:
 
