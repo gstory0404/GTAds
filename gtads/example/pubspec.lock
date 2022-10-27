@@ -75,7 +75,7 @@ packages:
       name: flutter_tencentad
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.10"
+    version: "1.2.11"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -94,35 +94,35 @@ packages:
       name: gtads
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.0"
   gtads_bqt:
     dependency: "direct main"
     description:
       name: gtads_bqt
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.2"
+    version: "1.1.0"
   gtads_csj:
     dependency: "direct main"
     description:
       name: gtads_csj
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.1"
+    version: "1.1.0"
   gtads_sigmob:
     dependency: "direct main"
     description:
       name: gtads_sigmob
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.0"
   gtads_ylh:
     dependency: "direct main"
     description:
       name: gtads_ylh
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.0.2"
+    version: "1.1.0"
   lints:
     dependency: transitive
     description:

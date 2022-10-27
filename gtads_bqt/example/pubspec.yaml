@@ -11,7 +11,7 @@ dependencies:
 
   gtads_bqt:
     path: ../
-  gtads: ^1.0.0
+  gtads: ^1.1.0
 
   cupertino_icons: ^1.0.2
 

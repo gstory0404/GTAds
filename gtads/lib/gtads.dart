@@ -18,6 +18,8 @@ part 'widget/gtads_splash_widget.dart';
 
 part 'widget/gtads_native_widget.dart';
 
+part 'gtads_constant.dart';
+
 class GTAds {
   ///添加GTAdsProvider 必须实现[GTAdsProvider]
   ///
@@ -58,16 +60,20 @@ class GTAds {
   ///
   ///  [timeout] 超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
   ///
+  ///  [model] 广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式
+  ///
   /// [callBack] 广告监听
   static Future<bool> insertAd(
       {required List<GTAdsCode> codes,
       bool? isFull,
       required int timeout,
+      String? model,
       GTAdsCallBack? callBack}) {
     return GTAdsInsert(
             codes: codes,
             isFull: isFull ?? true,
             timeout: timeout,
+            model: model ?? GTAdsModel.RANDOM,
             callBack: callBack)
         .init();
   }
@@ -86,6 +92,8 @@ class GTAds {
   ///
   ///  [timeout] 超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
   ///
+  ///  [model] 广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式
+  ///
   /// [callBack] 广告监听
   static Future<bool> rewardAd(
       {required List<GTAdsCode> codes,
@@ -93,6 +101,7 @@ class GTAds {
       int? rewardAmount,
       String? userId,
       String? customData,
+      String? model,
       required int timeout,
       GTAdsCallBack? callBack}) {
     return GTAdsReward(
@@ -102,6 +111,7 @@ class GTAds {
             userId: userId ?? "",
             customData: customData ?? "",
             timeout: timeout,
+            model: model ?? GTAdsModel.RANDOM,
             callBack: callBack)
         .init();
   }

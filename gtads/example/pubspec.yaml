@@ -25,15 +25,15 @@ dependencies:
 #  gtads_bqt:
 #    path: ../../gtads_bqt
 
-  gtads: ^1.0.0
+  gtads: ^1.1.0
   #字节穿山甲广告
-  gtads_csj: ^1.0.1
+  gtads_csj: ^1.1.0
   #腾讯优量汇广告
-  gtads_ylh: ^1.0.2
+  gtads_ylh: ^1.1.0
   #优量汇广告
-  gtads_sigmob: ^1.0.0
+  gtads_sigmob: ^1.1.0
   #百度百青藤广告
-  gtads_bqt: ^1.0.2
+  gtads_bqt: ^1.1.0
 
 dev_dependencies:
   flutter_test:

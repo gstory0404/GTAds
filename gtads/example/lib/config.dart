@@ -52,69 +52,69 @@ class Config {
         alias: CSJ, probability: 1, androidId: "945417699", iosId: "945417699"),
     GTAdsCode(
         alias: YLH,
-        probability: 1,
+        probability: 2,
         androidId: "4072918853903023",
         iosId: "6023578995600715"),
     GTAdsCode(
         alias: SIGMOB,
-        probability: 1,
+        probability: 3,
         androidId: "ed70b4760ff",
         iosId: "ed70b3615a5"),
     GTAdsCode(
-        alias: BQT, probability: 9, androidId: "8352393", iosId: "8353656"),
+        alias: BQT, probability: 4, androidId: "8352393", iosId: "8353656"),
   ];
 
   //开屏广告位
   static List<GTAdsCode> splashCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 5, androidId: "887367774", iosId: "887367774"),
+        alias: CSJ, probability: 1, androidId: "887367774", iosId: "887367774"),
     GTAdsCode(
         alias: YLH,
-        probability: 5,
+        probability: 2,
         androidId: "4052216802299999",
         iosId: "3053975955207733"),
     GTAdsCode(
         alias: SIGMOB,
-        probability: 5,
+        probability: 3,
         androidId: "ea1f8f21300",
         iosId: "ea1f8f9bd12"),
     GTAdsCode(
-        alias: BQT, probability: 5, androidId: "7792007", iosId: "7803231"),
+        alias: BQT, probability: 4, androidId: "7792007", iosId: "7803231"),
   ];
 
   //激励广告位
   static List<GTAdsCode> rewardCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 5, androidId: "945418088", iosId: "945418088"),
+        alias: CSJ, probability: 1, androidId: "945418088", iosId: "945418088"),
     GTAdsCode(
         alias: YLH,
-        probability: 5,
+        probability: 2,
         androidId: "5042816813706194",
         iosId: "4023171869997790"),
     GTAdsCode(
         alias: SIGMOB,
-        probability: 5,
+        probability: 3,
         androidId: "ea1f8ea2d90",
         iosId: "ea1f8f7b662"),
     GTAdsCode(
-        alias: BQT, probability: 5, androidId: "7792010", iosId: "7800949"),
+        alias: BQT, probability: 4, androidId: "7792010", iosId: "7800949"),
   ];
 
   //插屏广告位
   static List<GTAdsCode> insertCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 5, androidId: "946201351", iosId: "946201351"),
+        alias: CSJ, probability: 1, androidId: "946201351", iosId: "946201351"),
     GTAdsCode(
         alias: YLH,
-        probability: 5,
+        probability: 2,
         androidId: "9062813863614416",
         iosId: "5093576955904702"),
     GTAdsCode(
         alias: SIGMOB,
-        probability: 5,
+        probability: 3,
         androidId: "ea1f8f45d80",
         iosId: "ea1f8fb93fb"),
     GTAdsCode(
-        alias: BQT, probability: 5, androidId: "8351686", iosId: "7803486"),
+        alias: BQT, probability: 4, androidId: "8351686", iosId: "7803486"),
   ];
 }

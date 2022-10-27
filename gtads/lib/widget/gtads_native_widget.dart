@@ -10,6 +10,7 @@ class GTAdsNativeWidget extends StatefulWidget {
   final double width;
   final double height;
   final int timeout;
+  final String model;
   final GTAdsCallBack? callBack;
 
   /// 信息流广告
@@ -22,6 +23,8 @@ class GTAdsNativeWidget extends StatefulWidget {
   ///
   /// [timeout] 超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
   ///
+  /// [model] 广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式
+  ///
   /// [callBack] 广告回调  [GTAdsCallBack]
   ///
   const GTAdsNativeWidget(
@@ -30,6 +33,7 @@ class GTAdsNativeWidget extends StatefulWidget {
       required this.width,
       required this.height,
       required this.timeout,
+      this.model = GTAdsModel.RANDOM,
       this.callBack})
       : super(key: key);
 
@@ -88,7 +92,7 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
       }
       return;
     }
-    code = GTAdsUtil.randomCode(codes);
+    code = GTAdsUtil.getCode(widget.model, codes);
     //如果未获取到code 则直接返回
     if (code == null) {
       _timer?.cancel();

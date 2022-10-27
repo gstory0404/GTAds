@@ -8,6 +8,30 @@ import 'package:gtads/gtads.dart';
 /// @Description: dart类作用描述
 
 class GTAdsUtil {
+  static GTAdsCode? getCode(String mode, List<GTAdsCode> codes) {
+    if (mode == GTAdsModel.RANDOM) {
+      return randomCode(codes);
+    } else if (mode == GTAdsModel.PRIORITY) {
+      return priorityCode(codes);
+    } else {
+      return null;
+    }
+  }
+
+  //获取优先级高的广告组件
+  static GTAdsCode? priorityCode(List<GTAdsCode> codes) {
+    if (codes.length == 0) {
+      return null;
+    }
+    GTAdsCode code = codes[0];
+    codes.forEach((element) {
+      if (code.probability < element.probability) {
+        code = element;
+      }
+    });
+    return code;
+  }
+
   //获取随机广告组件
   static GTAdsCode? randomCode(List<GTAdsCode> codes) {
     //最大数因子

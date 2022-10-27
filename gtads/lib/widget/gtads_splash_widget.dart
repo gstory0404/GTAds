@@ -10,6 +10,7 @@ class GTAdsSplashWidget extends StatefulWidget {
   final double width;
   final double height;
   final int timeout;
+  final String model;
   final GTAdsCallBack? callBack;
 
   /// 开屏广告广告
@@ -22,6 +23,8 @@ class GTAdsSplashWidget extends StatefulWidget {
   ///
   /// [timeout] 超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
   ///
+  /// [model] 广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式
+  ///
   /// [callBack] 广告回调  [GTAdsCallBack]
   ///
   const GTAdsSplashWidget(
@@ -30,6 +33,7 @@ class GTAdsSplashWidget extends StatefulWidget {
       required this.width,
       required this.height,
       required this.timeout,
+      this.model = GTAdsModel.RANDOM,
       this.callBack})
       : super(key: key);
 
@@ -40,6 +44,7 @@ class GTAdsSplashWidget extends StatefulWidget {
 class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
   //开屏广告
   Widget? _splashWidget;
+
   //广告ids
   List<GTAdsCode> codes = [];
 
@@ -70,7 +75,8 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
         });
       }
       if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "获取广告超时");;
+        widget.callBack?.onFail!(null, "获取广告超时");
+        ;
       }
       _timer?.cancel();
     });
@@ -86,7 +92,7 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
       }
       return;
     }
-    code = GTAdsUtil.randomCode(codes);
+    code = GTAdsUtil.getCode(widget.model, codes);
     //如果未获取到code 则直接返回
     if (code == null) {
       _timer?.cancel();
@@ -147,7 +153,7 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
           },
         ));
     //广告不存在 则重试
-    if(_splashWidget == null){
+    if (_splashWidget == null) {
       //移除当前错误code
       codes.remove(code);
       //重试 直至codes数组为空

@@ -24,7 +24,7 @@ class _NativePageState extends State<NativePage> {
           "信息流广告",
         ),
       ),
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         reverse: false,
         physics: const BouncingScrollPhysics(),
@@ -37,6 +37,7 @@ class _NativePageState extends State<NativePage> {
                 height: 200,
                 //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
                 timeout: 5,
+                model: GTAdsModel.RANDOM,
                 callBack: GTAdsCallBack(
                   onShow: (code) {
                     print("信息流显示 ${code.toJson()}");
@@ -44,7 +45,7 @@ class _NativePageState extends State<NativePage> {
                   onClick: (code) {
                     print("信息流点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("信息流错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
@@ -57,6 +58,7 @@ class _NativePageState extends State<NativePage> {
                 width: 300,
                 height: 200,
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 callBack: GTAdsCallBack(
                   onShow: (code) {
                     print("信息流显示 ${code.toJson()}");
@@ -64,7 +66,7 @@ class _NativePageState extends State<NativePage> {
                   onClick: (code) {
                     print("信息流点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("信息流错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
@@ -77,6 +79,7 @@ class _NativePageState extends State<NativePage> {
                 width: 300,
                 height: 200,
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 callBack: GTAdsCallBack(
                   onShow: (code) {
                     print("信息流显示 ${code.toJson()}");
@@ -84,7 +87,7 @@ class _NativePageState extends State<NativePage> {
                   onClick: (code) {
                     print("信息流点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("信息流错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
@@ -97,6 +100,7 @@ class _NativePageState extends State<NativePage> {
                 width: 300,
                 height: 200,
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 callBack: GTAdsCallBack(
                   onShow: (code) {
                     print("信息流显示 ${code.toJson()}");
@@ -104,7 +108,7 @@ class _NativePageState extends State<NativePage> {
                   onClick: (code) {
                     print("信息流点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("信息流错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {

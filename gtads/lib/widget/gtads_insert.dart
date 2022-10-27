@@ -13,13 +13,15 @@ class GTAdsInsert {
   final List<GTAdsCode> codes;
   final bool isFull;
   final int timeout;
+  final String model;
   final GTAdsCallBack? callBack;
 
   GTAdsInsert(
       {required this.codes,
-        required this.isFull,
-        required this.timeout,
-        this.callBack});
+      required this.isFull,
+      required this.timeout,
+      required this.model,
+      this.callBack});
 
   //当前广告提供者
   GTAdsProvider? _provider;
@@ -39,7 +41,7 @@ class GTAdsInsert {
   Future<bool> init() {
     _providers = GTAdsManager.instance.providers;
     startTime();
-   return _loadAd();
+    return _loadAd();
   }
 
   //开始计时
@@ -64,7 +66,7 @@ class GTAdsInsert {
       }
       return Future.value(false);
     }
-    _code = GTAdsUtil.randomCode(codes);
+    _code = GTAdsUtil.getCode(model, codes);
     //如果未获取到code 则直接返回
     if (_code == null) {
       _stream?.cancel();
@@ -126,7 +128,7 @@ class GTAdsInsert {
         },
       ),
     );
-    if(_stream == null){
+    if (_stream == null) {
       //移除当前错误code
       codes.remove(_code);
       //重试 直至codes数组为空
@@ -135,4 +137,3 @@ class GTAdsInsert {
     return Future.value(true);
   }
 }
-

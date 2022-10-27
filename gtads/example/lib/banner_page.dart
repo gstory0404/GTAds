@@ -38,6 +38,7 @@ class _BannerPageState extends State<BannerPage> {
                 height: 100,
                 //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -46,7 +47,7 @@ class _BannerPageState extends State<BannerPage> {
                   onClick: (code) {
                     print("Banner点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("Banner错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
@@ -60,6 +61,7 @@ class _BannerPageState extends State<BannerPage> {
                 //高
                 height: 100,
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -68,7 +70,7 @@ class _BannerPageState extends State<BannerPage> {
                   onClick: (code) {
                     print("Banner点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("Banner错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
@@ -82,6 +84,7 @@ class _BannerPageState extends State<BannerPage> {
                 //高
                 height: 100,
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -90,7 +93,7 @@ class _BannerPageState extends State<BannerPage> {
                   onClick: (code) {
                     print("Banner点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("Banner错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
@@ -104,6 +107,7 @@ class _BannerPageState extends State<BannerPage> {
                 //高
                 height: 80,
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -112,7 +116,7 @@ class _BannerPageState extends State<BannerPage> {
                   onClick: (code) {
                     print("Banner点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("Banner错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
@@ -126,6 +130,7 @@ class _BannerPageState extends State<BannerPage> {
                 //高
                 height: 80,
                 timeout: 5,
+                model: GTAdsModel.PRIORITY,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -134,7 +139,7 @@ class _BannerPageState extends State<BannerPage> {
                   onClick: (code) {
                     print("Banner点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("Banner错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {

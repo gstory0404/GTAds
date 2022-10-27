@@ -1,7 +1,7 @@
 # GTAds聚合广告插件
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v1.0.0-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v1.1.0-success></a>
 </p>
 
 GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案及广告规则、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
@@ -16,13 +16,14 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 ## 开发环境
 
 ```dart
-[✓] Flutter (Channel stable, 3.3.0, on macOS 12.5.1 21G83 darwin-x64, locale zh-Hans-CN)
+[✓] Flutter (Channel stable, 3.3.6, on macOS 13.0 22A380 darwin-x64, locale zh-Hans-CN)
 [✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc1)
-[✓] Xcode - develop for iOS and macOS (Xcode 13.4.1)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.0.1)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2021.2)
-[✓] IntelliJ IDEA Ultimate Edition (version 2022.1.1)
-[✓] VS Code (version 1.70.2)
+[✓] Android Studio (version 2021.3)
+[✓] IntelliJ IDEA Ultimate Edition (version 2022.2.3)
+[✓] IntelliJ IDEA Ultimate Edition (version 2022.2.3)
+[✓] VS Code (version 1.72.2)
 [✓] Connected device (3 available)
 [✓] HTTP Host Availability
 ```
@@ -33,16 +34,16 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 
 ```dart
  //广告基础库 必须引入
- gtads: ^1.0.0
+ gtads: ^1.1.0
  //需要使用的广告按需引入,以下可选
  //字节穿山甲广告
- gtads_csj: ^1.0.1
+ gtads_csj: ^1.1.0
  //腾讯优量汇广告
- gtads_ylh: ^1.0.2
+ gtads_ylh: ^1.1.0
  //优量汇广告
- gtads_sigmob: ^1.0.0
+ gtads_sigmob: ^1.1.0
  //百度百青藤广告
- gtads_bqt: ^1.0.2
+ gtads_bqt: ^1.1.0
 ```
 
 ### 引入
@@ -74,6 +75,20 @@ await GTAds.init(isDebug: true);
 //return [{csj: true}]，添加的广告初始化结果
 ```
 
+### GTAdsCode
+
+```dart
+//别名 需要与GTAds.addProvider传入的Provider别名保持一致 不然无法加载对应广告
+String alias = "";
+//当前广告位 androidid
+String? androidId;
+//当前广告位 iosid
+String? iosId;
+//GTAdsModel.PRIORITY时 当前广告位的优先级数值越大越优先加载（当加载失败后从剩余广告中按数值大小依次重试）
+//GTAdsModel.RANDOM时 当前广告位出现的概率必须大于0,如果小于0则不会加载该广告（当加载失败后从剩余广告中重新随机加载）
+int probability = 0;
+```
+
 ### 横幅广告
 
 ```dart
@@ -86,6 +101,9 @@ await GTAds.init(isDebug: true);
     height: 400,
     //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
     timeout: 5,
+    //广告加载模式 [GTAdsModel.RANDOM]优先级模式 [GTAdsModel.RANDOM]随机模式
+    //默认随机模式
+    model: GTAdsModel.RANDOM,
     //回调
     callBack: GTAdsCallBack(
         onShow: (code) {
@@ -119,6 +137,9 @@ await GTAds.init(isDebug: true);
     customData: "123",
     //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
     timeout: 5,
+    //广告加载模式 [GTAdsModel.RANDOM]优先级模式 [GTAdsModel.RANDOM]随机模式
+    //默认随机模式  
+    model: GTAdsModel.RANDOM,
     callBack: GTAdsCallBack(
         onShow: (code) {
           print("激励广告显示 ${code.toJson()}");
@@ -154,6 +175,9 @@ var b = await GTAds.insertAd(
     height: 500,
     //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
     timeout: 5,
+    //广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式
+    //默认随机模式
+    model: GTAdsModel.RANDOM,
     callBack: GTAdsCallBack(
         onShow: (code) {
          print("插屏广告显示 ${code.toJson()}");
@@ -180,6 +204,9 @@ GTAdsSplashWidget(
     height: MediaQuery.of(context).size.height,
     //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
     timeout: 5,
+    //广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式
+    //默认随机模式
+    model: GTAdsModel.RANDOM,
     callBack: GTAdsCallBack(
         onShow: (code) {
           print("开屏显示 ${code.toJson()}");
@@ -209,6 +236,9 @@ GTAdsNativeWidget(
     height: 200,
     //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
     timeout: 5,
+    //广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式 
+    //默认随机模式
+    model: GTAdsModel.RANDOM,
     callBack: GTAdsCallBack(
         onShow: (code) {
           print("信息流显示 ${code.toJson()}");
@@ -232,15 +262,3 @@ GTAdsNativeWidget(
 
 如果不需要某个广告 则可以不传入对应的广告位id到数组中
 
-### GTAdsCode
-
-```dart
-//别名 需要与GTAds.addProvider传入的Provider别名保持一致 不然无法加载对应广告
-String alias = "";
-//当前广告位 androidid
-String? androidId;
-//当前广告位 iosid
-String? iosId;
-//当前广告位出现的概率 必须大于0,如果小于0则不会加载该广告
-int probability = 0;
-```

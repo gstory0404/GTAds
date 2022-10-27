@@ -3,7 +3,7 @@
 > 横幅广告暂不可用
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_bqt-v1.0.2-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_bqt-v1.1.0-success></a>
 </p>
 
 # 📢 相关插件
@@ -17,9 +17,9 @@
 
 ```dart
  //广告基础库 必须引入
- gtads: ^1.0.0
+ gtads: ^1.1.0
  //百青藤广告支持
- gtads_bqt: ^1.0.2
+ gtads_bqt: ^1.1.0
 ```
 
 ### 引入

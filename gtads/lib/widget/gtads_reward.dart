@@ -16,6 +16,7 @@ class GTAdsReward {
   final String userId;
   final String customData;
   final int timeout;
+  final String model;
   final GTAdsCallBack? callBack;
 
   GTAdsReward(
@@ -25,6 +26,7 @@ class GTAdsReward {
       required this.userId,
       required this.customData,
       required this.timeout,
+      required this.model,
       this.callBack});
 
   //当前广告提供者
@@ -70,7 +72,7 @@ class GTAdsReward {
       }
       return Future.value(false);
     }
-    _code = GTAdsUtil.randomCode(codes);
+    _code = GTAdsUtil.getCode(model, codes);
     //如果未获取到code 则直接返回
     if (_code == null) {
       _stream?.cancel();
@@ -146,7 +148,7 @@ class GTAdsReward {
         },
       ),
     );
-    if(_stream == null){
+    if (_stream == null) {
       //移除当前错误code
       codes.remove(_code);
       //重试 直至codes数组为空

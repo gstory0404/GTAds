@@ -10,6 +10,7 @@ class GTAdsBannerWidget extends StatefulWidget {
   final double width;
   final double height;
   final int timeout;
+  final String model;
   final GTAdsCallBack? callBack;
 
   /// 横幅广告
@@ -22,6 +23,8 @@ class GTAdsBannerWidget extends StatefulWidget {
   ///
   /// [timeout] 超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
   ///
+  ///  [model] 广告加载模式 [GTAdsModel.PRIORITY]优先级模式 [GTAdsModel.RANDOM]随机模式
+  ///
   /// [callBack] 广告回调  [GTAdsCallBack]
   ///
   const GTAdsBannerWidget(
@@ -30,6 +33,7 @@ class GTAdsBannerWidget extends StatefulWidget {
       required this.width,
       required this.height,
       required this.timeout,
+      this.model = GTAdsModel.RANDOM,
       this.callBack})
       : super(key: key);
 
@@ -89,7 +93,7 @@ class _GTAdsBannerWidgetState extends State<GTAdsBannerWidget> {
       }
       return;
     }
-    code = GTAdsUtil.randomCode(codes);
+    code = GTAdsUtil.getCode(widget.model, codes);
     //如果未获取到code 则直接返回
     if (code == null) {
       _timer?.cancel();
@@ -150,7 +154,7 @@ class _GTAdsBannerWidgetState extends State<GTAdsBannerWidget> {
           },
         ));
     //广告不存在 则重试
-    if(_bannerWidget == null){
+    if (_bannerWidget == null) {
       //移除当前错误code
       codes.remove(code);
       //重试 直至codes数组为空

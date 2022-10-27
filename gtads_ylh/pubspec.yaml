@@ -1,6 +1,6 @@
 name: gtads_ylh
 description: GTAds优量汇广告支持
-version: 1.0.2
+version: 1.1.0
 homepage: https://github.com/gstory0404/GTAds/blob/master/gtads_ylh
 
 environment:
@@ -11,10 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  flutter_tencentad: ^1.2.10
-  #  gtads:
-  #    path: ../gtads
-  gtads: ^1.0.0
+  flutter_tencentad: ^1.2.11
+  gtads: ^1.1.0
+#  gtads:
+#    path: ../gtads
+
 
 dev_dependencies:
   flutter_test:
