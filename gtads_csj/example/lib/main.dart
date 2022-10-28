@@ -36,7 +36,8 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> init() async {
-    GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580")]);
+    GTAds.addProvider(
+        [GTAdsCsjProvider("csj", "5098580", "5098580", appName: "unionad")]);
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});
@@ -73,7 +74,13 @@ class _IndexState extends State<Index> {
                   child: const Text('激励广告'),
                   onPressed: () async {
                     var b = await GTAds.rewardAd(
-                      codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945418088",iosId: "945418088")],
+                      codes: [
+                        GTAdsCode(
+                            alias: "csj",
+                            probability: 5,
+                            androidId: "945418088",
+                            iosId: "945418088")
+                      ],
                       //奖励名称
                       rewardName: "100金币",
                       //奖励数量
@@ -91,8 +98,8 @@ class _IndexState extends State<Index> {
                         print("激励广告点击 ${code.toJson()}");
                       }, onClose: (code) {
                         print("激励广告关闭 ${code.toJson()}");
-                      }, onVerify: (code, verify, transId, rewardName,
-                          rewardAmount) {
+                      }, onVerify:
+                          (code, verify, transId, rewardName, rewardAmount) {
                         print(
                             "激励广告关闭 ${code.toJson()} $verify $transId $rewardName $rewardAmount");
                       }, onExpand: (code, param) {
@@ -112,7 +119,13 @@ class _IndexState extends State<Index> {
                   child: const Text('插屏广告'),
                   onPressed: () async {
                     var b = await GTAds.insertAd(
-                        codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "946201351",iosId: "946201351")],
+                        codes: [
+                          GTAdsCode(
+                              alias: "csj",
+                              probability: 5,
+                              androidId: "946201351",
+                              iosId: "946201351")
+                        ],
                         isFull: false,
                         timeout: 6,
                         callBack: GTAdsCallBack(

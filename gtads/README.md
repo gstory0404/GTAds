@@ -7,6 +7,7 @@
 GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案及广告规则、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
 
 ## 支持插件
+
 - [gtads(基础库)](https://github.com/gstory0404/GTAds/tree/master/gtads)
 - [gtads_csj(字节穿山甲广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_csj)
 - [gtads_ylh(腾讯优量汇广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_ylh)
@@ -37,7 +38,7 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
  gtads: ^1.1.0
  //需要使用的广告按需引入,以下可选
  //字节穿山甲广告
- gtads_csj: ^1.1.0
+ gtads_csj: ^1.1.1
  //腾讯优量汇广告
  gtads_ylh: ^1.1.0
  //优量汇广告
@@ -57,13 +58,13 @@ import 'package:gtads/gtads.dart';
 广告初始化前必须完成添加对应广告Provider，如：穿山甲
 
 ```dart
-GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580")]);
+GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad")]);
 ```
 
->GTAdsCsjProvider 穿山甲广告Provider   
-alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告  
-androidId: andorid appId   
-iosId: ios appId   
+> GTAdsCsjProvider 穿山甲广告Provider
+> alias: 广告别名，必须保证唯一，后续广告加载回调将返回这个别名 识别是哪家的广告
+> androidId: andorid appId
+> iosId: ios appId
 
 📢 使用前查看对应广告Provider参数
 
@@ -261,4 +262,3 @@ GTAdsNativeWidget(
 ### 广告位codes
 
 如果不需要某个广告 则可以不传入对应的广告位id到数组中
-

@@ -6,8 +6,10 @@ part of 'gtads_csj.dart';
 /// @Description: GTAds穿山甲广告提供
 
 class GTAdsCsjProvider extends GTAdsProvider {
+  String appName = "";
 
-  GTAdsCsjProvider(String alias, String? androidId, String? iosId)
+  GTAdsCsjProvider(String alias, String? androidId, String? iosId,
+      {required this.appName})
       : super(alias, androidId, iosId);
 
   @override
@@ -20,7 +22,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
         //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView 选填
         useTextureView: true,
         //appname 必填
-        appName: "unionad_test",
+        appName: appName,
         //是否允许sdk展示通知栏提示 选填
         allowShowNotify: true,
         //是否在锁屏场景支持展示广告落地页 选填
@@ -197,7 +199,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
   }
 
   @override
-  StreamSubscription? insertAd(GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack) {
+  StreamSubscription? insertAd(
+      GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack) {
     StreamSubscription? stream = null;
     stream = FlutterUnionadStream.initAdStream(
       flutterUnionadNewInteractionCallBack:
@@ -256,8 +259,13 @@ class GTAdsCsjProvider extends GTAdsProvider {
   }
 
   @override
-  StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
-      String userId, String customData, GTAdsCallBack? callBack) {
+  StreamSubscription? rewardAd(
+      GTAdsCode adCode,
+      String rewardName,
+      int rewardAmount,
+      String userId,
+      String customData,
+      GTAdsCallBack? callBack) {
     StreamSubscription? stream = null;
     stream = FlutterUnionadStream.initAdStream(
       flutterUnionadRewardAdCallBack: FlutterUnionadRewardAdCallBack(
@@ -283,7 +291,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
         },
         onSkip: () {},
         onVerify: (rewardVerify, rewardAmount, rewardName, code, message) {
-          if(!rewardVerify){
+          if (!rewardVerify) {
             if (callBack?.onFail != null) {
               callBack?.onFail!(adCode, "$code $message");
             }
