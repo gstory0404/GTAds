@@ -27,7 +27,7 @@ import 'package:gtads_csj/gtads_csj.dart';
 仅需通过以下方法插入广告至聚合插件，无需关注具体广告的调用
 ```dart
 //参数依次为 别名、andorid app Id、ios app Id
-//appName 
+//appName初始化使用
 GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad")]);
 ```
 
