@@ -19,7 +19,13 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GTAdsSplashWidget(
-        codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "887367774",iosId: "887367774")],
+        codes: [
+          GTAdsCode(
+              alias: "csj",
+              probability: 5,
+              androidId: "887367774",
+              iosId: "887367774")
+        ],
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         timeout: 6,
@@ -40,26 +46,6 @@ class _SplashPageState extends State<SplashPage> {
           },
         ),
       ),
-      // body: FlutterUnionad.splashAdView(
-      //   androidCodeId: "887367774",
-      //   iosCodeId: "887367774",
-      //   callBack: FlutterUnionadSplashCallBack(
-      //     onShow: () {
-      //       print("开屏显示}");
-      //     },
-      //     onClick: () {
-      //       print("开屏点击}");
-      //     },
-      //     onFail: (message) {
-      //       print("开屏错误");
-      //       Navigator.pop(context);
-      //     },
-      //     onSkip: () {
-      //       print("开屏关闭}");
-      //       Navigator.pop(context);
-      //     },
-      //   ),
-      // ),
     );
   }
 }

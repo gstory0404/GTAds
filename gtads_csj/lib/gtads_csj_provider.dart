@@ -112,13 +112,9 @@ class GTAdsCsjProvider extends GTAdsProvider {
       expressViewWidth: width,
       //期望view高度 dp 必填
       expressViewHeight: height,
-      //一次请求广告数量 大于1小于3 必填
-      expressNum: 2,
       mIsExpress: true,
       //控制下载APP前是否弹出二次确认弹窗
       downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
-      //是否启用点击 仅ios生效 默认启用
-      isUserInteractionEnabled: true,
       //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
       adLoadType: FlutterUnionadLoadType.LOAD,
       callBack: FlutterUnionadNativeCallBack(

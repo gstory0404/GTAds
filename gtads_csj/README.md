@@ -1,6 +1,6 @@
 # GTAds穿山甲广告支持插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_csj-v1.1.1-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_csj-v1.1.2-success></a>
 </p>
 
 # 📢 相关插件
@@ -15,7 +15,7 @@
  //广告基础库 必须引入
  gtads: ^1.1.0
  //穿山甲广告
- gtads_csj: ^1.1.1
+ gtads_csj: ^1.1.2
 ```
 
 ### 引入

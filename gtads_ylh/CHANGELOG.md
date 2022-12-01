@@ -1,3 +1,7 @@
+## 1.1.1
+
+* 优量汇flutter_tencentad更新1.2.12
+
 ## 1.1.0
 
 * 升级sdk 兼容android13
