@@ -88,7 +88,7 @@ String? androidId;
 //当前广告位 iosid
 String? iosId;
 //GTAdsModel.PRIORITY时 当前广告位的优先级数值越大越优先加载（当加载失败后从剩余广告中按数值大小依次重试）
-//GTAdsModel.RANDOM时 当前广告位出现的概率必须大于0,如果小于0则不会加载该广告（当加载失败后从剩余广告中重新随机加载）
+//GTAdsModel.RANDOM时 当前广告位出现的概率必须大于0,如果小于0则不会加载该广告,数值越大出现的概率越高（当加载失败后从剩余广告中重新随机加载）
 int probability = 0;
 ```
 
