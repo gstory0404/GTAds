@@ -264,3 +264,10 @@ GTAdsNativeWidget(
 ### 广告位codes
 
 如果不需要某个广告 则可以不传入对应的广告位id到数组中
+
+### 广告加载模式
+广告加载模式 mode
+- GTAdsModel.PRIORITY 优先级模式 
+传入广告位GTAdsCode中probability数值越大越优先加载，如果数值相同则列表中前面的先加载（当加载失败后从剩余广告中按数值大小依次重试）
+- GTAdsModel.RANDOM 随机模式 
+传入广告位GTAdsCode中probability数值必须大于0,如果小于0则不会加载该广告,数值越大出现的概率越高（当加载失败后从剩余广告中重新随机加载）
