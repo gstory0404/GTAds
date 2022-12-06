@@ -10,30 +10,30 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-#  gtads:
-#    path: ../
-#  # 穿山甲
-#  gtads_csj:
-#    path: ../../gtads_csj
-#  # 优量汇
-#  gtads_ylh:
-#    path: ../../gtads_ylh
-#  # Sigmob
-#  gtads_sigmob:
-#    path: ../../gtads_sigmob
-#  # 百青藤
-#  gtads_bqt:
-#    path: ../../gtads_bqt
+  gtads:
+    path: ../
+  # 穿山甲
+  gtads_csj:
+    path: ../../gtads_csj
+  # 优量汇y
+  gtads_ylh:
+    path: ../../gtads_ylh
+  # Sigmob
+  gtads_sigmob:
+    path: ../../gtads_sigmob
+  # 百青藤
+  gtads_bqt:
+    path: ../../gtads_bqt
 
-  gtads: ^1.1.0
-  #字节穿山甲广告
-  gtads_csj: ^1.1.0
-  #腾讯优量汇广告
-  gtads_ylh: ^1.1.0
-  #优量汇广告
-  gtads_sigmob: ^1.1.0
-  #百度百青藤广告
-  gtads_bqt: ^1.1.0
+#  gtads: ^1.2.0
+#  #字节穿山甲广告
+#  gtads_csj: ^1.2.0
+#  #腾讯优量汇广告
+#  gtads_ylh: ^1.2.0
+#  #优量汇广告
+#  gtads_sigmob: ^1.2.0
+#  #百度百青藤广告
+#  gtads_bqt: ^1.2.0
 
 dev_dependencies:
   flutter_test:
