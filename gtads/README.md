@@ -1,7 +1,7 @@
 # GTAds聚合广告插件
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v1.1.0-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/badge/gtads-v1.2.0-success></a>
 </p>
 
 GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一套广告管理调度方案及广告规则、本身不提供任何广告，可通过扩展方法快速集成市面任何一款广告。
@@ -14,20 +14,19 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 - [gtads_sigmob(Sigmob广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_sigmob)
 - [gtads_bqt(百度百青藤广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_bqt)
 
-> 支持插件版本号前两位必须与基础库相同不然会出现插件版本不兼容问题
+> 基础库版本号与广告插件版本号前两位必须相同，不然会出现兼容问题
 
 ## 开发环境
 
 ```dart
-[✓] Flutter (Channel stable, 3.3.6, on macOS 13.0 22A380 darwin-x64, locale zh-Hans-CN)
+[✓] Flutter (Channel stable, 3.3.6, on macOS 13.0.1 22A400 darwin-x64, locale zh-Hans-CN)
 [✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc1)
-[✓] Xcode - develop for iOS and macOS (Xcode 14.0.1)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.1)
 [✓] Chrome - develop for the web
 [✓] Android Studio (version 2021.3)
-[✓] IntelliJ IDEA Ultimate Edition (version 2022.2.3)
-[✓] IntelliJ IDEA Ultimate Edition (version 2022.2.3)
-[✓] VS Code (version 1.72.2)
-[✓] Connected device (3 available)
+[✓] IntelliJ IDEA Ultimate Edition (version 2022.3)
+[✓] VS Code (version 1.73.1)
+[✓] Connected device (4 available)
 [✓] HTTP Host Availability
 ```
 
@@ -37,16 +36,16 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 
 ```dart
  //广告基础库 必须引入
- gtads: ^1.1.0
+ gtads: ^1.2.0
  //需要使用的广告按需引入,以下可选
  //字节穿山甲广告
- gtads_csj: ^1.1.2
+ gtads_csj: ^1.2.0
  //腾讯优量汇广告
- gtads_ylh: ^1.1.1
+ gtads_ylh: ^1.2.0
  //优量汇广告
- gtads_sigmob: ^1.1.0
+ gtads_sigmob: ^1.2.0
  //百度百青藤广告
- gtads_bqt: ^1.1.0
+ gtads_bqt: ^1.2.0
 ```
 
 ### 引入
@@ -121,6 +120,12 @@ int probability = 0;
         onClose: (code) {
           print("Banner关闭 ${code.toJson()}");
         },
+        onTimeout: () {
+          print("Banner加载超时");
+        },
+        onEnd: () {
+          print("Banner所有广告位都加载失败");
+        },
 )),
 ```
 
@@ -158,7 +163,14 @@ int probability = 0;
         "激励广告关闭 ${code.toJson()} $verify $transId $rewardName $rewardAmount");
         }, onExpand: (code, param) {
           print("激励广告自定义参数 ${code.toJson()} $param");
-        }),
+        },
+        onTimeout: () {
+         print("激励广告加载超时");
+        },
+        onEnd: () {
+          print("激励广告所有广告位都加载失败");
+        },
+  ),
 );
 if (b) {
   print("激励广告开始请求");
@@ -194,6 +206,12 @@ var b = await GTAds.insertAd(
         onClose: (code) {
           print("插屏广告关闭 ${code.toJson()}");
         },
+        onTimeout: () {
+          print("插屏广告加载超时");
+        },
+        onEnd: () {
+          print("插屏广告所有广告位都加载失败");
+        },
 ));
 ```
 
@@ -223,6 +241,14 @@ GTAdsSplashWidget(
         },
         onClose: (code) {
           print("开屏关闭 ${code.toJson()}");
+          Navigator.pop(context);
+        },
+        onTimeout: () {
+          print("开屏加载超时");
+          Navigator.pop(context);
+        },
+        onEnd: () {
+          print("开屏所有广告位都加载失败");
           Navigator.pop(context);
         },
   ),
@@ -255,6 +281,12 @@ GTAdsNativeWidget(
         onClose: (code) {
           print("信息流关闭 ${code.toJson()}");
         },
+        onTimeout: () {
+          print("信息流加载超时");
+        },
+        onEnd: () {
+          print("信息流所有广告位都加载失败");
+        },
     ),
 ),
 ```
@@ -266,8 +298,32 @@ GTAdsNativeWidget(
 如果不需要某个广告 则可以不传入对应的广告位id到数组中
 
 ### 广告加载模式
+
 广告加载模式 mode
-- GTAdsModel.PRIORITY 优先级模式  
-传入广告位GTAdsCode中probability数值越大越优先加载，如果数值相同则列表中前面的先加载（当加载失败后从剩余广告中按数值大小依次重试）
-- GTAdsModel.RANDOM 随机模式  
-传入广告位GTAdsCode中probability数值必须大于0,如果小于0则不会加载该广告,数值越大出现的概率越高（当加载失败后从剩余广告中重新随机加载）
+
+- GTAdsModel.PRIORITY 优先级模式传入广告位GTAdsCode中probability数值越大越优先加载，如果数值相同则列表中前面的先加载（当加载失败后从剩余广告中按数值大小依次重试）
+- GTAdsModel.RANDOM 随机模式
+  传入广告位GTAdsCode中probability数值必须大于0,如果小于0则不会加载该广告,数值越大出现的概率越高（当加载失败后从剩余广告中重新随机加载）
+
+#### GTAdsCallBack说明
+
+```dart
+  /// [onShow] 广告加载成功
+  /// [onFail] 广告加载失败（单广告位）
+  /// [onClick] 广告加载点击
+  /// [onVerify] 广告验证
+  /// [onClose] 广告关闭
+  /// [onTimeout] 广告加载超时
+  /// [onEnd] 广告加载结束（所有广告均加载失败）
+  /// [onExpand] 广告扩展回调
+  GTAdsCallBack(
+      {this.onShow,
+      this.onFail,
+      this.onClick,
+      this.onFinish,
+      this.onVerify,
+      this.onClose,
+      this.onTimeout,
+      this.onEnd,
+      this.onExpand});
+```

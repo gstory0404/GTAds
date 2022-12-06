@@ -48,6 +48,7 @@ class GTAdsUtil {
     int probability = Random().nextInt(max) + 1;
     int current = 0;
     for (int i = 0; i < codes.length; i++) {
+      print("suiji ===$probability");
       //过滤概率小于1的广告
       if (codes[i].probability > 0) {
         if (current < probability &&

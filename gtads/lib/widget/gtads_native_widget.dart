@@ -51,18 +51,17 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
   //provider组
   List<GTAdsProvider> providers = [];
 
-  //广告id
-  GTAdsCode? code;
-
   //定时器
   Timer? _timer;
 
   @override
   void initState() {
-    super.initState();
+    // super.initState();
     providers = GTAdsManager.instance.providers;
-    codes = widget.codes;
+    codes.clear();
+    codes.addAll(widget.codes);
     _startTime();
+    print("banner广告位数量 ${codes.length} == ${widget.codes.length}");
     _getProvider();
   }
 
@@ -74,9 +73,9 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
           _nativeWidget = null;
         });
       }
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "获取广告超时");
-        print("获取广告超时");
+      if (widget.callBack?.onTimeout != null) {
+        //获取广告超时
+        widget.callBack?.onTimeout!();
       }
       _timer?.cancel();
     });
@@ -87,36 +86,47 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
+      }
+      if (mounted) {
+        setState(() {
+          _nativeWidget = null;
+        });
       }
       return;
     }
-    code = GTAdsUtil.getCode(widget.model, codes);
+    //获取当前展示的广告位id
+    var code = GTAdsUtil.getCode(widget.model, codes);
     //如果未获取到code 则直接返回
     if (code == null) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
+      }
+      if (mounted) {
+        setState(() {
+          _nativeWidget = null;
+        });
       }
       return;
     }
     //循环获取provider
     for (var value in providers) {
-      if (value.getAlias() == code?.alias) {
+      if (value.getAlias() == code.alias) {
         provider = value;
       }
     }
-    //如果未查询到可使用provider 则直接返回
+    //如果未查询到可使用provider 则重新加载
     if (provider == null) {
-      _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
-      }
+      codes.remove(code);
+      _getProvider();
       return;
     }
     _nativeWidget = provider.nativeAd(
-        code!,
+        code,
         widget.width,
         widget.height,
         GTAdsCallBack(
@@ -160,7 +170,9 @@ class _GTAdsNativeWidgetState extends State<GTAdsNativeWidget> {
       _getProvider();
       return;
     }
-    setState(() {});
+    if (mounted) {
+      setState(() {});
+    }
   }
 
   @override

@@ -24,7 +24,7 @@ class Config {
 
   //广告
   static List<GTAdsProvider> providers = [
-    GTAdsCsjProvider(CSJ, "5098580", "5098580"),
+    GTAdsCsjProvider(CSJ, "5098580", "5098580", appName: 'flutter_test'),
     GTAdsYlhProvider(YLH, "1200009850", "1200718557"),
     GTAdsSigmobProvider(
         alias: SIGMOB,
@@ -43,7 +43,7 @@ class Config {
         alias: YLH,
         probability: 5,
         androidId: "8042711873318113",
-        iosId: "4043774915303757")
+        iosId: "5004358713683949")
   ];
 
   //信息流广告位

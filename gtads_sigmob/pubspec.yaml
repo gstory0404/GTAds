@@ -1,6 +1,6 @@
 name: gtads_sigmob
 description: 为GTAds提供Singmob广告支持
-version: 1.1.0
+version: 1.2.0
 homepage: https://github.com/gstory0404/GTAds/tree/master/gtads_sigmob
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
   sigmobad: ^1.0.0
-  gtads: ^1.1.0
+  gtads: ^1.2.0
 #  gtads:
 #    path: ../gtads
 

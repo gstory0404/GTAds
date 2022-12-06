@@ -74,22 +74,23 @@ class _GTAdsBannerWidgetState extends State<GTAdsBannerWidget> {
           _bannerWidget = null;
         });
       }
-      if (widget.callBack?.onFail != null) {
-        _timer?.cancel();
-        widget.callBack?.onFail!(null, "获取广告超时");
-        print("获取广告超时");
+      if (widget.callBack?.onTimeout != null) {
+        //获取广告超时
+        widget.callBack?.onTimeout!();
       }
       _timer?.cancel();
     });
   }
 
   void getProvider() {
+    print("codes数量===>${codes.length}");
     GTAdsProvider? provider;
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
       }
       return;
     }
@@ -97,8 +98,9 @@ class _GTAdsBannerWidgetState extends State<GTAdsBannerWidget> {
     //如果未获取到code 则直接返回
     if (code == null) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
       }
       return;
     }
@@ -111,8 +113,9 @@ class _GTAdsBannerWidgetState extends State<GTAdsBannerWidget> {
     //如果未查询到可使用provider 则直接返回
     if (provider == null) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
       }
       return;
     }

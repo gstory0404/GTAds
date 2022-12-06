@@ -74,9 +74,9 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
           _splashWidget = null;
         });
       }
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "获取广告超时");
-        ;
+      if (widget.callBack?.onTimeout != null) {
+        //获取广告超时
+        widget.callBack?.onTimeout!();
       }
       _timer?.cancel();
     });
@@ -87,8 +87,9 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
     //如果不存在provider则返回一个空Container
     if (providers.length == 0) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
       }
       return;
     }
@@ -96,8 +97,9 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
     //如果未获取到code 则直接返回
     if (code == null) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
       }
       return;
     }
@@ -110,10 +112,11 @@ class _GTAdsSplashWidgetState extends State<GTAdsSplashWidget> {
     //如果未查询到可使用provider 则直接返回
     if (provider == null) {
       _timer?.cancel();
-      if (widget.callBack?.onFail != null) {
-        widget.callBack?.onFail!(null, "暂无可加载广告");
-        return;
+      if (widget.callBack?.onEnd != null) {
+        //暂无可加载广告
+        widget.callBack?.onEnd!();
       }
+      return;
     }
     _splashWidget = provider?.splashAd(
         code!,

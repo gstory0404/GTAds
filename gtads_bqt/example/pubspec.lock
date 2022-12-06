@@ -75,19 +75,19 @@ packages:
     source: sdk
     version: "0.0.0"
   gtads:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: gtads
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
   gtads_bqt:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "1.1.0"
+    version: "1.2.0"
   lints:
     dependency: transitive
     description:

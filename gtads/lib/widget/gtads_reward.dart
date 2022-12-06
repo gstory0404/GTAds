@@ -54,8 +54,9 @@ class GTAdsReward {
   void startTime() {
     _timer = Timer.periodic(Duration(seconds: timeout), (timer) {
       _stream?.cancel();
-      if (callBack?.onFail != null) {
-        callBack?.onFail!(null, "获取广告超时");
+      if (callBack?.onTimeout != null) {
+        //获取广告超时
+        callBack?.onTimeout!();
       }
       _timer?.cancel();
     });
@@ -67,8 +68,9 @@ class GTAdsReward {
     if (_providers.length == 0) {
       _stream?.cancel();
       _timer?.cancel();
-      if (callBack?.onFail != null) {
-        callBack?.onFail!(null, "暂无可加载广告");
+      if (callBack?.onEnd != null) {
+        //暂无可加载广告
+        callBack?.onEnd!();
       }
       return Future.value(false);
     }
@@ -77,8 +79,9 @@ class GTAdsReward {
     if (_code == null) {
       _stream?.cancel();
       _timer?.cancel();
-      if (callBack?.onFail != null) {
-        callBack?.onFail!(null, "暂无可加载广告");
+      if (callBack?.onEnd != null) {
+        //暂无可加载广告
+        callBack?.onEnd!();
       }
       return Future.value(false);
     }
@@ -92,8 +95,9 @@ class GTAdsReward {
     if (_provider == null) {
       _stream?.cancel();
       _timer?.cancel();
-      if (callBack?.onFail != null) {
-        callBack?.onFail!(null, "暂无可加载广告");
+      if (callBack?.onEnd != null) {
+        //暂无可加载广告
+        callBack?.onEnd!();
       }
       return Future.value(false);
     }

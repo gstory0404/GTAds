@@ -35,10 +35,10 @@ class _BannerPageState extends State<BannerPage> {
                 //宽
                 width: 300,
                 //高
-                height: 100,
+                height: 60,
                 //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
                 timeout: 5,
-                model: GTAdsModel.PRIORITY,
+                model: GTAdsModel.RANDOM,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -52,6 +52,12 @@ class _BannerPageState extends State<BannerPage> {
                   },
                   onClose: (code) {
                     print("Banner关闭 ${code.toJson()}");
+                  },
+                  onTimeout: () {
+                    print("Banner加载超时");
+                  },
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
                   },
                 )),
             GTAdsBannerWidget(
@@ -59,9 +65,9 @@ class _BannerPageState extends State<BannerPage> {
                 //宽
                 width: 300,
                 //高
-                height: 100,
+                height: 60,
                 timeout: 5,
-                model: GTAdsModel.PRIORITY,
+                model: GTAdsModel.RANDOM,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -75,6 +81,12 @@ class _BannerPageState extends State<BannerPage> {
                   },
                   onClose: (code) {
                     print("Banner关闭 ${code.toJson()}");
+                  },
+                  onTimeout: () {
+                    print("Banner加载超时");
+                  },
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
                   },
                 )),
             GTAdsBannerWidget(
@@ -82,9 +94,9 @@ class _BannerPageState extends State<BannerPage> {
                 //宽
                 width: 300,
                 //高
-                height: 100,
+                height: 60,
                 timeout: 5,
-                model: GTAdsModel.PRIORITY,
+                model: GTAdsModel.RANDOM,
                 //回调
                 callBack: GTAdsCallBack(
                   onShow: (code) {
@@ -98,6 +110,12 @@ class _BannerPageState extends State<BannerPage> {
                   },
                   onClose: (code) {
                     print("Banner关闭 ${code.toJson()}");
+                  },
+                  onTimeout: () {
+                    print("Banner加载超时");
+                  },
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
                   },
                 )),
             GTAdsBannerWidget(
@@ -122,6 +140,12 @@ class _BannerPageState extends State<BannerPage> {
                   onClose: (code) {
                     print("Banner关闭 ${code.toJson()}");
                   },
+                  onTimeout: () {
+                    print("Banner加载超时");
+                  },
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
+                  },
                 )),
             GTAdsBannerWidget(
                 codes: Config.bannerCodes,
@@ -144,6 +168,12 @@ class _BannerPageState extends State<BannerPage> {
                   },
                   onClose: (code) {
                     print("Banner关闭 ${code.toJson()}");
+                  },
+                  onTimeout: () {
+                    print("Banner加载超时");
+                  },
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
                   },
                 )),
           ],

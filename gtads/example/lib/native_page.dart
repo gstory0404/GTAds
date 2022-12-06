@@ -51,26 +51,11 @@ class _NativePageState extends State<NativePage> {
                   onClose: (code) {
                     print("信息流关闭 ${code.toJson()}");
                   },
-                ),
-              ),
-              GTAdsNativeWidget(
-                codes: Config.nativeCodes,
-                width: 300,
-                height: 200,
-                timeout: 5,
-                model: GTAdsModel.PRIORITY,
-                callBack: GTAdsCallBack(
-                  onShow: (code) {
-                    print("信息流显示 ${code.toJson()}");
+                  onTimeout: () {
+                    print("Banner加载超时");
                   },
-                  onClick: (code) {
-                    print("信息流点击 ${code.toJson()}");
-                  },
-                  onFail: (code, message) {
-                    print("信息流错误 ${code?.toJson()} $message");
-                  },
-                  onClose: (code) {
-                    print("信息流关闭 ${code.toJson()}");
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
                   },
                 ),
               ),
@@ -93,6 +78,12 @@ class _NativePageState extends State<NativePage> {
                   onClose: (code) {
                     print("信息流关闭 ${code.toJson()}");
                   },
+                  onTimeout: () {
+                    print("Banner加载超时");
+                  },
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
+                  },
                 ),
               ),
               GTAdsNativeWidget(
@@ -113,6 +104,39 @@ class _NativePageState extends State<NativePage> {
                   },
                   onClose: (code) {
                     print("信息流关闭 ${code.toJson()}");
+                  },
+                  onTimeout: () {
+                    print("Banner加载超时");
+                  },
+                  onEnd: () {
+                    print("Banner所有广告位都加载失败");
+                  },
+                ),
+              ),
+              GTAdsNativeWidget(
+                codes: Config.nativeCodes,
+                width: 300,
+                height: 200,
+                timeout: 5,
+                model: GTAdsModel.PRIORITY,
+                callBack: GTAdsCallBack(
+                  onShow: (code) {
+                    print("信息流显示 ${code.toJson()}");
+                  },
+                  onClick: (code) {
+                    print("信息流点击 ${code.toJson()}");
+                  },
+                  onFail: (code, message) {
+                    print("信息流错误 ${code?.toJson()} $message");
+                  },
+                  onClose: (code) {
+                    print("信息流关闭 ${code.toJson()}");
+                  },
+                  onTimeout: () {
+                    print("信息流加载超时");
+                  },
+                  onEnd: () {
+                    print("信息流所有广告位都加载失败");
                   },
                 ),
               ),

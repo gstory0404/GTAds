@@ -1,6 +1,6 @@
 # GTAds Sigmob广告支持插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads_sigmob"><img src=https://img.shields.io/badge/gtads_sigmob-v1.1.0-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads_sigmob"><img src=https://img.shields.io/badge/gtads_sigmob-v1.2.0-success></a>
 </p>
 
 # 📢 相关插件
@@ -13,9 +13,9 @@
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^1.1.0
+ gtads: ^1.2.0
  //Sigmob广告
- gtads_sigmob: ^1.1.0
+ gtads_sigmob: ^1.2.0
 ```
 
 ### 引入

@@ -30,7 +30,13 @@ class _BannerPageState extends State<BannerPage> {
         child: Column(
           children: [
             GTAdsBannerWidget(
-                codes: [GTAdsCode(alias: "ylh", probability: 5,androidId: "8042711873318113",iosId: "4043774915303757")],
+                codes: [
+                  GTAdsCode(
+                      alias: "ylh",
+                      probability: 5,
+                      androidId: "8042711873318113",
+                      iosId: "5004358713683949")
+                ],
                 //宽
                 width: 300,
                 //高
@@ -44,7 +50,7 @@ class _BannerPageState extends State<BannerPage> {
                   onClick: (code) {
                     print("Banner点击 ${code.toJson()}");
                   },
-                  onFail: (code,message) {
+                  onFail: (code, message) {
                     print("Banner错误 ${code?.toJson()} $message");
                   },
                   onClose: (code) {
