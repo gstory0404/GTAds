@@ -14,8 +14,6 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 - [gtads_sigmob(Sigmob广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_sigmob)
 - [gtads_bqt(百度百青藤广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_bqt)
 
-> 基础库版本号与广告插件版本号前两位必须相同，不然会出现兼容问题
-
 ## 开发环境
 
 ```dart
@@ -47,6 +45,8 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
  //百度百青藤广告
  gtads_bqt: ^1.2.0
 ```
+
+> 基础库版本号与广告插件版本号前两位必须保持一致，不然会出现兼容问题
 
 ### 引入
 
