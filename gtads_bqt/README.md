@@ -3,7 +3,9 @@
 > 横幅广告暂不可用
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/badge/gtads_bqt-v1.2.0-success></a>
+<a href="https://pub.flutter-io.cn/packages/gtads_bqt"><img src=https://img.shields.io/pub/v/gtads_bqt?color=orange></a>
+<a href="https://pub.flutter-io.cn/packages/gtads_bqt"><img src=https://img.shields.io/pub/likes/gtads_bqt></a>
+<a href="https://pub.flutter-io.cn/packages/gtads_bqt"><img src=https://img.shields.io/pub/points/gtads_bqt></a>
 </p>
 
 # 📢 相关插件

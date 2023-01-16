@@ -17,6 +17,12 @@ class _NativePageState extends State<NativePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text(
+          "信息流广告",
+        ),
+      ),
       body: Container(
         child: Column(
           children: [

@@ -297,7 +297,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
                 adCode, rewardVerify, "", rewardName, rewardAmount);
           }
         },
-        onReady: () async {
+        onReady: () async {},
+        onCache: () async {
           //显示激励广告
           await FlutterUnionad.showRewardVideoAd();
         },
