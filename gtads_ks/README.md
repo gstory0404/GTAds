@@ -1,6 +1,4 @@
-# GTAds百度百青藤广告支持插件
-
-> 横幅广告暂不可用
+# GTAds快手广告支持插件
 
 <p>
 <a href="https://pub.flutter-io.cn/packages/gtads_ks"><img src=https://img.shields.io/pub/v/gtads_ks?color=orange></a>
@@ -21,7 +19,7 @@
  //广告基础库 必须引入
  gtads: ^1.2.0
  //快手广告支持
- gtads_ks: ^1.2.0
+ gtads_ks: ^1.2.1
 ```
 
 ### 引入
