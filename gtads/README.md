@@ -21,15 +21,15 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 ## 开发环境
 
 ```dart
-[✓] Flutter (Channel stable, 3.3.6, on macOS 13.0.1 22A400 darwin-x64, locale zh-Hans-CN)
-[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0-rc1)
-[✓] Xcode - develop for iOS and macOS (Xcode 14.1)
+[✓] Flutter (Channel stable, 3.7.7, on macOS 13.2.1 22D68 darwin-x64, locale zh-Hans-CN)
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.3)
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2021.3)
-[✓] IntelliJ IDEA Ultimate Edition (version 2022.3)
-[✓] VS Code (version 1.73.1)
+[✓] Android Studio (version 2022.1)
+[✓] IntelliJ IDEA Ultimate Edition (version 2023.1)
+[✓] VS Code (version 1.76.2)
 [✓] Connected device (4 available)
-[✓] HTTP Host Availability
+[✓] HTTP Host Availabilit
 ```
 
 # 使用
@@ -41,7 +41,7 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
  gtads: ^1.2.0
  //需要使用的广告按需引入,以下可选
  //字节穿山甲广告
- gtads_csj: ^1.2.0
+ gtads_csj: ^1.2.2
  //腾讯优量汇广告
  gtads_ylh: ^1.2.0
  //优量汇广告
@@ -49,7 +49,7 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
  //百度百青藤广告
  gtads_bqt: ^1.2.0
  //快手广告
- gtads_: ^1.2.0
+ gtads_: ^1.2.1
 ```
 
 > 基础库版本号与广告插件版本号前两位必须保持一致，不然会出现兼容问题

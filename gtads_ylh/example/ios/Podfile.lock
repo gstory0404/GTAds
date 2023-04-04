@@ -1,0 +1,43 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_tencentad (0.0.1):
+    - Flutter
+    - GDTMobSDK (= 4.14.10)
+  - GDTMobSDK (4.14.10):
+    - GDTMobSDK/GDTMobSDK (= 4.14.10)
+  - GDTMobSDK/GDTMobSDK (4.14.10)
+  - gtads (0.0.1):
+    - Flutter
+  - gtads_ylh (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_tencentad (from `.symlinks/plugins/flutter_tencentad/ios`)
+  - gtads (from `.symlinks/plugins/gtads/ios`)
+  - gtads_ylh (from `.symlinks/plugins/gtads_ylh/ios`)
+
+SPEC REPOS:
+  trunk:
+    - GDTMobSDK
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_tencentad:
+    :path: ".symlinks/plugins/flutter_tencentad/ios"
+  gtads:
+    :path: ".symlinks/plugins/gtads/ios"
+  gtads_ylh:
+    :path: ".symlinks/plugins/gtads_ylh/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_tencentad: ffea545fae35e1b5aeb17fb0a453a7ec629d400b
+  GDTMobSDK: 1374b9d6066b860e9d90229bd0bd46988227aa00
+  gtads: 1e73e834441d85346f001cdf18341ec2ce7dc0de
+  gtads_ylh: 54174e6a736053c1fcda2a3655aa063f92f9d782
+
+PODFILE CHECKSUM: 663715e941f9adb426e33bf9376914006f9ea95b
+
+COCOAPODS: 1.11.3
