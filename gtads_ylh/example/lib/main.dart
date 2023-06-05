@@ -78,7 +78,7 @@ class _IndexState extends State<Index> {
                             alias: "ylh",
                             probability: 5,
                             androidId: "5042816813706194",
-                            iosId: "4023171869997790")
+                            iosId: "3035541744552914")
                       ],
                       //奖励名称
                       rewardName: "100金币",
@@ -122,8 +122,8 @@ class _IndexState extends State<Index> {
                           GTAdsCode(
                               alias: "ylh",
                               probability: 5,
-                              androidId: "9062813863614416",
-                              iosId: "5093576955904702")
+                              androidId: "2015540734459587",
+                              iosId: "5095940784157969")
                         ],
                         isFull: false,
                         timeout: 6,

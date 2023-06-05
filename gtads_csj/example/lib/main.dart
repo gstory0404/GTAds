@@ -41,6 +41,8 @@ class _IndexState extends State<Index> {
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});
+    var version = await FlutterUnionad.getSDKVersion();
+    print("version => $version");
   }
 
   @override
