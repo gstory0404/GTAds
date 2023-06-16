@@ -85,19 +85,19 @@ class Config {
   //激励广告位
   static List<GTAdsCode> rewardCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 1, androidId: "945418088", iosId: "945418088"),
+        alias: CSJ, probability: 5, androidId: "945418088", iosId: "945418088"),
     GTAdsCode(
         alias: YLH,
-        probability: 2,
+        probability: 1,
         androidId: "5042816813706194",
         iosId: "4023171869997790"),
     GTAdsCode(
         alias: SIGMOB,
-        probability: 3,
+        probability: 1,
         androidId: "ea1f8ea2d90",
         iosId: "ea1f8f7b662"),
     GTAdsCode(
-        alias: BQT, probability: 4, androidId: "7792010", iosId: "7800949"),
+        alias: BQT, probability: 1, androidId: "7792010", iosId: "7800949"),
   ];
 
   //插屏广告位

@@ -80,6 +80,7 @@ class _IndexState extends State<Index> {
                       userId: "user100",
                       //扩展参数
                       customData: "123",
+                      model: GTAdsModel.RANDOM,
                       //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
                       timeout: 6,
                       callBack: GTAdsCallBack(

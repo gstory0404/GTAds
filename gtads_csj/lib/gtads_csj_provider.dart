@@ -266,6 +266,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
     stream = FlutterUnionadStream.initAdStream(
       flutterUnionadRewardAdCallBack: FlutterUnionadRewardAdCallBack(
         onShow: () {
+          print("激励广告--onShow--$adCode");
           if (callBack?.onShow != null) {
             callBack?.onShow!(adCode);
           }
