@@ -15,9 +15,9 @@
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^1.2.0
+ gtads: ^1.3.0
  //优量汇广告
- gtads_ylh: ^1.2.2
+ gtads_ylh: ^1.3.0
 ```
 
 ### 引入
@@ -29,7 +29,7 @@ import 'package:gtads_ylh/gtads_ylh.dart';
 仅需通过以下方法插入广告至聚合插件，无需关注具体广告的调用
 ```dart
 //别名、androidId、iosId
-GTAds.addProvider([GTAdsYlhProvider("ylh", "5098580", "5098580")]);
+GTAds.addProvider(GTAdsYlhProvider("ylh", "5098580", "5098580"));
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

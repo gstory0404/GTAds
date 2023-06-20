@@ -36,7 +36,7 @@ import 'package:gtads_csj/gtads_bqt.dart';
 
 ```dart
 //参数依次为 别名、andorid app Id、ios app Id
- GTAds.addProvider([GTAdsBqtProvider("bqt", "b423d90d", "a6b7fed6")]);
+ GTAds.addProvider(GTAdsBqtProvider("bqt", "b423d90d", "a6b7fed6"));
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

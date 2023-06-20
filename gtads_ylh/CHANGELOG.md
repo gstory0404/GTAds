@@ -1,3 +1,8 @@
+## 1.3.0
+
+* 基础库升级v1.3.0
+* 优量汇flutter_tencentad更新1.2.15
+
 ## 1.2.2
 
 * 优量汇flutter_tencentad更新1.2.15

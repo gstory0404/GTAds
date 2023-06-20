@@ -37,14 +37,12 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> init() async {
-    GTAds.addProvider([
-      GTAdsSigmobProvider(
-          alias: _alias,
-          androidId: '6878',
-          iosId: '6877',
-          androidAppKey: '8ebc1fd1c27e650c',
-          iosAppKey: 'eccdcdbd9adbd4a7')
-    ]);
+    GTAds.addProvider(GTAdsSigmobProvider(
+        alias: _alias,
+        androidId: '6878',
+        iosId: '6877',
+        androidAppKey: '8ebc1fd1c27e650c',
+        iosAppKey: 'eccdcdbd9adbd4a7'));
     initAd = await GTAds.init(isDebug: true);
     GTAdsSigmobProvider? provider =
         GTAds.getProvider(_alias) as GTAdsSigmobProvider?;
@@ -97,7 +95,7 @@ class _IndexState extends State<Index> {
                       }, onVerify:
                           (code, verify, transId, rewardName, rewardAmount) {
                         print(
-                            "激励广告关闭 ${code.toJson()} $verify $transId $rewardName $rewardAmount");
+                            "激励广告奖励 ${code.toJson()} $verify $transId $rewardName $rewardAmount");
                       }, onExpand: (code, param) {
                         print("激励广告自定义参数 ${code.toJson()} $param");
                       }),

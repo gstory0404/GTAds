@@ -1,8 +1,8 @@
 PODS:
   - baiduad (0.0.1):
-    - BaiduMobAdSDK (= 4.901)
+    - BaiduMobAdSDK (= 5.301)
     - Flutter
-  - BaiduMobAdSDK (4.901)
+  - BaiduMobAdSDK (5.301)
   - Flutter (1.0.0)
   - gtads (0.0.1):
     - Flutter
@@ -30,8 +30,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/gtads_bqt/ios"
 
 SPEC CHECKSUMS:
-  baiduad: 7619a70d158e584048e9dcf80e11d7cb231c8513
-  BaiduMobAdSDK: 1c4a23ef749a2f841d5eed3d76652093e779cdb9
+  baiduad: 68998ae15656427f28b8738534f6f16f2295df92
+  BaiduMobAdSDK: bb64abc1b5104134d4a0fcd2ff223e688c5aa372
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   gtads: 1e73e834441d85346f001cdf18341ec2ce7dc0de
   gtads_bqt: 601975fb35727a506812149e758f7c2d51513c49

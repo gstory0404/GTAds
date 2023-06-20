@@ -15,9 +15,9 @@
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^1.2.0
+ gtads: ^1.3.0
  //穿山甲广告
- gtads_csj: ^1.2.3
+ gtads_csj: ^1.3.0
 ```
 
 ### 引入
@@ -30,7 +30,7 @@ import 'package:gtads_csj/gtads_csj.dart';
 ```dart
 //参数依次为 别名、andorid app Id、ios app Id
 //appName初始化使用
-GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad")]);
+GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad"));
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

@@ -37,7 +37,7 @@ class _IndexState extends State<Index> {
 
   Future<void> init() async {
     GTAds.addProvider(
-        [GTAdsCsjProvider("csj", "5098580", "5098580", appName: "unionad")]);
+        GTAdsCsjProvider("csj", "5098580", "5098580", appName: "unionad"));
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});
@@ -103,7 +103,7 @@ class _IndexState extends State<Index> {
                       }, onVerify:
                           (code, verify, transId, rewardName, rewardAmount) {
                         print(
-                            "激励广告关闭 ${code.toJson()} $verify $transId $rewardName $rewardAmount");
+                            "激励广告奖励 ${code.toJson()} $verify $transId $rewardName $rewardAmount");
                       }, onExpand: (code, param) {
                         print("激励广告自定义参数 ${code.toJson()} $param");
                       }),

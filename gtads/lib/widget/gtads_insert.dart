@@ -114,6 +114,7 @@ class GTAdsInsert {
           if (callBack?.onClose != null) {
             callBack?.onClose!(code);
           }
+          _stream?.cancel();
         },
         onFail: (code, message) {
           if (callBack?.onFail != null) {
@@ -121,6 +122,7 @@ class GTAdsInsert {
           }
           //移除当前错误code
           codes.remove(code);
+          _stream?.cancel();
           //重试 直至codes数组为空
           _loadAd();
         },

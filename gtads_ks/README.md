@@ -17,9 +17,9 @@
 
 ```dart
  //广告基础库 必须引入
- gtads: ^1.2.0
+ gtads: ^1.3.0
  //快手广告支持
- gtads_ks: ^1.2.1
+ gtads_ks: ^1.3.0
 ```
 
 ### 引入
@@ -34,7 +34,7 @@ import 'package:gtads_csj/gtads_bqt.dart';
 
 ```dart
 //参数依次为 别名、andorid app Id、ios app Id
-GTAds.addProvider([GTAdsKSProvider(_alias, "613400004", "613400004")]);
+GTAds.addProvider(GTAdsKSProvider(_alias, "613400004", "613400004"));
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

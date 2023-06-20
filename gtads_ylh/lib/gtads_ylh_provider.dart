@@ -75,12 +75,10 @@ class GTAdsYlhProvider extends GTAdsProvider {
           if (callBack != null && callBack.onFail != null) {
             callBack.onFail!(adCode, message);
           }
-          stream?.cancel();
         },
         onClose: () {
           if (callBack != null && callBack.onClose != null) {
             callBack.onClose!(adCode);
-            stream?.cancel();
           }
         },
         onReady: () async {
@@ -90,12 +88,10 @@ class GTAdsYlhProvider extends GTAdsProvider {
           if (callBack != null && callBack.onFail != null) {
             callBack.onFail!(adCode, "广告未准备就绪");
           }
-          stream?.cancel();
         },
         onVerify: (transId, rewardName, rewardAmount) {
           if (callBack != null && callBack.onVerify != null) {
             callBack.onVerify!(adCode, true, "", rewardName, rewardAmount);
-            stream?.cancel();
           }
         },
       ),

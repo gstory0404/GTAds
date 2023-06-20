@@ -17,19 +17,21 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 - [gtads_ylh(腾讯优量汇广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_ylh)
 - [gtads_sigmob(Sigmob广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_sigmob)
 - [gtads_bqt(百度百青藤广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_bqt)
+- [gtads_ks(快手广告支持)](https://github.com/gstory0404/GTAds/tree/master/gtads_ks)
 
 ## 开发环境
 
 ```dart
-[✓] Flutter (Channel stable, 3.7.7, on macOS 13.2.1 22D68 darwin-x64, locale zh-Hans-CN)
+[✓] Flutter (Channel stable, 3.10.5, on macOS 13.4 22F66 darwin-x64, locale
+zh-Hans-CN)
 [✓] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
-[✓] Xcode - develop for iOS and macOS (Xcode 14.3)
+[✓] Xcode - develop for iOS and macOS (Xcode 14.3.1)
 [✓] Chrome - develop for the web
 [✓] Android Studio (version 2022.1)
-[✓] IntelliJ IDEA Ultimate Edition (version 2023.1)
-[✓] VS Code (version 1.76.2)
+[✓] IntelliJ IDEA Ultimate Edition (version 2023.1.2)
+[✓] VS Code (version 1.79.0)
 [✓] Connected device (4 available)
-[✓] HTTP Host Availabilit
+[✓] Network resources
 ```
 
 # 使用
@@ -38,18 +40,18 @@ GTAds是一个Flutter聚合广告管理插件，支持android、ios，提供一�
 
 ```dart
  //广告基础库 必须引入
- gtads: ^1.2.0
+ gtads: ^1.3.0
  //需要使用的广告按需引入,以下可选
  //字节穿山甲广告
- gtads_csj: ^1.2.2
+ gtads_csj: ^1.3.0
  //腾讯优量汇广告
- gtads_ylh: ^1.2.0
+ gtads_ylh: ^1.3.0
  //优量汇广告
- gtads_sigmob: ^1.2.0
+ gtads_sigmob: ^1.3.0
  //百度百青藤广告
- gtads_bqt: ^1.2.0
+ gtads_bqt: ^1.3.0
  //快手广告
- gtads_: ^1.2.1
+ gtads_ks: ^1.3.0
 ```
 
 > 基础库版本号与广告插件版本号前两位必须保持一致，不然会出现兼容问题
@@ -65,7 +67,14 @@ import 'package:gtads/gtads.dart';
 广告初始化前必须完成添加对应广告Provider，如：穿山甲
 
 ```dart
-GTAds.addProvider([GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad")]);
+//添加Provider
+GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad"));
+//添加Provider列表
+GTAds.addProviders([GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad")]);
+//移除Provider
+GTAds.addProvider("csj");
+//获取Provider
+GTAds.getProvider("csj");
 ```
 
 > GTAdsCsjProvider 穿山甲广告Provider

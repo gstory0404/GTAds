@@ -37,7 +37,7 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> init() async {
-    GTAds.addProvider([GTAdsBqtProvider("bqt", "b423d90d", "a6b7fed6")]);
+    GTAds.addProvider(GTAdsBqtProvider("bqt", "b423d90d", "a6b7fed6"));
     initAd = await GTAds.init(isDebug: true);
     setState(() {});
   }

@@ -1,3 +1,7 @@
+## 1.3.0
+* 基础库升级v1.3.0
+* flutter_unionad升级1.3.22
+
 ## 1.2.3
 * flutter_unionad升级1.3.21
 

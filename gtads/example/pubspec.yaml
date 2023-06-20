@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-#  gtads:
-#    path: ../
+  gtads:
+    path: ../
   # 穿山甲
   gtads_csj:
     path: ../../gtads_csj
@@ -25,7 +25,7 @@ dependencies:
   gtads_bqt:
     path: ../../gtads_bqt
 
-  gtads: ^1.2.0
+#  gtads: ^1.2.0
 #  #字节穿山甲广告
 #  gtads_csj: ^1.2.0
 #  #腾讯优量汇广告

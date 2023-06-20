@@ -13,10 +13,10 @@ packages:
     dependency: transitive
     description:
       name: baiduad
-      sha256: "08adad2e585dddf3ef13c903965e1182fb22dc6db2e70b4861b16bb555c5da14"
+      sha256: "39c7a1432db856fb9427ea29b50ad80f4d1648b80bbd8cafd84673addcbde920"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.5"
   boolean_selector:
     dependency: transitive
     description:

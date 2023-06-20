@@ -35,8 +35,6 @@ class GTAdsManager {
   }
 
   /// 添加adProvider
-  ///
-  /// 在GTAds.init后调用 则必须先执行GTAdsProvider.init
   void addProvider(GTAdsProvider provider) {
     providers.add(provider);
   }

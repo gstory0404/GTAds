@@ -21,13 +21,23 @@ part 'widget/gtads_native_widget.dart';
 part 'gtads_constant.dart';
 
 class GTAds {
+
   ///添加GTAdsProvider 必须实现[GTAdsProvider]
   ///
   /// [name] 广告别名 保证唯一不然无法添加进去
   ///
-  static void addProvider(List<GTAdsProvider> providers) {
+  static void addProvider(GTAdsProvider provider) {
+    GTAdsManager.instance.addProvider(provider);
+  }
+
+  ///添加GTAdsProvider 必须实现[GTAdsProvider]
+  ///
+  /// [name] 广告别名 保证唯一不然无法添加进去
+  ///
+  static void addProviders(List<GTAdsProvider> providers) {
     GTAdsManager.instance.addProviders(providers);
   }
+
 
   ///初始化广告组
   static Future<List<Map<String, bool>>> init({bool? isDebug}) async {
@@ -50,6 +60,14 @@ class GTAds {
       return provider.first;
     }
     return null;
+  }
+
+  ///移除GTAdsProvider
+  ///
+  /// [alias] 广告别名
+  ///
+  static void removeProvider(String alias) {
+    GTAdsManager.instance.removeProvider(alias);
   }
 
   ///插屏广告
