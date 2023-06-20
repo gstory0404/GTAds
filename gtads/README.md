@@ -72,7 +72,7 @@ GTAds.addProvider(GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad")
 //添加Provider列表
 GTAds.addProviders([GTAdsCsjProvider("csj","5098580","5098580",appName: "unionad")]);
 //移除Provider
-GTAds.addProvider("csj");
+GTAds.removeProvider("csj");
 //获取Provider
 GTAds.getProvider("csj");
 ```
