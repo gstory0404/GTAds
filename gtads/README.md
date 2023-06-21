@@ -49,7 +49,7 @@ zh-Hans-CN)
  //优量汇广告
  gtads_sigmob: ^1.3.0
  //百度百青藤广告
- gtads_bqt: ^1.3.0
+ gtads_bqt: ^1.3.1
  //快手广告
  gtads_ks: ^1.3.0
 ```
