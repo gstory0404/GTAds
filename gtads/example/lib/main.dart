@@ -34,7 +34,7 @@ class _IndexState extends State<Index> {
 
   Future<void> init() async {
     //添加广告支持
-    GTAds.addProvider(Config.providers);
+    GTAds.addProviders(Config.providers);
     //初始化广告
     initAd = await GTAds.init(isDebug: true);
     setState(() {});
