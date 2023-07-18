@@ -45,8 +45,8 @@ zh-Hans-CN)
  //字节穿山甲广告
  gtads_csj: ^1.3.0
  //腾讯优量汇广告
- gtads_ylh: ^1.3.0
- //优量汇广告
+ gtads_ylh: ^1.3.1
+ //sigmob广告
  gtads_sigmob: ^1.3.0
  //百度百青藤广告
  gtads_bqt: ^1.3.1

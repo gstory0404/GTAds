@@ -37,16 +37,18 @@ class _IndexState extends State<Index> {
     GTAds.addProviders(Config.providers);
     //初始化广告
     initAd = await GTAds.init(isDebug: true);
+    print("广告加载结果 $initAd");
     // loadInsertAd();
     setState(() {});
   }
 
   void loadInsertAd() async{
+    print("开始加载广告");
     await GTAds.insertAd(
         codes: Config.insertCodes,
         isFull: false,
         //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
-        timeout: 6,
+        timeout: 10,
         callBack: GTAdsCallBack(
           onShow: (code) {
             print("插屏广告显示 ${code.toJson()}");

@@ -82,10 +82,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_tencentad
-      sha256: d354226bd35839d29d404c2a3e5923ab977ec5fc98530f970aec1aebc8fa5901
+      sha256: "8beb6089414c77337356719dfc6ca8e075e39f8d6cbcd320d0ca72fd43712cf1"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.16"
+    version: "1.2.17"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -134,7 +134,7 @@ packages:
       path: "../../gtads_ylh"
       relative: true
     source: path
-    version: "1.3.0"
+    version: "1.3.1"
   js:
     dependency: transitive
     description:
