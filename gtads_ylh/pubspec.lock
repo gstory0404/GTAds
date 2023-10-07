@@ -58,10 +58,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_tencentad
-      sha256: "28e49d197fdc33c1dbebe9eb5a5768b61cc74f99c8e6a04d25d17d82dda95014"
+      sha256: "8e16b7a64d8d9b6fefe073a0d428de6469a2af2628afcbfa44094e1637bbf0c9"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.19"
+    version: "1.2.20"
   flutter_test:
     dependency: "direct dev"
     description: flutter
