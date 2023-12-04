@@ -1,53 +1,10 @@
 PODS:
-  - Ads-CN-Beta (5.2.0.1):
-    - Ads-CN-Beta/BUAdSDK (= 5.2.0.1)
-  - Ads-CN-Beta/BUAdSDK (5.2.0.1):
-    - Ads-CN-Beta/Dep_Accurate
-  - Ads-CN-Beta/Dep_Accurate (5.2.0.1):
-    - BUAdSDK (= 0.3.0.1)
-    - BURelyFoundation/CSJ (= 0.1.0.15)
-  - BUAdSDK (0.3.0.1):
-    - BUAdSDK/BUAdSDK (= 0.3.0.1)
-  - BUAdSDK/BUAdSDK (0.3.0.1)
-  - BURelyFoundation/AFNetworking (0.1.0.15)
-  - BURelyFoundation/BURelyFoundation (0.1.0.15)
-  - BURelyFoundation/CSJ (0.1.0.15):
-    - BURelyFoundation/AFNetworking
-    - BURelyFoundation/BURelyFoundation
-    - BURelyFoundation/CSJLottie
-    - BURelyFoundation/Foundation
-    - BURelyFoundation/Gecko
-    - BURelyFoundation/HM
-    - BURelyFoundation/NETWork
-    - BURelyFoundation/SDWebImage
-    - BURelyFoundation/Ugen
-    - BURelyFoundation/YYModel
-    - BURelyFoundation/ZFPlayer
-    - BURelyFoundation/Zip
-  - BURelyFoundation/CSJLottie (0.1.0.15)
-  - BURelyFoundation/ELCoreTokenizer (0.1.0.15)
-  - BURelyFoundation/Foundation (0.1.0.15):
-    - BURelyFoundation/NETWork
-  - BURelyFoundation/Gecko (0.1.0.15):
-    - BURelyFoundation/Foundation
-  - BURelyFoundation/HM (0.1.0.15)
-  - BURelyFoundation/NETWork (0.1.0.15):
-    - BURelyFoundation/AFNetworking
-  - BURelyFoundation/SDWebImage (0.1.0.15):
-    - BURelyFoundation/Foundation
-    - BURelyFoundation/ServiceCenter
-  - BURelyFoundation/ServiceCenter (0.1.0.15)
-  - BURelyFoundation/Ugen (0.1.0.15):
-    - BURelyFoundation/ELCoreTokenizer
-  - BURelyFoundation/YYModel (0.1.0.15)
-  - BURelyFoundation/ZFPlayer (0.1.0.15):
-    - BURelyFoundation/Foundation
-    - BURelyFoundation/Zip
-  - BURelyFoundation/Zip (0.1.0.15):
-    - BURelyFoundation/Foundation
+  - Ads-CN-Beta (5.8.0.7):
+    - Ads-CN-Beta/BUAdSDK (= 5.8.0.7)
+  - Ads-CN-Beta/BUAdSDK (5.8.0.7)
   - Flutter (1.0.0)
   - flutter_unionad (0.0.1):
-    - Ads-CN-Beta (= 5.2.0.1)
+    - Ads-CN-Beta (= 5.8.0.7)
     - Flutter
   - gtads (0.0.1):
     - Flutter
@@ -63,8 +20,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Ads-CN-Beta
-    - BUAdSDK
-    - BURelyFoundation
 
 EXTERNAL SOURCES:
   Flutter:
@@ -77,11 +32,9 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/gtads_csj/ios"
 
 SPEC CHECKSUMS:
-  Ads-CN-Beta: e9196920e1779a6c2903b7c90d6762efab0bccbb
-  BUAdSDK: 7569eec1e2c9ba61b948545eb5fcbb56775bf0de
-  BURelyFoundation: a2a45cb810ba96691dc86273af70d473a14d5abd
+  Ads-CN-Beta: 10f45519e756d384f213484a0ddb28dc03ad5016
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_unionad: 6e2633e4aecd57ae5e03dd27b798afe22903d096
+  flutter_unionad: 431a65308b154a93486f58e9b9b6bc308cc79ccc
   gtads: 1e73e834441d85346f001cdf18341ec2ce7dc0de
   gtads_csj: 51cf5d02d1270fba19282538f549823478eae80c
 
