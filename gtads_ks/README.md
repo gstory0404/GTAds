@@ -19,7 +19,7 @@
  //广告基础库 必须引入
  gtads: ^1.3.0
  //快手广告支持
- gtads_ks: ^1.3.0
+ gtads_ks: ^1.3.1
 ```
 
 ### 引入
@@ -28,6 +28,14 @@
 import 'package:gtads_csj/gtads_bqt.dart';
 ```
 
+⚠️注： 
+```
+如果andorid出现NoClassDefFoundError闪退 
+java.lang.NoClassDefFoundError: Failed resolution of:Landroidx/localbroadcastmanager/content/LocalBroadcastManager 
+则在app下build.gradle中引入库 
+implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+
+```
 ### 使用
 
 仅需通过以下方法插入广告至聚合插件，无需关注具体广告的调用
