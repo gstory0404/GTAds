@@ -25,14 +25,10 @@ class GTAdsCsjProvider extends GTAdsProvider {
         appName: appName,
         //是否允许sdk展示通知栏提示 选填
         allowShowNotify: true,
-        //是否在锁屏场景支持展示广告落地页 选填
-        allowShowPageWhenScreenLock: true,
         //是否显示debug日志
         debug: isDebug,
         //是否支持多进程，true支持 选填
         supportMultiProcess: true,
-        //是否开启个性化推荐 选填 默认开启
-        personalise: FlutterUnionadPersonalise.close,
         //允许直接下载的网络状态集合 选填
         directDownloadNetworkType: [
           FlutterUnionadNetCode.NETWORK_STATE_2G,
@@ -45,23 +41,15 @@ class GTAdsCsjProvider extends GTAdsProvider {
   @override
   Widget splashAd(
       GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
-    return FlutterUnionad.splashAdView(
-      //是否使用个性化模版  设定widget宽高
-      mIsExpress: true,
+    return FlutterUnionadSplashAdView(
       //android 开屏广告广告id 必填
       androidCodeId: adCode.androidId ?? "",
       //ios 开屏广告广告id 必填
       iosCodeId: adCode.iosId ?? "",
-      //是否支持 DeepLink 选填
-      supportDeepLink: true,
-      // 期望view 宽度 dp 选填 mIsExpress=true必填
-      expressViewWidth: width,
-      //期望view高度 dp 选填 mIsExpress=true必填
-      expressViewHeight: height,
-      //控制下载APP前是否弹出二次确认弹窗
-      downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
-      //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
-      adLoadType: FlutterUnionadLoadType.LOAD,
+      // 期望view 宽度 dp 选填
+      width: width,
+      //期望view高度 dp 选填
+      height: height,
       callBack: FlutterUnionadSplashCallBack(
         onShow: () {
           if (callBack != null && callBack.onShow != null) {
@@ -100,23 +88,12 @@ class GTAdsCsjProvider extends GTAdsProvider {
   @override
   Widget nativeAd(
       GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
-    return //个性化模板信息流广告
-        FlutterUnionad.nativeAdView(
-      //android 信息流广告id 必填
+    return FlutterUnionadNativeAdView(
       androidCodeId: adCode.androidId ?? "",
-      //ios banner广告id 必填
       iosCodeId: adCode.iosId ?? "",
-      //是否支持 DeepLink 选填
       supportDeepLink: true,
-      // 期望view 宽度 dp 必填
-      expressViewWidth: width,
-      //期望view高度 dp 必填
-      expressViewHeight: height,
-      mIsExpress: true,
-      //控制下载APP前是否弹出二次确认弹窗
-      downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
-      //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
-      adLoadType: FlutterUnionadLoadType.LOAD,
+      width: width,
+      height: height,
       callBack: FlutterUnionadNativeCallBack(
         onShow: () {
           if (callBack != null && callBack.onShow != null) {
@@ -145,30 +122,11 @@ class GTAdsCsjProvider extends GTAdsProvider {
   @override
   Widget bannerAd(
       GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
-    return FlutterUnionad.bannerAdView(
-      //andrrid banner广告id 必填
+    return FlutterUnionadBannerView(
       androidCodeId: adCode.androidId ?? "",
-      //ios banner广告id 必填
       iosCodeId: adCode.iosId ?? "",
-      //是否使用个性化模版
-      mIsExpress: true,
-      //是否支持 DeepLink 选填
-      supportDeepLink: true,
-      //一次请求广告数量 大于1小于3 必填
-      expressAdNum: 1,
-      //轮播间隔事件 30-120秒  选填
-      expressTime: 30,
-      // 期望view 宽度 dp 必填
-      expressViewWidth: width,
-      //期望view高度 dp 必填
-      expressViewHeight: height,
-      //控制下载APP前是否弹出二次确认弹窗
-      downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
-      //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
-      adLoadType: FlutterUnionadLoadType.LOAD,
-      //是否启用点击 仅ios生效 默认启用
-      isUserInteractionEnabled: true,
-      //广告事件回调 选填
+      width: width,
+      height: height,
       callBack: FlutterUnionadBannerCallBack(
         onShow: () {
           if (callBack?.onShow != null) {
@@ -242,14 +200,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
       androidCodeId: adCode.androidId ?? "",
       //ios 全屏广告id 必填
       iosCodeId: adCode.iosId ?? "",
-      //是否支持 DeepLink 选填
-      supportDeepLink: true,
       //视屏方向 选填
       orientation: FlutterUnionadOrientation.VERTICAL,
-      //控制下载APP前是否弹出二次确认弹窗
-      downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
-      //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
-      adLoadType: FlutterUnionadLoadType.LOAD,
     );
     return stream;
   }
@@ -266,7 +218,6 @@ class GTAdsCsjProvider extends GTAdsProvider {
     stream = FlutterUnionadStream.initAdStream(
       flutterUnionadRewardAdCallBack: FlutterUnionadRewardAdCallBack(
         onShow: () {
-          print("激励广告--onShow--$adCode");
           if (callBack?.onShow != null) {
             callBack?.onShow!(adCode);
           }
@@ -332,8 +283,6 @@ class GTAdsCsjProvider extends GTAdsProvider {
       //Android 激励视频广告id  必填
       iosCodeId: adCode.iosId ?? "",
       //ios 激励视频广告id  必填
-      supportDeepLink: true,
-      //是否支持 DeepLink 选填
       rewardName: rewardName,
       //奖励名称 选填
       rewardAmount: rewardAmount,
@@ -341,13 +290,9 @@ class GTAdsCsjProvider extends GTAdsProvider {
       userID: userId,
       //  用户id 选填
       orientation: FlutterUnionadOrientation.VERTICAL,
-      //控制下载APP前是否弹出二次确认弹窗
-      downloadType: FlutterUnionadDownLoadType.DOWNLOAD_TYPE_POPUP,
       //视屏方向 选填
       mediaExtra: customData,
       //扩展参数 选填
-      //用于标注此次的广告请求用途为预加载（当做缓存）还是实时加载，
-      adLoadType: FlutterUnionadLoadType.PRELOAD,
     );
     return stream;
   }

@@ -27,7 +27,7 @@ class _NativePageState extends State<NativePage> {
         child: Column(
           children: [
             GTAdsNativeWidget(
-              codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945417699",iosId: "945417699")],
+              codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "958444566",iosId: "945417699")],
               width: 300,
               height: 200,
               timeout: 6,
