@@ -36,8 +36,9 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> init() async {
-    GTAds.addProvider(
-        GTAdsCsjProvider("csj", "5098580", "5098580", appName: "unionad"));
+    GTAdsCsjProvider provider = GTAdsCsjProvider("csj", "5098580", "5098580", appName: "unionad");
+    provider.setUseMediation(true);
+    GTAds.addProvider(provider);
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});

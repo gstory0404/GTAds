@@ -7,10 +7,15 @@ part of 'gtads_csj.dart';
 
 class GTAdsCsjProvider extends GTAdsProvider {
   String appName = "";
+  bool? useMediation = false; //穿山甲聚合开关
 
   GTAdsCsjProvider(String alias, String? androidId, String? iosId,
       {required this.appName})
       : super(alias, androidId, iosId);
+
+  void setUseMediation(bool useMediation){
+    this.useMediation = useMediation;
+  }
 
   @override
   Future<bool> initAd(bool isDebug) {
@@ -21,6 +26,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
         iosAppId: iosId ?? "",
         //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView 选填
         useTextureView: true,
+        useMediation: useMediation,
         //appname 必填
         appName: appName,
         //是否允许sdk展示通知栏提示 选填
