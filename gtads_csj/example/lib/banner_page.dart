@@ -34,7 +34,7 @@ class _BannerPageState extends State<BannerPage> {
                 //宽
                 width: 300,
                 //高
-                height: 400,
+                height: 100,
                 timeout: 5,
                 //回调
                 callBack: GTAdsCallBack(
