@@ -30,11 +30,11 @@ class _BannerPageState extends State<BannerPage> {
         child: Column(
           children: [
             GTAdsBannerWidget(
-                codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "945410197",iosId: "945410197")],
+                codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "102735527",iosId: "102735527")],
                 //宽
                 width: 300,
                 //高
-                height: 100,
+                height: 150,
                 timeout: 5,
                 //回调
                 callBack: GTAdsCallBack(

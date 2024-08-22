@@ -1,10 +1,11 @@
 PODS:
-  - Ads-CN-Beta (5.8.0.7):
-    - Ads-CN-Beta/BUAdSDK (= 5.8.0.7)
-  - Ads-CN-Beta/BUAdSDK (5.8.0.7)
+  - Ads-CN-Beta/BUAdSDK (6.4.0.1)
+  - Ads-CN-Beta/CSJMediation (6.4.0.1):
+    - Ads-CN-Beta/BUAdSDK
   - Flutter (1.0.0)
   - flutter_unionad (0.0.1):
-    - Ads-CN-Beta (= 5.8.0.7)
+    - Ads-CN-Beta/BUAdSDK (= 6.4.0.1)
+    - Ads-CN-Beta/CSJMediation (= 6.4.0.1)
     - Flutter
   - gtads (0.0.1):
     - Flutter
@@ -32,12 +33,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/gtads_csj/ios"
 
 SPEC CHECKSUMS:
-  Ads-CN-Beta: 10f45519e756d384f213484a0ddb28dc03ad5016
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_unionad: 431a65308b154a93486f58e9b9b6bc308cc79ccc
+  Ads-CN-Beta: 0eb5c38a232256ccb8b15c3bb7a3e5b4a405690c
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_unionad: 3a012c644cf957a1c8dc3f597c16a6e6aee56295
   gtads: 1e73e834441d85346f001cdf18341ec2ce7dc0de
   gtads_csj: 51cf5d02d1270fba19282538f549823478eae80c
 
-PODFILE CHECKSUM: 663715e941f9adb426e33bf9376914006f9ea95b
+PODFILE CHECKSUM: cf0c950f7e9a456b4e325f5b8fc0f98906a3705a
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.15.2
