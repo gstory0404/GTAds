@@ -1,8 +1,8 @@
 # GTAds穿山甲广告支持插件
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/pub/v/gtads_csj?color=orange></a>
-<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/pub/likes/gtads_csj></a>
-<a href="https://pub.flutter-io.cn/packages/gtads_csj"><img src=https://img.shields.io/pub/points/gtads_csj></a>
+<a href="https://pub.dev/packages/gtads_csj"><img src=https://img.shields.io/pub/v/gtads_csj?color=orange></a>
+<a href="https://pub.dev/packages/gtads_csj"><img src=https://img.shields.io/pub/likes/gtads_csj></a>
+<a href="https://pub.dev/packages/gtads_csj"><img src=https://img.shields.io/pub/points/gtads_csj></a>
 </p>
 <p>
 <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=VhD0AZSmzvsD3fu7CeQFkzpBQHMHANb1&authKey=W7JGJ0HKklyhP1jyBvbTF2Dkw0cq4UmhVSx2zXVdIm6n48Xrto%2B7%2B1n9jbkAadyF&noverify=0&group_code=649574038"><img src=https://img.shields.io/badge/flutter%E4%BA%A4%E6%B5%81%E7%BE%A4-649574038-blue></a>

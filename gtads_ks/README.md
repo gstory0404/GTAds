@@ -1,9 +1,9 @@
 # GTAds快手广告支持插件
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads_ks"><img src=https://img.shields.io/pub/v/gtads_ks?color=orange></a>
-<a href="https://pub.flutter-io.cn/packages/gtads_ks"><img src=https://img.shields.io/pub/likes/gtads_ks></a>
-<a href="https://pub.flutter-io.cn/packages/gtads_ks"><img src=https://img.shields.io/pub/points/gtads_ks></a>
+<a href="https://pub.dev/packages/gtads_ks"><img src=https://img.shields.io/pub/v/gtads_ks?color=orange></a>
+<a href="https://pub.dev/packages/gtads_ks"><img src=https://img.shields.io/pub/likes/gtads_ks></a>
+<a href="https://pub.dev/packages/gtads_ks"><img src=https://img.shields.io/pub/points/gtads_ks></a>
 </p>
 
 # 📢 相关插件

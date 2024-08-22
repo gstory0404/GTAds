@@ -1,9 +1,9 @@
 # GTAds聚合广告插件
 
 <p>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/pub/v/gtads?color=orange></a>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/pub/likes/gtads></a>
-<a href="https://pub.flutter-io.cn/packages/gtads"><img src=https://img.shields.io/pub/points/gtads></a>
+<a href="https://pub.dev/packages/gtads"><img src=https://img.shields.io/pub/v/gtads?color=orange></a>
+<a href="https://pub.dev/packages/gtads"><img src=https://img.shields.io/pub/likes/gtads></a>
+<a href="https://pub.dev/packages/gtads"><img src=https://img.shields.io/pub/points/gtads></a>
 <a href="https://github.com/gstory0404/gtads/commits"><img src=https://img.shields.io/github/last-commit/gstory0404/gtads></a>
 <a href="https://github.com/gstory0404/gtads"><img src=https://img.shields.io/github/stars/gstory0404/gtads></a>
 </p>
