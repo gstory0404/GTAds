@@ -21,7 +21,7 @@
  //广告基础库 必须引入
  gtads: ^1.3.0
  //优量汇广告
- gtads_ylh: ^1.3.5
+ gtads_ylh: ^1.3.7
 ```
 
 ### 引入
@@ -33,7 +33,16 @@ import 'package:gtads_ylh/gtads_ylh.dart';
 仅需通过以下方法插入广告至聚合插件，无需关注具体广告的调用
 ```dart
 //别名、androidId、iosId
-GTAds.addProvider(GTAdsYlhProvider("ylh", "5098580", "5098580"));
+GTAdsYlhProvider("ylh", "1200009850", "1200718557", 
+//andorid隐私管理
+androidPrivacy: {
+    //优量汇SDK将不采集mac地址
+    "mac_address": false,
+    //允许优量汇SDK采集android_id
+    "android_id": false,
+    //允许收集ip
+    "wipaddr": false
+})
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

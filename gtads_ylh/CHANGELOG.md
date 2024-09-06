@@ -1,3 +1,7 @@
+## 1.3.7
+* 优量汇flutter_tencentad更新1.2.23
+* 新增android隐私权限管理
+
 ## 1.3.6
 * 优量汇flutter_tencentad更新1.2.22
 

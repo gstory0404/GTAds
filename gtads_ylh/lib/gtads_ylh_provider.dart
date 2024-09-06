@@ -6,13 +6,21 @@ part of 'gtads_ylh.dart';
 /// @Description: 优量汇广告支持
 
 class GTAdsYlhProvider extends GTAdsProvider {
+  Map<String, bool>? androidPrivacy;
 
-  GTAdsYlhProvider(String alias, String? androidId, String? iosId) : super(alias, androidId, iosId);
+  GTAdsYlhProvider(String alias, String? androidId, String? iosId,
+      {Map<String, bool>? androidPrivacy})
+      : super(alias, androidId, iosId) {
+    this.androidPrivacy = androidPrivacy;
+  }
 
   @override
   Future<bool> initAd(bool isDebug) {
     return FlutterTencentad.register(
-        androidId: androidId ?? "", iosId: iosId ?? "", debug: isDebug);
+        androidId: androidId ?? "",
+        iosId: iosId ?? "",
+        debug: isDebug,
+        androidPrivacy: this.androidPrivacy);
   }
 
   @override
@@ -57,7 +65,8 @@ class GTAdsYlhProvider extends GTAdsProvider {
   }
 
   @override
-  StreamSubscription? insertAd(GTAdsCode adCode, bool isFull,GTAdsCallBack? callBack) {
+  StreamSubscription? insertAd(
+      GTAdsCode adCode, bool isFull, GTAdsCallBack? callBack) {
     StreamSubscription? stream;
     stream = FlutterTencentAdStream.initAdStream(
       flutterTencentadInteractionCallBack: FlutterTencentadInteractionCallBack(
@@ -150,8 +159,13 @@ class GTAdsYlhProvider extends GTAdsProvider {
   }
 
   @override
-  StreamSubscription? rewardAd(GTAdsCode adCode, String rewardName, int rewardAmount,
-      String userId, String customData, GTAdsCallBack? callBack) {
+  StreamSubscription? rewardAd(
+      GTAdsCode adCode,
+      String rewardName,
+      int rewardAmount,
+      String userId,
+      String customData,
+      GTAdsCallBack? callBack) {
     StreamSubscription? stream;
     stream = FlutterTencentAdStream.initAdStream(
       //激励广告
@@ -226,9 +240,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
             callBack.onShow!(adCode);
           }
         },
-        onADTick: (time) {
-
-        },
+        onADTick: (time) {},
         onClick: () {
           if (callBack != null && callBack.onClick != null) {
             callBack.onClick!(adCode);
@@ -239,12 +251,10 @@ class GTAdsYlhProvider extends GTAdsProvider {
             callBack.onClose!(adCode);
           }
         },
-        onExpose: () {
-
-        },
+        onExpose: () {},
         onFail: (code, message) {
           if (callBack != null && callBack.onFail != null) {
-            callBack.onFail!(adCode,message);
+            callBack.onFail!(adCode, message);
           }
         },
       ),
