@@ -215,36 +215,6 @@ class GTAdsBqtProvider extends GTAdsProvider {
   @override
   Widget? bannerAd(
       GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
-    // return BaiduBannerAdView(
-    //   //android广告位id
-    //   androidId: adCode.androidId ?? "",
-    //   //ios广告位id
-    //   iosId: adCode.iosId ?? "",
-    //   //广告宽 推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
-    //   width: width,
-    //   //广告高 加载完成后会自动修改为sdk返回广告高
-    //   height: height,
-    //   //是否自动切换
-    //   autoplay: true,
-    //   //广告回调
-    //   callBack: BaiduAdBannerCallBack(onShow: () {
-    //     if (callBack?.onShow != null) {
-    //       callBack?.onShow!(adCode);
-    //     }
-    //   }, onClick: () {
-    //     if (callBack?.onClick != null) {
-    //       callBack?.onClick!(adCode);
-    //     }
-    //   }, onFail: (message) {
-    //     if (callBack?.onFail != null) {
-    //       callBack?.onFail!(adCode, message);
-    //     }
-    //   }, onClose: () {
-    //     if (callBack?.onClose != null) {
-    //       callBack?.onClose!(adCode);
-    //     }
-    //   }),
-    // );
     return null;
   }
 }
