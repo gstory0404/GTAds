@@ -19,7 +19,8 @@ class GTAdsKSProvider extends GTAdsProvider {
       //是否显示日志log
       debug: isDebug,
       //是否显示个性化推荐广告
-      personalized: true,
+      personal: true,
+      programmatic: true,
     );
   }
 

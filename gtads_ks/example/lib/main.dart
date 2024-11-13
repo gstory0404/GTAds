@@ -36,7 +36,7 @@ class _IndexState extends State<Index> {
     init();
   }
   Future<void> init() async {
-    GTAds.addProvider(GTAdsKSProvider(_alias, "613400004", "613400004"));
+    GTAds.addProvider(GTAdsKSProvider(_alias, "2296000003", "2296000003"));
     initAd = await GTAds.init(isDebug: true);
     setState(() {});
   }
@@ -63,8 +63,8 @@ class _IndexState extends State<Index> {
                         GTAdsCode(
                             alias: _alias,
                             probability: 5,
-                            androidId: "6134000007",
-                            iosId: "6134000007")
+                            androidId: "22960000015",
+                            iosId: "22960000015")
                       ],
                       //奖励名称
                       rewardName: "100金币",
@@ -108,8 +108,8 @@ class _IndexState extends State<Index> {
                           GTAdsCode(
                               alias: _alias,
                               probability: 5,
-                              androidId: "6134000013",
-                              iosId: "6134000013")
+                              androidId: "22960000019",
+                              iosId: "22960000020")
                         ],
                         isFull: false,
                         timeout: 6,
