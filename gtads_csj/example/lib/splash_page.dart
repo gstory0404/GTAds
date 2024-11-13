@@ -18,32 +18,44 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GTAdsSplashWidget(
-        codes: [
-          GTAdsCode(
-              alias: "csj",
-              probability: 5,
-              androidId: "887367774",
-              iosId: "887367774")
-        ],
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        timeout: 6,
-        callBack: GTAdsCallBack(
-          onShow: (code) {
-            print("开屏显示 ${code.toJson()}");
-          },
-          onClick: (code) {
-            print("开屏点击 ${code.toJson()}");
-          },
-          onFail: (code, message) {
-            print("开屏错误 ${code?.toJson()} $message");
-            Navigator.pop(context);
-          },
-          onClose: (code) {
-            print("开屏关闭 ${code.toJson()}");
-            Navigator.pop(context);
-          },
+      body: Container(
+        child: Column(
+          children: [
+            GTAdsSplashWidget(
+              codes: [
+                GTAdsCode(
+                    alias: "csj",
+                    probability: 5,
+                    androidId: "887367774",
+                    iosId: "887367774")
+              ],
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height - 100,
+              timeout: 6,
+              callBack: GTAdsCallBack(
+                onShow: (code) {
+                  print("开屏显示 ${code.toJson()}");
+                },
+                onClick: (code) {
+                  print("开屏点击 ${code.toJson()}");
+                },
+                onFail: (code, message) {
+                  print("开屏错误 ${code?.toJson()} $message");
+                  Navigator.pop(context);
+                },
+                onClose: (code) {
+                  print("开屏关闭 ${code.toJson()}");
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+            Container(
+              alignment: Alignment.center,
+              height: 100,
+              color: Colors.cyanAccent,
+              child: Text("GtadsCSJ",style: TextStyle(fontSize: 20),),
+            )
+          ],
         ),
       ),
     );
