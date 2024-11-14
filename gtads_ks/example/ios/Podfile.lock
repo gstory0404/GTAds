@@ -6,12 +6,18 @@ PODS:
     - Flutter
   - ksad (0.0.1):
     - Flutter
+    - KSAdSDK (= 3.3.69.3)
+  - KSAdSDK (3.3.69.3)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - gtads (from `.symlinks/plugins/gtads/ios`)
   - gtads_ks (from `.symlinks/plugins/gtads_ks/ios`)
   - ksad (from `.symlinks/plugins/ksad/ios`)
+
+SPEC REPOS:
+  trunk:
+    - KSAdSDK
 
 EXTERNAL SOURCES:
   Flutter:
@@ -27,7 +33,8 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   gtads: 1e73e834441d85346f001cdf18341ec2ce7dc0de
   gtads_ks: ee13fab574f328e0c842e0f24a13478f9d26e8d7
-  ksad: d95c7be56d42bfdfe916f05dc31092f3a5feef33
+  ksad: 75d9a4bd54a08d7eeb91cad035b48c68ce7dc97b
+  KSAdSDK: a43b039755299f770f7fc81cba0ebf64ae4f03a8
 
 PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
 
