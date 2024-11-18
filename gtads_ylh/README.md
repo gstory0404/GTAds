@@ -42,7 +42,9 @@ androidPrivacy: {
     "android_id": false,
     //允许收集ip
     "wipaddr": false
-})
+},
+//安卓隐私合规 是否开启收集应用安装状态
+enableCollectAppInstallStatus: false,)
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

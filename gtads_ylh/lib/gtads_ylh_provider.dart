@@ -7,11 +7,13 @@ part of 'gtads_ylh.dart';
 
 class GTAdsYlhProvider extends GTAdsProvider {
   Map<String, bool>? androidPrivacy;
+  bool? enableCollectAppInstallStatus;
 
   GTAdsYlhProvider(String alias, String? androidId, String? iosId,
-      {Map<String, bool>? androidPrivacy})
+      {Map<String, bool>? androidPrivacy, bool? enableCollectAppInstallStatus})
       : super(alias, androidId, iosId) {
     this.androidPrivacy = androidPrivacy;
+    this.enableCollectAppInstallStatus = enableCollectAppInstallStatus;
   }
 
   @override
@@ -20,7 +22,8 @@ class GTAdsYlhProvider extends GTAdsProvider {
         androidId: androidId ?? "",
         iosId: iosId ?? "",
         debug: isDebug,
-        androidPrivacy: this.androidPrivacy);
+        androidPrivacy: this.androidPrivacy,
+        enableCollectAppInstallStatus: enableCollectAppInstallStatus ?? false);
   }
 
   @override

@@ -36,15 +36,21 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> init() async {
-    GTAds.addProvider(
-        GTAdsYlhProvider("ylh", "1200009850", "1200718557", androidPrivacy: {
-      //优量汇SDK将不采集mac地址
-      "mac_address": false,
-      //允许优量汇SDK采集android_id
-      "android_id": false,
-      //允许收集ip
-      "wipaddr": false
-    }));
+    GTAds.addProvider(GTAdsYlhProvider(
+      "ylh",
+      "1200009850",
+      "1200718557",
+      androidPrivacy: {
+        //优量汇SDK将不采集mac地址
+        "mac_address": false,
+        //允许优量汇SDK采集android_id
+        "android_id": false,
+        //允许收集ip
+        "wipaddr": false
+      },
+      //安卓隐私合规 是否开启收集应用安装状态
+      enableCollectAppInstallStatus: false,
+    ));
     initAd = await GTAds.init(isDebug: true);
     setState(() {});
   }
