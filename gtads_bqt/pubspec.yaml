@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  baiduad: ^0.0.7
+  baiduad: ^0.0.8
 #  baiduad:
 #    git:
 #      url: https://github.com/gstory0404/baiduad.git
