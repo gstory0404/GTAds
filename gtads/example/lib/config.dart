@@ -1,8 +1,8 @@
 import 'package:gtads/gtads.dart';
-import 'package:gtads_bqt/gtads_bqt.dart';
+// import 'package:gtads_bqt/gtads_bqt.dart';
 import 'package:gtads_csj/gtads_csj.dart';
-import 'package:gtads_sigmob/gtads_sigmob.dart';
-import 'package:gtads_ylh/gtads_ylh.dart';
+// import 'package:gtads_sigmob/gtads_sigmob.dart';
+// import 'package:gtads_ylh/gtads_ylh.dart';
 
 /// @Author: gstory
 /// @CreateDate: 2022/8/31 19:09
@@ -25,20 +25,20 @@ class Config {
   //广告
   static List<GTAdsProvider> providers = [
     GTAdsCsjProvider(CSJ, "5098580", "5098580", appName: 'flutter_test'),
-    GTAdsYlhProvider(YLH, "1200009850", "1200718557"),
-    GTAdsSigmobProvider(
-        alias: SIGMOB,
-        androidId: '6878',
-        iosId: '6877',
-        androidAppKey: '8ebc1fd1c27e650c',
-        iosAppKey: 'eccdcdbd9adbd4a7'),
-    GTAdsBqtProvider(BQT, "b423d90d", "a6b7fed6")
+    // GTAdsYlhProvider(YLH, "1200009850", "1200718557"),
+    // GTAdsSigmobProvider(
+    //     alias: SIGMOB,
+    //     androidId: '6878',
+    //     iosId: '6877',
+    //     androidAppKey: '8ebc1fd1c27e650c',
+    //     iosAppKey: 'eccdcdbd9adbd4a7'),
+    // GTAdsBqtProvider(BQT, "b423d90d", "a6b7fed6")
   ];
 
   //横幅广告位
   static List<GTAdsCode> bannerCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 5, androidId: "945410197", iosId: "945410197"),
+        alias: CSJ, probability: 5, androidId: "102735527", iosId: "102735527"),
     GTAdsCode(
         alias: YLH,
         probability: 5,
@@ -49,7 +49,7 @@ class Config {
   //信息流广告位
   static List<GTAdsCode> nativeCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 1, androidId: "945417699", iosId: "945417699"),
+        alias: CSJ, probability: 1, androidId: "102730271", iosId: "102730271"),
     GTAdsCode(
         alias: YLH,
         probability: 2,

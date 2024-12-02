@@ -7,7 +7,7 @@ part of 'gtads_csj.dart';
 
 class GTAdsCsjProvider extends GTAdsProvider {
   String appName = "";
-  bool? useMediation = false; //穿山甲聚合开关
+  bool? useMediation = true; //穿山甲聚合开关
 
   GTAdsCsjProvider(String alias, String? androidId, String? iosId,
       {required this.appName})
