@@ -1,3 +1,6 @@
+## 1.4.2
+* 优量汇flutter_tencentad更新1.2.28
+
 ## 1.4.1
 * gtads基础库升级1.4.0
 * 优量汇flutter_tencentad更新1.2.27
