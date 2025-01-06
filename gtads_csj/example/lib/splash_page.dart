@@ -26,8 +26,8 @@ class _SplashPageState extends State<SplashPage> {
                 GTAdsCode(
                     alias: "csj",
                     probability: 5,
-                    androidId: "887367774",
-                    iosId: "887367774")
+                    androidId: "102729400",
+                    iosId: "102729400")
               ],
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height - 100,
