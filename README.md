@@ -34,6 +34,7 @@ GTAds是一款Flutter聚合广告管理插件，支持android、ios，提供一�
 ## 使用
 
 - [集成使用](https://github.com/gstory0404/GTAds/tree/master/gtads)
+- [常见问题](https://github.com/gstory0404/GTAds/blob/master/error.md)
 
 ## 插件链接
 
