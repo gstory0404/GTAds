@@ -9,6 +9,7 @@ abstract class GTAdsProvider {
   String _alias;
   String? androidId;
   String? iosId;
+  String? ohosId;
 
   ///
   /// [_alias] 唯一， 广告别名 与广告位GTAdsCode 中别名保持一致 不然无法加载广告
@@ -16,7 +17,7 @@ abstract class GTAdsProvider {
   /// [androidId] android app id
   ///
   /// [iosId] ios app id
-  GTAdsProvider(this._alias, this.androidId, this.iosId);
+  GTAdsProvider(this._alias, this.androidId, this.iosId,{this.ohosId});
 
   ///初始化广告
   ///

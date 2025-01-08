@@ -10,8 +10,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
   bool? useMediation = true; //穿山甲聚合开关
 
   GTAdsCsjProvider(String alias, String? androidId, String? iosId,
-      {required this.appName})
-      : super(alias, androidId, iosId);
+      {required this.appName,String? ohosId})
+      : super(alias, androidId, iosId,ohosId: ohosId);
 
   void setUseMediation(bool useMediation){
     this.useMediation = useMediation;
@@ -24,6 +24,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
         androidAppId: androidId ?? "",
         //穿山甲广告 ios appid 必填
         iosAppId: iosId ?? "",
+        //穿山甲广告 ohos appid
+        ohosAppId: ohosId ?? "",
         //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView 选填
         useTextureView: true,
         useMediation: useMediation,
@@ -290,6 +292,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
       androidCodeId: adCode.androidId ?? "",
       //Android 激励视频广告id  必填
       iosCodeId: adCode.iosId ?? "",
+      //ohos 激励视频广告id
+      ohosCodeId: adCode.ohosId ?? "",
       //ios 激励视频广告id  必填
       rewardName: rewardName,
       //奖励名称 选填

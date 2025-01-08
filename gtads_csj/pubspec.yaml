@@ -16,9 +16,9 @@ dependencies:
 #    git:
 #      url: https://github.com/gstory0404/flutter_unionad.git
 #      ref: 3c6ec158a069df6c093209d9e0e448da507ff5e3
-  gtads: ^1.4.0
-#  gtads:
-#    path: ../gtads
+#  gtads: ^1.4.0
+  gtads:
+    path: ../gtads
   
 
 dev_dependencies:

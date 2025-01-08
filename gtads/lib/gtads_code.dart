@@ -7,15 +7,17 @@ part of 'gtads.dart';
 class GTAdsCode {
   String alias = "";
   String? androidId;
+  String? ohosId;
   String? iosId;
   int probability = 0;
 
-  GTAdsCode({required this.alias, this.androidId, this.iosId,required this.probability});
+  GTAdsCode({required this.alias, this.androidId, this.iosId,this.ohosId,required this.probability});
 
   GTAdsCode.fromJson(Map<String, dynamic> json) {
     alias = json['alias'];
     androidId = json['androidId'];
     iosId = json['iosId'];
+    ohosId = json['ohosId'];
     probability = json['probability'];
   }
 
@@ -24,6 +26,7 @@ class GTAdsCode {
     data['alias'] = this.alias;
     data['androidId'] = this.androidId;
     data['iosId'] = this.iosId;
+    data['ohosId'] = this.ohosId;
     data['probability'] = this.probability;
     return data;
   }
