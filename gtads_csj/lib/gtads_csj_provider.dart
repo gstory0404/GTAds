@@ -208,6 +208,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
       androidCodeId: adCode.androidId ?? "",
       //ios 全屏广告id 必填
       iosCodeId: adCode.iosId ?? "",
+      //ohos 全屏广告id
+      ohosCodeId: adCode.ohosId ?? "",
       //视屏方向 选填
       orientation: FlutterUnionadOrientation.VERTICAL,
     );
