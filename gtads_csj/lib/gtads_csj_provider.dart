@@ -10,12 +10,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
   bool? useMediation = true; //穿山甲聚合开关
 
   GTAdsCsjProvider(String alias, String? androidId, String? iosId,
-      {required this.appName,String? ohosId})
-      : super(alias, androidId, iosId,ohosId: ohosId);
-
-  void setUseMediation(bool useMediation){
-    this.useMediation = useMediation;
-  }
+      {required this.appName, this.useMediation, String? ohosId})
+      : super(alias, androidId, iosId, ohosId: ohosId);
 
   @override
   Future<bool> initAd(bool isDebug) {
