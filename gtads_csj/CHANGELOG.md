@@ -1,3 +1,8 @@
+## 1.5.0
+* gtads_csj基础库升级1.5.0
+* flutter_unionad升级2.1.2
+* 新增ohos平台支持
+
 ## 1.4.4
 * flutter_unionad升级2.1.0
 

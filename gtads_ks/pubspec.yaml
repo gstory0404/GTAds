@@ -1,6 +1,6 @@
 name: gtads_ks
 description: GTAds快手广告支持插件
-version: 1.4.1
+version: 1.5.0
 homepage: https://github.com/gstory0404/GTAds/tree/master/gtads_ks
 
 environment:
@@ -11,7 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   #  plugin_platform_interface: ^2.0.2
-  gtads: ^1.4.0
+  gtads: ^1.5.0
+  #  gtads:
+  #    path: ../gtads
   ksad: ^1.0.3
 #  ksad:
 #    git:

@@ -79,25 +79,25 @@ packages:
     dependency: transitive
     description:
       name: flutter_unionad
-      sha256: c75e744d7bc48b84f0e3d04388a18c521c833e8bcab08575b4feb4fc1ee5dcc7
+      sha256: ac5094a5d98dfcaf347bef3e736fa71704b1a4eb1ee0d1c63c182c28f15dad10
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   gtads:
     dependency: transitive
     description:
       name: gtads
-      sha256: "668501f277f234e61cb17c3ad4004d1d2f0dce121b67d2c8908b0fe51adf235b"
+      sha256: "26b564e5ad525fb9ef13fd4a945d92bc699d75aa64f095723ad88a597d962923"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.0"
+    version: "1.5.0"
   gtads_csj:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "1.4.5"
+    version: "1.5.0"
   leak_tracker:
     dependency: transitive
     description:

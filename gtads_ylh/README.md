@@ -20,9 +20,9 @@
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^1.4.0
+ gtads: ^1.5.0
  //优量汇广告
- gtads_ylh: ^1.4.3
+ gtads_ylh: ^1.5.x
 ```
 
 ### 引入

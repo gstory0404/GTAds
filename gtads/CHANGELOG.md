@@ -1,3 +1,6 @@
+## 1.5.0
+* 新增ohos配置
+
 ## 1.4.0
 * android新增namespace
 

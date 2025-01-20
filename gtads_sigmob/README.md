@@ -23,9 +23,9 @@
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^1.4.0
+ gtads: ^1.5.0
  //Sigmob广告
- gtads_sigmob: ^1.4.1
+ gtads_sigmob: ^1.5.x
 ```
 
 ### 引入

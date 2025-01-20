@@ -20,9 +20,9 @@
 ### pubspec.yaml
 ```dart
  //广告基础库 必须引入
- gtads: ^1.4.0
+ gtads: ^1.5.0
  //穿山甲广告
- gtads_csj: ^1.4.5
+ gtads_csj: ^1.5.x
 ```
 
 ### 引入
@@ -34,9 +34,10 @@ import 'package:gtads_csj/gtads_csj.dart';
 仅需通过以下方法插入广告至聚合插件，无需关注具体广告的调用
 ```dart
 //参数依次为 别名、andorid app Id、ios app Id
+//ohosId鸿蒙广告位id
 //appName初始化使用
 //useMediation穿山甲本身的聚合模式,true使用GroMore下的广告位,false使用广告变现下的广告位
-GTAds.addProvider(GTAdsCsjProvider("csj", "5098580", "5098580", appName: "unionad",useMediation: true));
+GTAds.addProvider(GTAdsCsjProvider("csj", "5098580", "5098580",ohosId: "", appName: "unionad",useMediation: true));
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)
