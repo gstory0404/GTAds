@@ -34,10 +34,21 @@ import 'package:gtads_csj/gtads_csj.dart';
 仅需通过以下方法插入广告至聚合插件，无需关注具体广告的调用
 ```dart
 //参数依次为 别名、andorid app Id、ios app Id
-//ohosId鸿蒙广告位id
+//ohosId鸿蒙 app id
 //appName初始化使用
 //useMediation穿山甲本身的聚合模式,true使用GroMore下的广告位,false使用广告变现下的广告位
-GTAds.addProvider(GTAdsCsjProvider("csj", "5098580", "5098580",ohosId: "", appName: "unionad",useMediation: true));
+//androidPrivacy Android隐私信息控制配置
+//iosPrivacy ios隐私信息控制配置
+GTAds.addProvider(GTAdsCsjProvider(
+    "csj",
+    "5098580",
+    "5098580",
+    ohosId: "",
+    appName: "unionad",
+    useMediation: true,
+    androidPrivacy: AndroidPrivacy(),
+    iosPrivacy: IOSPrivacy(),
+));
 ```
 
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

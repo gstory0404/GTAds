@@ -8,38 +8,47 @@ part of 'gtads_csj.dart';
 class GTAdsCsjProvider extends GTAdsProvider {
   String appName = "";
   bool? useMediation = true; //穿山甲聚合开关
+  AndroidPrivacy? androidPrivacy;
+  IOSPrivacy? iosPrivacy;
 
   GTAdsCsjProvider(String alias, String? androidId, String? iosId,
-      {required this.appName, this.useMediation, String? ohosId})
+      {required this.appName,
+      this.useMediation,
+      String? ohosId,
+      this.androidPrivacy,
+      this.iosPrivacy})
       : super(alias, androidId, iosId, ohosId: ohosId);
 
   @override
   Future<bool> initAd(bool isDebug) {
     return FlutterUnionad.register(
-        //穿山甲广告 Android appid 必填
-        androidAppId: androidId ?? "",
-        //穿山甲广告 ios appid 必填
-        iosAppId: iosId ?? "",
-        //穿山甲广告 ohos appid
-        ohosAppId: ohosId ?? "",
-        //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView 选填
-        useTextureView: true,
-        useMediation: useMediation,
-        //appname 必填
-        appName: appName,
-        //是否允许sdk展示通知栏提示 选填
-        allowShowNotify: true,
-        //是否显示debug日志
-        debug: isDebug,
-        //是否支持多进程，true支持 选填
-        supportMultiProcess: true,
-        //允许直接下载的网络状态集合 选填
-        directDownloadNetworkType: [
-          FlutterUnionadNetCode.NETWORK_STATE_2G,
-          FlutterUnionadNetCode.NETWORK_STATE_3G,
-          FlutterUnionadNetCode.NETWORK_STATE_4G,
-          FlutterUnionadNetCode.NETWORK_STATE_WIFI
-        ]);
+      //穿山甲广告 Android appid 必填
+      androidAppId: androidId ?? "",
+      //穿山甲广告 ios appid 必填
+      iosAppId: iosId ?? "",
+      //穿山甲广告 ohos appid
+      ohosAppId: ohosId ?? "",
+      //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView 选填
+      useTextureView: true,
+      useMediation: useMediation,
+      //appname 必填
+      appName: appName,
+      //是否允许sdk展示通知栏提示 选填
+      allowShowNotify: true,
+      //是否显示debug日志
+      debug: isDebug,
+      //是否支持多进程，true支持 选填
+      supportMultiProcess: true,
+      //允许直接下载的网络状态集合 选填
+      directDownloadNetworkType: [
+        FlutterUnionadNetCode.NETWORK_STATE_2G,
+        FlutterUnionadNetCode.NETWORK_STATE_3G,
+        FlutterUnionadNetCode.NETWORK_STATE_4G,
+        FlutterUnionadNetCode.NETWORK_STATE_WIFI
+      ],
+      androidPrivacy: androidPrivacy,
+      iosPrivacy: iosPrivacy,
+    );
   }
 
   @override
@@ -259,9 +268,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
           //显示激励广告
           await FlutterUnionad.showRewardVideoAd();
         },
-        onCache: () async {
-
-        },
+        onCache: () async {},
         onUnReady: () {
           if (callBack?.onFail != null) {
             callBack?.onFail!(adCode, "激励广告预加载未准备就绪");

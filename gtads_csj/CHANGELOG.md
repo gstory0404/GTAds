@@ -1,3 +1,6 @@
+## 1.5.1
+* GTAdsCsjProvider增加androidPrivacy、iosPrivacy权限配置
+
 ## 1.5.0
 * gtads_csj基础库升级1.5.0
 * flutter_unionad升级2.1.2
