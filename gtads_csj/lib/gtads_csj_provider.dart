@@ -94,6 +94,9 @@ class GTAdsCsjProvider extends GTAdsProvider {
             callBack.onFail!(adCode, "加载超时");
           }
         },
+        onEcpm: (info){
+          print("onEcpm info => $info");
+        }
       ),
     );
   }
