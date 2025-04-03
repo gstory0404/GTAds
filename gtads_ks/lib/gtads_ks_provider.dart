@@ -75,7 +75,7 @@ class GTAdsKSProvider extends GTAdsProvider {
       //ios广告id
       iosId: adCode.iosId ?? "",
       //用户id
-      userID: userId,
+      userId: userId,
       //奖励
       rewardName: rewardName,
       //奖励数
