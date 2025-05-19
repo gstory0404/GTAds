@@ -21,6 +21,39 @@ class GTAdsBqtProvider extends GTAdsProvider {
     );
   }
 
+  ///
+  /// # 隐私敏感权限API&限制个性化广告推荐
+  ///
+  /// [readDeviceID] 读取设备ID的权限（建议授权）
+  ///
+  /// [appList] 读取已安装应用列表权限（建议授权）
+  ///
+  /// [location] 读取粗略地理位置权限
+  ///
+  /// [storage] 读写外部存储权限
+  ///
+  /// [personalAds] 设置限制个性化广告推荐
+  ///
+  /// [bDPermission] ios 新标志能力，该能力默认开启，如果有监管或隐私要求，在app内配置是否开启该能力。
+  ///
+  void privacy({
+    bool readDeviceID = false,
+    bool appList = false,
+    bool location = false,
+    bool storage = false,
+    bool personalAds = false,
+    bool bDPermission = false,
+  }) {
+    Baiduad.privacy(
+      readDeviceID: readDeviceID,
+      appList: appList,
+      location: location,
+      storage: storage,
+      personalAds: personalAds,
+      bDPermission: bDPermission,
+    );
+  }
+
   @override
   StreamSubscription? rewardAd(
       GTAdsCode adCode,

@@ -45,4 +45,24 @@ import 'package:gtads_csj/gtads_bqt.dart';
  GTAds.addProvider(GTAdsBqtProvider("bqt", "b423d90d", "a6b7fed6"));
 ```
 
+配置隐私权限
+```
+  void setPrivacy() {
+    GTAdsBqtProvider provider = GTAds.getProvider("bqt") as GTAdsBqtProvider;
+    provider.privacy(
+      readDeviceID: true,
+      //读取设备ID的权限（建议授权）
+      appList: true,
+      //读取已安装应用列表权限（建议授权）
+      location: true,
+      //读取粗略地理位置权限
+      storage: true,
+      //读写外部存储权限
+      personalAds: true,
+      //设置限制个性化广告推荐
+      bDPermission: true, //ios 新标志能力，该能力默认开启，如果有监管或隐私要求，在app内配置是否开启该能力。
+    );
+  }
+```
+
 > 广告位使用参考[GTAds](https://github.com/gstory0404/GTAds/tree/master/gtads)

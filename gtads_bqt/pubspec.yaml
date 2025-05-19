@@ -1,6 +1,6 @@
 name: gtads_bqt
 description: GTAds百青藤广告支持
-version: 1.5.0
+version: 1.5.1
 homepage: https://github.com/gstory0404/GTAds/blob/master/gtads_bqt
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  baiduad: ^0.0.8
+  baiduad: ^0.0.9
 #  baiduad:
 #    git:
 #      url: https://github.com/gstory0404/baiduad.git
