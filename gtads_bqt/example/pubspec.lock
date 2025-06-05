@@ -13,10 +13,10 @@ packages:
     dependency: transitive
     description:
       name: baiduad
-      sha256: "73eb2f556dd2e2061b1c1851578a375420764e593ab758195151bf04e74d262e"
+      sha256: "3ac7c171f55e0b6ae6625e09345a674a76f92f992ba5e564638db035bc1a6781"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.9"
+    version: "0.0.10"
   boolean_selector:
     dependency: transitive
     description:
@@ -97,7 +97,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.5.0"
+    version: "1.5.2"
   leak_tracker:
     dependency: transitive
     description:

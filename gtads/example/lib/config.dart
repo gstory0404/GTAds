@@ -22,6 +22,9 @@ class Config {
   //百青藤
   static String BQT = "bqt";
 
+  //快手
+  static String KS = "bqt";
+
   //广告
   static List<GTAdsProvider> providers = [
     GTAdsCsjProvider(CSJ, "5098580", "5098580", appName: 'flutter_test'),
@@ -98,6 +101,8 @@ class Config {
         iosId: "ea1f8f7b662"),
     GTAdsCode(
         alias: BQT, probability: 1, androidId: "7792010", iosId: "7800949"),
+    GTAdsCode(
+        alias: BQT, probability: 1, androidId: "7792010", iosId: "7800949"),
   ];
 
   //插屏广告位
@@ -116,5 +121,7 @@ class Config {
         iosId: "ea1f8fb93fb"),
     GTAdsCode(
         alias: BQT, probability: 4, androidId: "8351686", iosId: "7803486"),
+    GTAdsCode(
+        alias: KS, probability: 5, androidId: "22960000015", iosId: "22960000015"),
   ];
 }

@@ -10,8 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  gtads:
-    path: ../
+
+  gtads: ^1.5.0
+#  gtads:
+#    path: ../
   # 穿山甲
   gtads_csj:
     path: ../../gtads_csj

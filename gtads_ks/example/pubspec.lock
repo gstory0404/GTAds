@@ -81,15 +81,15 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.5.1"
+    version: "1.5.2"
   ksad:
     dependency: transitive
     description:
       name: ksad
-      sha256: b504cf07b8b602b4adae5f91f0641273e47d1085161b0058a44977848c88acb6
+      sha256: "6046c09a54474c2c3ad79047aa90a088ec6ca2bab0c6dca5d602101ca9a0ae0e"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.5"
   leak_tracker:
     dependency: transitive
     description:
