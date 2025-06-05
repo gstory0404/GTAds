@@ -66,10 +66,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_tencentad
-      sha256: "79a95e900554a406ac33925f05561b22f7ab8379b563d68c51dc7bf02520031b"
+      sha256: "3523ced20df01232019fa601607cd4e9723441958b0916f01fb53bdff376ec22"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.34"
+    version: "1.2.35"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -89,7 +89,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.5.3"
+    version: "1.5.4"
   leak_tracker:
     dependency: transitive
     description:
