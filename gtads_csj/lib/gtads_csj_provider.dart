@@ -10,13 +10,15 @@ class GTAdsCsjProvider extends GTAdsProvider {
   bool? useMediation = true; //穿山甲聚合开关
   AndroidPrivacy? androidPrivacy;
   IOSPrivacy? iosPrivacy;
+  String? localConfig;
 
   GTAdsCsjProvider(String alias, String? androidId, String? iosId,
       {required this.appName,
       this.useMediation,
       String? ohosId,
       this.androidPrivacy,
-      this.iosPrivacy})
+      this.iosPrivacy,
+      this.localConfig})
       : super(alias, androidId, iosId, ohosId: ohosId);
 
   @override
@@ -48,6 +50,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
       ],
       androidPrivacy: androidPrivacy,
       iosPrivacy: iosPrivacy,
+      localConfig: localConfig
     );
   }
 
@@ -63,41 +66,33 @@ class GTAdsCsjProvider extends GTAdsProvider {
       width: width,
       //期望view高度 dp 选填
       height: height,
-      callBack: FlutterUnionadSplashCallBack(
-        onShow: () {
-          if (callBack != null && callBack.onShow != null) {
-            callBack.onShow!(adCode);
-          }
-        },
-        onClick: () {
-          if (callBack != null && callBack.onClick != null) {
-            callBack.onClick!(adCode);
-          }
-        },
-        onFail: (error) {
-          if (callBack != null && callBack.onFail != null) {
-            callBack.onFail!(adCode, error);
-          }
-        },
-        onFinish: () {
-          if (callBack != null && callBack.onClose != null) {
-            callBack.onClose!(adCode);
-          }
-        },
-        onSkip: () {
-          if (callBack != null && callBack.onClose != null) {
-            callBack.onClose!(adCode);
-          }
-        },
-        onTimeOut: () {
-          if (callBack != null && callBack.onFail != null) {
-            callBack.onFail!(adCode, "加载超时");
-          }
-        },
-        onEcpm: (info){
-          print("onEcpm info => $info");
+      callBack: FlutterUnionadSplashCallBack(onShow: () {
+        if (callBack != null && callBack.onShow != null) {
+          callBack.onShow!(adCode);
         }
-      ),
+      }, onClick: () {
+        if (callBack != null && callBack.onClick != null) {
+          callBack.onClick!(adCode);
+        }
+      }, onFail: (error) {
+        if (callBack != null && callBack.onFail != null) {
+          callBack.onFail!(adCode, error);
+        }
+      }, onFinish: () {
+        if (callBack != null && callBack.onClose != null) {
+          callBack.onClose!(adCode);
+        }
+      }, onSkip: () {
+        if (callBack != null && callBack.onClose != null) {
+          callBack.onClose!(adCode);
+        }
+      }, onTimeOut: () {
+        if (callBack != null && callBack.onFail != null) {
+          callBack.onFail!(adCode, "加载超时");
+        }
+      }, onEcpm: (info) {
+        print("onEcpm info => $info");
+      }),
     );
   }
 

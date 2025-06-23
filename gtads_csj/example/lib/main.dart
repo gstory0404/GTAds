@@ -45,6 +45,7 @@ class _IndexState extends State<Index> {
       useMediation: true,
       androidPrivacy: AndroidPrivacy(),
       iosPrivacy: IOSPrivacy(),
+      localConfig: "site_config_5098580"
     ));
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
