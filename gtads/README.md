@@ -92,6 +92,24 @@ GTAds.getProvider("csj");
 
 📢 使用前查看对应广告Provider参数
 
+📢 如果外部定义了广告id组，则在传入的时候如下
+```agsl
+  //横幅广告位
+  static List<GTAdsCode> bannerCodes = [
+    GTAdsCode(
+        alias: CSJ, probability: 5, androidId: "102735527", iosId: "102735527"),
+    GTAdsCode(
+        alias: YLH,
+        probability: 5,
+        androidId: "8042711873318113",
+        iosId: "5004358713683949")
+  ];
+  GTAdsBannerWidget(
+     codes: [...Config.bannerCodes],
+     ...
+  )
+```
+
 ### 初始化
 
 ```dart

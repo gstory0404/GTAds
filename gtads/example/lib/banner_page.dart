@@ -31,7 +31,7 @@ class _BannerPageState extends State<BannerPage> {
         child: Column(
           children: [
             GTAdsBannerWidget(
-                codes: Config.bannerCodes,
+                codes: [...Config.bannerCodes],
                 //宽
                 width: 300,
                 //高

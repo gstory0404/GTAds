@@ -32,7 +32,7 @@ class _NativePageState extends State<NativePage> {
           child: Column(
             children: [
               GTAdsNativeWidget(
-                codes: Config.nativeCodes,
+                codes: [...Config.nativeCodes],
                 width: 300,
                 height: 200,
                 //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消

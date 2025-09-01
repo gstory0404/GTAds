@@ -45,7 +45,7 @@ class _IndexState extends State<Index> {
   void loadInsertAd() async{
     print("开始加载广告");
     await GTAds.insertAd(
-        codes: Config.insertCodes,
+        codes: [...Config.insertCodes],
         isFull: false,
         //超时时间 当广告失败后会依次重试其他广告 直至所有广告均加载失败 设置超时时间可提前取消
         timeout: 10,
@@ -73,7 +73,7 @@ class _IndexState extends State<Index> {
 
   void loadRewardAd() async{
     await GTAds.rewardAd(
-      codes: Config.rewardCodes,
+      codes: [...Config.rewardCodes],
       //奖励名称
       rewardName: "100金币",
       //奖励数量
