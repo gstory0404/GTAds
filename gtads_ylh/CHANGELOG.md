@@ -1,3 +1,6 @@
+## 1.5.6
+* 优量汇flutter_tencentad更新1.3.0
+
 ## 1.5.5
 * 优量汇flutter_tencentad更新1.2.36
 

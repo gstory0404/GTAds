@@ -34,8 +34,8 @@ class _BannerPageState extends State<BannerPage> {
                   GTAdsCode(
                       alias: "ylh",
                       probability: 5,
-                      androidId: "2015540734459587",
-                      iosId: "1045045794563008")
+                      androidId: "3280862472037698",
+                      iosId: "2240669472733809")
                 ],
                 //宽
                 width: 300,

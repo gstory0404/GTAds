@@ -38,8 +38,8 @@ class _IndexState extends State<Index> {
   Future<void> init() async {
     GTAds.addProvider(GTAdsYlhProvider(
       "ylh",
-      "1200009850",
-      "1200718557",
+      "1211169508",
+      "1211169509",
       androidPrivacy: {
         //优量汇SDK将不采集mac地址
         "mac_address": false,
@@ -90,8 +90,8 @@ class _IndexState extends State<Index> {
                         GTAdsCode(
                             alias: "ylh",
                             probability: 5,
-                            androidId: "5042816813706194",
-                            iosId: "3035541744552914")
+                            androidId: "8260663462736446",
+                            iosId: "2250968442134762")
                       ],
                       //奖励名称
                       rewardName: "100金币",
@@ -135,8 +135,8 @@ class _IndexState extends State<Index> {
                           GTAdsCode(
                               alias: "ylh",
                               probability: 5,
-                              androidId: "2015540734459587",
-                              iosId: "5095940784157969")
+                              androidId: "6270368452032577",
+                              iosId: "8200166492635708")
                         ],
                         isFull: false,
                         timeout: 6,

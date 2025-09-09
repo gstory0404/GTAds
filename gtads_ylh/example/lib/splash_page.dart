@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GTAdsSplashWidget(
-        codes: [GTAdsCode(alias: "ylh", probability: 5,androidId: "4052216802299999",iosId: "2065245754651975")],
+        codes: [GTAdsCode(alias: "ylh", probability: 5,androidId: "7240264412639400",iosId: "4210763402133659")],
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         timeout: 6,
