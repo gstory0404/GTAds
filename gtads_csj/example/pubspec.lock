@@ -79,10 +79,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_unionad
-      sha256: "1a39432b93049847649c3bcca766111e08d6820399a195492e9d125702818122"
+      sha256: e180941a357e20ba71f158cff68c5b50ca41b76f99cf4858ddb8e97b83108e69
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.1"
   gtads:
     dependency: transitive
     description:
@@ -97,7 +97,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.5.11"
+    version: "1.5.12"
   leak_tracker:
     dependency: transitive
     description:
