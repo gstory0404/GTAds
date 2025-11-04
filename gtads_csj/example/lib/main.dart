@@ -8,6 +8,8 @@ import 'package:gtads_csj_example/banner_page.dart';
 import 'package:gtads_csj_example/native_page.dart';
 import 'package:gtads_csj_example/splash_page.dart';
 
+import 'ad_config.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -36,17 +38,7 @@ class _IndexState extends State<Index> {
   }
 
   Future<void> init() async {
-    GTAds.addProvider(GTAdsCsjProvider(
-      "csj",
-      "5098580",
-      "5098580",
-      ohosId: "",
-      appName: "unionad",
-      useMediation: true,
-      androidPrivacy: AndroidPrivacy(),
-      iosPrivacy: IOSPrivacy(),
-      // localConfig: "site_config_5098580"
-    ));
+    GTAds.addProviders(AdConfig.providers);
     initAd = await GTAds.init(isDebug: true);
     print(initAd);
     setState(() {});
@@ -85,13 +77,7 @@ class _IndexState extends State<Index> {
                   child: const Text('激励广告'),
                   onPressed: () async {
                     var b = await GTAds.rewardAd(
-                      codes: [
-                        GTAdsCode(
-                            alias: "csj",
-                            probability: 5,
-                            androidId: "945418088",
-                            iosId: "945418088")
-                      ],
+                      codes: [...AdConfig.rewardCodes],
                       //奖励名称
                       rewardName: "100金币",
                       //奖励数量
@@ -131,11 +117,7 @@ class _IndexState extends State<Index> {
                   onPressed: () async {
                     var b = await GTAds.insertAd(
                         codes: [
-                          GTAdsCode(
-                              alias: "csj",
-                              probability: 5,
-                              androidId: "946201351",
-                              iosId: "946201351")
+                          ...AdConfig.insertCodes
                         ],
                         isFull: false,
                         timeout: 6,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gtads/gtads.dart';
 
+import 'ad_config.dart';
+
 /// @Author: gstory
 /// @CreateDate: 2022/8/16 17:12
 /// @Email gstory0404@gmail.com
@@ -30,7 +32,7 @@ class _BannerPageState extends State<BannerPage> {
         child: Column(
           children: [
             GTAdsBannerWidget(
-                codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "102735527",iosId: "102735527")],
+                codes: [...AdConfig.bannerCodes],
                 //宽
                 width: 300,
                 //高

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gtads/gtads.dart';
 import 'package:gtads_csj/gtads_csj.dart';
 
+import 'ad_config.dart';
+
 /// @Author: gstory
 /// @CreateDate: 2022/8/18 15:18
 /// @Email gstory0404@gmail.com
@@ -22,13 +24,7 @@ class _SplashPageState extends State<SplashPage> {
         child: Column(
           children: [
             GTAdsSplashWidget(
-              codes: [
-                GTAdsCode(
-                    alias: "csj",
-                    probability: 5,
-                    androidId: "102729400",
-                    iosId: "102729400")
-              ],
+              codes: [...AdConfig.splashCodes],
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height - 100,
               timeout: 6,
@@ -53,7 +49,10 @@ class _SplashPageState extends State<SplashPage> {
               alignment: Alignment.center,
               height: 100,
               color: Colors.cyanAccent,
-              child: Text("GtadsCSJ",style: TextStyle(fontSize: 20),),
+              child: Text(
+                "GtadsCSJ",
+                style: TextStyle(fontSize: 20),
+              ),
             )
           ],
         ),

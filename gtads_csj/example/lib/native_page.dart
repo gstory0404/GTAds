@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gtads/gtads.dart';
 
+import 'ad_config.dart';
+
 /// @Author: gstory
 /// @CreateDate: 2022/8/18 15:41
 /// @Email gstory0404@gmail.com
@@ -27,7 +29,7 @@ class _NativePageState extends State<NativePage> {
         child: Column(
           children: [
             GTAdsNativeWidget(
-              codes: [GTAdsCode(alias: "csj", probability: 5,androidId: "102730271",iosId: "102730271")],
+              codes: [...AdConfig.nativeCodes],
               width: 300,
               height: 200,
               timeout: 6,
