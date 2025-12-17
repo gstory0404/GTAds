@@ -62,6 +62,8 @@ class GTAdsCsjProvider extends GTAdsProvider {
       androidCodeId: adCode.androidId ?? "",
       //ios 开屏广告广告id 必填
       iosCodeId: adCode.iosId ?? "",
+      //ohos
+      ohosId: adCode.ohosId ?? "",
       // 期望view 宽度 dp 选填
       width: width,
       //期望view高度 dp 选填
@@ -102,6 +104,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
     return FlutterUnionadNativeAdView(
       androidCodeId: adCode.androidId ?? "",
       iosCodeId: adCode.iosId ?? "",
+      //ohosCodeId: adCode.ohosId ?? "",
       supportDeepLink: true,
       width: width,
       height: height,
@@ -136,6 +139,7 @@ class GTAdsCsjProvider extends GTAdsProvider {
     return FlutterUnionadBannerView(
       androidCodeId: adCode.androidId ?? "",
       iosCodeId: adCode.iosId ?? "",
+      ohosId: adCode.ohosId ?? "",
       width: width,
       height: height,
       callBack: FlutterUnionadBannerCallBack(

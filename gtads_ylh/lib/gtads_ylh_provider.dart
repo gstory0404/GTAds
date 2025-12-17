@@ -9,9 +9,9 @@ class GTAdsYlhProvider extends GTAdsProvider {
   Map<String, bool>? androidPrivacy;
   bool? enableCollectAppInstallStatus;
 
-  GTAdsYlhProvider(String alias, String? androidId, String? iosId,
+  GTAdsYlhProvider(String alias, String? androidId, String? iosId, String? ohosId,
       {Map<String, bool>? androidPrivacy, bool? enableCollectAppInstallStatus})
-      : super(alias, androidId, iosId) {
+      : super(alias, androidId, iosId, ohosId: ohosId) {
     this.androidPrivacy = androidPrivacy;
     this.enableCollectAppInstallStatus = enableCollectAppInstallStatus;
   }
@@ -21,6 +21,7 @@ class GTAdsYlhProvider extends GTAdsProvider {
     return FlutterTencentad.register(
         androidId: androidId ?? "",
         iosId: iosId ?? "",
+        ohosId: ohosId ?? "",
         debug: isDebug,
         androidPrivacy: this.androidPrivacy,
         enableCollectAppInstallStatus: enableCollectAppInstallStatus ?? false);
@@ -34,6 +35,8 @@ class GTAdsYlhProvider extends GTAdsProvider {
       androidId: adCode.androidId ?? "",
       //ios广告id
       iosId: adCode.iosId ?? "",
+      //ohos广告id
+      ohosId: adCode.ohosId ?? "",
       //广告宽 单位dp
       viewWidth: width,
       //广告高  单位dp   宽高比应该为6.4:1
@@ -113,6 +116,8 @@ class GTAdsYlhProvider extends GTAdsProvider {
       androidId: adCode.androidId ?? "",
       //ios广告id
       iosId: adCode.iosId ?? "",
+      //ohos广告id
+      ohosId: adCode.ohosId ?? "",
       //是否全屏
       isFullScreen: isFull,
       //下载二次确认弹窗 默认false
@@ -129,6 +134,8 @@ class GTAdsYlhProvider extends GTAdsProvider {
         androidId: adCode.androidId ?? "",
         //ios广告id
         iosId: adCode.iosId ?? "",
+        //ohos广告id
+        ohosId: adCode.ohosId ?? "",
         //广告宽 单位dp
         viewWidth: width.toInt(),
         //广告高  单位dp
@@ -210,6 +217,8 @@ class GTAdsYlhProvider extends GTAdsProvider {
       androidId: adCode.androidId ?? "",
       //ios广告id
       iosId: adCode.iosId ?? "",
+      //ohos广告id
+      ohosId: adCode.ohosId ?? "",
       //用户id
       userID: userId,
       //奖励
@@ -232,6 +241,8 @@ class GTAdsYlhProvider extends GTAdsProvider {
       androidId: adCode.androidId ?? "",
       //ios广告id
       iosId: adCode.iosId ?? "",
+      //ohos广告id
+      ohosId: adCode.ohosId ?? "",
       ////设置开屏广告从请求到展示所花的最大时长（并不是指广告曝光时长），取值范围为[1500, 5000]ms
       fetchDelay: 3000,
       //下载二次确认弹窗 默认false

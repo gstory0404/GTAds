@@ -1,0 +1,60 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/tian/.ohos/config/default_ohos_3gTNhuqGp2_y4aWPVuf8veN-qdtwv3PX2B1GIGGsKws=.cer",
+          "certpath": "/Users/tian/.ohos/config/default_ohos_3gTNhuqGp2_y4aWPVuf8veN-qdtwv3PX2B1GIGGsKws=.cer",
+          "certpath": "/Users/tian/.ohos/config/default_ohos_3gTNhuqGp2_y4aWPVuf8veN-qdtwv3PX2B1GIGGsKws=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A1C918F2CB6442E826C548E061E8ED903EDF54DF857E70359A5AA2DE73D3953D6913CE57E9F56",
+          "profile": "/Users/tian/.ohos/config/default_ohos_3gTNhuqGp2_y4aWPVuf8veN-qdtwv3PX2B1GIGGsKws=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/tian/.ohos/config/default_ohos_3gTNhuqGp2_y4aWPVuf8veN-qdtwv3PX2B1GIGGsKws=.p12",
+          "storePassword": "0000001A3CBD0579E2016296544ADB0097362AD9EFEBF8509FD6ADA62CD71E41CA5968A5797A5249E3DD"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "targetSdkVersion": "5.0.0(12)",
+        "buildOption": {
+          "strictMode": {
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "profile"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

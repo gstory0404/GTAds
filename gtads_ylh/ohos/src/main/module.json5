@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "gtads_ylh",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

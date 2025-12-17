@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "gtads",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}
