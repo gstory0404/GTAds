@@ -96,9 +96,9 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: "88e3c25727567c1322f8a0cd215d4c65e3601572"
-      url: "https://github.com/gstory0404/flutter_unionad.git"
+      ref: ohos
+      resolved-ref: "8a5e84d2d4e4337a4ce61e2549c231685b3ceaea"
+      url: "https://github.com/gstory0404/flutter_unionad"
     source: git
     version: "2.2.3"
   gtads:

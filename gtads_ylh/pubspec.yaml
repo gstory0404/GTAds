@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
+#  flutter_tencentad: 
+#    path: "../../flutter_tencentad"
   flutter_tencentad: 
     git:
       url: "https://github.com/gstory0404/flutter_tencentad"
