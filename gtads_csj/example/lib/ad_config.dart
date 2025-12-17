@@ -1,5 +1,4 @@
 import 'package:gtads/gtads.dart';
-
 // import 'package:gtads_bqt/gtads_bqt.dart';
 import 'package:gtads_csj/gtads_csj.dart';
 
@@ -26,6 +25,7 @@ class AdConfig {
       useMediation: true,
       androidPrivacy: AndroidPrivacy(),
       iosPrivacy: IOSPrivacy(),
+      userInfo: UnionadUserInfo(),
     ),
   ];
 
