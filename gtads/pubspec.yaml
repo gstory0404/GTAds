@@ -25,5 +25,3 @@ flutter:
         pluginClass: GtadsPlugin
       ios:
         pluginClass: GtadsPlugin
-      ohos:
-        pluginClass: GtadsPlugin

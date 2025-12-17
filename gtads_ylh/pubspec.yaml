@@ -15,10 +15,7 @@ dependencies:
     git:
       url: "https://github.com/gstory0404/flutter_tencentad"
       ref: ohos
-#  gtads: ^1.5.0
-  gtads:
-    path: ../gtads
-
+  gtads: ^1.5.0
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +31,4 @@ flutter:
         package: com.gstory.gtads_ylh
         pluginClass: GtadsYlhPlugin
       ios:
-        pluginClass: GtadsYlhPlugin
-      ohos:
         pluginClass: GtadsYlhPlugin
