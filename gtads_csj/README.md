@@ -48,7 +48,7 @@ GTAds.addProvider(GTAdsCsjProvider(
     useMediation: true,
     androidPrivacy: AndroidPrivacy(),
     iosPrivacy: IOSPrivacy(),
-    iosPrivacy: UnionadUserInfo(),
+    userInfo: UnionadUserInfo(),
     //配置拉取失败时导入本地配置 https://www.csjplatform.com/supportcenter/5885
     //android导入/android/app/src/main/assets/下，文件必须为json文件，传入文件名
     //ios导入/ios/下，文件必须为json文件，传入文件名
