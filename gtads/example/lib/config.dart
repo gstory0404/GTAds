@@ -1,6 +1,7 @@
 import 'package:gtads/gtads.dart';
 // import 'package:gtads_bqt/gtads_bqt.dart';
 import 'package:gtads_csj/gtads_csj.dart';
+import 'package:gtads_ylh/gtads_ylh.dart';
 // import 'package:gtads_sigmob/gtads_sigmob.dart';
 // import 'package:gtads_ylh/gtads_ylh.dart';
 
@@ -27,8 +28,8 @@ class Config {
 
   //广告
   static List<GTAdsProvider> providers = [
-    GTAdsCsjProvider(CSJ, "5098580", "5098580", appName: 'flutter_test'),
-    // GTAdsYlhProvider(YLH, "1200009850", "1200718557"),
+    GTAdsCsjProvider(CSJ, "5750023", "5750023", appName: 'flutter_test'),
+    GTAdsYlhProvider(YLH, "1200009850", "1200718557"),
     // GTAdsSigmobProvider(
     //     alias: SIGMOB,
     //     androidId: '6878',
@@ -41,7 +42,7 @@ class Config {
   //横幅广告位
   static List<GTAdsCode> bannerCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 5, androidId: "102735527", iosId: "102735527"),
+        alias: CSJ, probability: 5, androidId: "103686668", iosId: "103686668"),
     GTAdsCode(
         alias: YLH,
         probability: 5,
@@ -52,7 +53,7 @@ class Config {
   //信息流广告位
   static List<GTAdsCode> nativeCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 1, androidId: "102730271", iosId: "102730271"),
+        alias: CSJ, probability: 1, androidId: "103686791", iosId: "103686791"),
     GTAdsCode(
         alias: YLH,
         probability: 2,
@@ -88,12 +89,12 @@ class Config {
   //激励广告位
   static List<GTAdsCode> rewardCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 5, androidId: "945418088", iosId: "945418088"),
-    GTAdsCode(
         alias: YLH,
-        probability: 1,
+        probability: 10,
         androidId: "5042816813706194",
         iosId: "4023171869997790"),
+    GTAdsCode(
+        alias: CSJ, probability: 5, androidId: "103685185", iosId: "103685185"),
     GTAdsCode(
         alias: SIGMOB,
         probability: 1,
@@ -108,7 +109,7 @@ class Config {
   //插屏广告位
   static List<GTAdsCode> insertCodes = [
     GTAdsCode(
-        alias: CSJ, probability: 1, androidId: "946201351", iosId: "946201351"),
+        alias: CSJ, probability: 1, androidId: "103687132", iosId: "103687132"),
     GTAdsCode(
         alias: YLH,
         probability: 2,
@@ -122,6 +123,9 @@ class Config {
     GTAdsCode(
         alias: BQT, probability: 4, androidId: "8351686", iosId: "7803486"),
     GTAdsCode(
-        alias: KS, probability: 5, androidId: "22960000015", iosId: "22960000015"),
+        alias: KS,
+        probability: 5,
+        androidId: "22960000015",
+        iosId: "22960000015"),
   ];
 }
