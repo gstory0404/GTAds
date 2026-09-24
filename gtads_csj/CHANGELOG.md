@@ -1,3 +1,6 @@
+## 1.5.21
+* flutter_unionad升级3.0.0
+
 ## 1.5.20
 * flutter_unionad升级2.2.9
 

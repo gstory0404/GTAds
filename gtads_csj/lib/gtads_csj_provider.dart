@@ -25,13 +25,14 @@ class GTAdsCsjProvider extends GTAdsProvider {
 
   @override
   Future<bool> initAd(bool isDebug) {
+    var appIdCode = defaultTargetPlatform == TargetPlatform.iOS
+        ? iosId
+        : defaultTargetPlatform == TargetPlatform.android
+            ? androidId
+            : ohosId;
     return FlutterUnionad.register(
-        //穿山甲广告 Android appid 必填
-        androidAppId: androidId ?? "",
-        //穿山甲广告 ios appid 必填
-        iosAppId: iosId ?? "",
-        //穿山甲广告 ohos appid
-        ohosAppId: ohosId ?? "",
+        //穿山甲广告 appid 必填
+        appId: appIdCode ?? "",
         //使用TextureView控件播放视频,默认为SurfaceView,当有SurfaceView冲突的场景，可以使用TextureView 选填
         useTextureView: true,
         useMediation: useMediation,
@@ -59,11 +60,14 @@ class GTAdsCsjProvider extends GTAdsProvider {
   @override
   Widget splashAd(
       GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
+    var adCodeId = defaultTargetPlatform == TargetPlatform.iOS
+        ? adCode.iosId
+        : defaultTargetPlatform == TargetPlatform.android
+            ? adCode.androidId
+            : adCode.ohosId;
     return FlutterUnionadSplashAdView(
-      //android 开屏广告广告id 必填
-      androidCodeId: adCode.androidId ?? "",
-      //ios 开屏广告广告id 必填
-      iosCodeId: adCode.iosId ?? "",
+      // 开屏广告广告id 必填
+      codeId: adCodeId ?? "",
       // 期望view 宽度 dp 选填
       width: width,
       //期望view高度 dp 选填
@@ -101,9 +105,13 @@ class GTAdsCsjProvider extends GTAdsProvider {
   @override
   Widget nativeAd(
       GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
+    var adCodeId = defaultTargetPlatform == TargetPlatform.iOS
+        ? adCode.iosId
+        : defaultTargetPlatform == TargetPlatform.android
+            ? adCode.androidId
+            : adCode.ohosId;
     return FlutterUnionadNativeAdView(
-      androidCodeId: adCode.androidId ?? "",
-      iosCodeId: adCode.iosId ?? "",
+      codeId: adCodeId ?? "",
       supportDeepLink: true,
       width: width,
       height: height,
@@ -135,9 +143,13 @@ class GTAdsCsjProvider extends GTAdsProvider {
   @override
   Widget bannerAd(
       GTAdsCode adCode, double width, double height, GTAdsCallBack? callBack) {
+    var adCodeId = defaultTargetPlatform == TargetPlatform.iOS
+        ? adCode.iosId
+        : defaultTargetPlatform == TargetPlatform.android
+            ? adCode.androidId
+            : adCode.ohosId;
     return FlutterUnionadBannerView(
-      androidCodeId: adCode.androidId ?? "",
-      iosCodeId: adCode.iosId ?? "",
+      codeId: adCodeId ?? "",
       width: width,
       height: height,
       callBack: FlutterUnionadBannerCallBack(
@@ -208,13 +220,13 @@ class GTAdsCsjProvider extends GTAdsProvider {
         },
       ),
     );
+    var adCodeId = defaultTargetPlatform == TargetPlatform.iOS
+        ? adCode.iosId
+        : defaultTargetPlatform == TargetPlatform.android
+            ? adCode.androidId
+            : adCode.ohosId;
     FlutterUnionad.loadFullScreenVideoAdInteraction(
-      //android 全屏广告id 必填
-      androidCodeId: adCode.androidId ?? "",
-      //ios 全屏广告id 必填
-      iosCodeId: adCode.iosId ?? "",
-      //ohos 全屏广告id
-      ohosCodeId: adCode.ohosId ?? "",
+      codeId: adCodeId ?? "",
       //视屏方向 选填
       orientation: FlutterUnionadOrientation.VERTICAL,
     );
@@ -292,14 +304,13 @@ class GTAdsCsjProvider extends GTAdsProvider {
         },
       ),
     );
+    var adCodeId = defaultTargetPlatform == TargetPlatform.iOS
+        ? adCode.iosId
+        : defaultTargetPlatform == TargetPlatform.android
+            ? adCode.androidId
+            : adCode.ohosId;
     FlutterUnionad.loadRewardVideoAd(
-      //是否个性化 选填
-      androidCodeId: adCode.androidId ?? "",
-      //Android 激励视频广告id  必填
-      iosCodeId: adCode.iosId ?? "",
-      //ohos 激励视频广告id
-      ohosCodeId: adCode.ohosId ?? "",
-      //ios 激励视频广告id  必填
+      codeId: adCodeId ?? "",
       rewardName: rewardName,
       //奖励名称 选填
       rewardAmount: rewardAmount,
